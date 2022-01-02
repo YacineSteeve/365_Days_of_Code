@@ -2,7 +2,7 @@ from itertools import zip_longest
 
 
 class Poly:
-    """ Beautifully manage various lengths and degrees polynomials.
+    """ Beautifully manage various lengths and degrees single-variable polynomials.
         Coefficients order should be (an, -->, ao)
         Zero terms should be specified when on the right side."""
 
