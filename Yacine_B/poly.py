@@ -93,6 +93,9 @@ class Poly:
         :return: Boolean
         """
         return self.evaluate(x) == 0
+    
+    def __getitem__(self, item):
+        return self.__coefs[item]
 
     def __add__(self, other):
         polys = [self.__coefs] + [other.coefs]
