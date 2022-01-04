@@ -1,21 +1,22 @@
-"""
-source: https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/sum-as-per-frequency-88b00c1f/
-"""
+from collections import Counter
+import sys
 
+sys.stdin = open("input.in", 'r')
 size = int(input())
 numbers = list(map(int, input().split()))
+occ = dict(Counter(numbers))
+occ = sorted(occ.items(), key=lambda x: x[1], reverse=True)
+occ = dict(occ)
+print(occ)
 t = int(input())
 
-for _ in range(t):
-    l, r = [int(i) for i in input().split()]
-    occ = {}
-    for i in range(size):
-        if numbers[i] in occ:
-            occ[numbers[i]] += 1
-        else:
-            occ[numbers[i]] = 1
+for k in range(t):
+    left, right = [int(i) for i in input().split()]
     s = 0
     for n in occ:
-        if l <= occ[n] <= r:
-            s += n*occ[n]
+        if occ[n] >= left:
+            if occ[n] <= right:
+                s += n*occ[n]
+        else:
+            break
     print(s)
