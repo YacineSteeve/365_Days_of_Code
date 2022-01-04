@@ -2,9 +2,11 @@ from itertools import zip_longest, product
 
 
 class Poly:
-    """ Beautifully manage various lengths and degrees single-variable polynomials.
-        Coefficients order should be (an, -->, ao)
-        Zero terms should be specified when on the right side."""
+    """
+    Beautifully manage various lengths and degrees single-variable polynomials.
+    Coefficients order should be (an, -->, ao)
+    Zero terms should be specified when on the right side.
+    """
 
     def __init__(self, *coefs):
         if type(coefs[0]) is list:
@@ -85,6 +87,13 @@ class Poly:
             return Poly(0)
         return Poly(*reversed(new_coefs))
 
+    def test_root(self, x):
+        """
+        :param x: Float or Integer.
+        :return: Boolean
+        """
+        return self.evaluate(x) == 0
+
     def __add__(self, other):
         polys = [self.__coefs] + [other.coefs]
         return Poly(*reversed([sum(coef) for coef in zip_longest(*polys, fillvalue=0)]))
@@ -108,7 +117,6 @@ class Poly:
             prod_coefs = [sum([self.__coefs[tp[0]] * other.coefs[tp[1]] for tp in coef]) for coef in part_prod_coefs]
 
         return Poly(*reversed(prod_coefs))
-
 
 if __name__ == "__main__":
     p = Poly(-5, 0, 4, -2, 1+2j, 7)
