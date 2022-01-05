@@ -17,14 +17,10 @@ class QuadraticPoly(Poly):
         else:
             super().__init__(*coefs)
 
-        self.a, self.b, self.c = self.get_coefs()
-
         if self.deg > 2:
-            try:
-                raise LengthException()
-            except LengthException:
-                print("Too much coefficients! A quadratic polynomial has at most 3 coefficients")
-                exit()
+            raise LengthException("Too much coefficients! A quadratic polynomial has at most 3 coefficients.")
+
+        self.a, self.b, self.c = self.get_coefs()
 
     def get_determinant(self):
         return self.b**2 - 4 * self.a * self.c
@@ -59,10 +55,15 @@ class QuadraticPoly(Poly):
             return r
         elif not r:
             return c
-        else:
-            return r + c
 
+    def factors(self):
+        an = [str(self.a)] if self.a != 1 else []
 
-k = QuadraticPoly([3, 4, 1])
-k.display()
-print(k.get_roots())
+        for root in self.get_roots(rounded=1):
+            fact = f"x + {-root}" if type(root) is complex else f"x + ({-root})"
+            an.append(fact)
+        return an
+
+    def factorised(self):
+        return ''.join([f"({fact})" for fact in self.factors()])
+    

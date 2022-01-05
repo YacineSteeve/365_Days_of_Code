@@ -5,7 +5,7 @@ class Poly:
     """
     Beautifully manage various lengths and degrees single-variable polynomials.
     Coefficients order should be (an, -->, ao)
-    Zero terms should be specified when on the right side.
+    Zero terms should be specified when they are not the endpoints of the polynomial.
     """
 
     def __init__(self, *coefs):
@@ -18,11 +18,7 @@ class Poly:
         self.const = self.__coefs[0]
 
         if not all(map(lambda x: type(x) in [int, float, complex], self.__coefs)):
-            try:
-                raise TypeError
-            except TypeError:
-                print(f"Polynomial ill instantiated! All of the coefficients should be integer, float or complex.")
-                exit()
+            raise TypeError(f"Polynomial ill instantiated! The coefficients should be integer, float or complex.")
 
     def is_const(self):
         """
@@ -40,30 +36,6 @@ class Poly:
 
     def get_coefs(self):
         return list(reversed(self.__coefs))
-
-    def display(self):
-        """
-        Make a display of the polynomial.
-        :return: None
-        """
-        poly = ""
-        if self.is_null():
-            print(f"({0})")
-        else:
-            for i, a in enumerate(self.__coefs):
-                if a != 0:
-                    elem = f"{a}" if type(a) is complex else f"({a})"
-                    if i == 1:
-                        elem += f"x"
-                    elif i > 1:
-                        elem += f"x^{i}"
-                    poly = elem + poly
-                    if i != self.deg:
-                        poly = " + " + poly
-                else:
-                    if i == self.deg:
-                        poly = poly[3:]
-            print(poly)
 
     def evaluate(self, x):
         """Calculate the polynomial for a given value x"""
@@ -93,55 +65,62 @@ class Poly:
         :return: Boolean
         """
         return self.evaluate(x) == 0
-    
+
+    def integral(self, x, y):
+        pass
+
+    def __str__(self):
+        """
+        Make a display of the polynomial.
+        :return: String
+        """
+        poly = ""
+        if self.is_null():
+            return f"({0})"
+        else:
+            for i, a in enumerate(self.__coefs):
+                if a != 0:
+                    elem = f"{a}" if type(a) is complex else f"({a})"
+                    if i == 1:
+                        elem += f"x"
+                    elif i > 1:
+                        elem += f"x^{i}"
+                    poly = elem + poly
+                    if i != self.deg:
+                        poly = " + " + poly
+                else:
+                    if i == self.deg:
+                        poly = poly[3:]
+            return poly
+
+    def __eq__(self, other):
+        return self.__coefs == other.__coefs
+
     def __getitem__(self, item):
         return self.__coefs[item]
 
     def __add__(self, other):
-        polys = [self.__coefs] + [other.coefs]
+        polys = [self.__coefs] + [other.__coefs]
         return Poly(*reversed([sum(coef) for coef in zip_longest(*polys, fillvalue=0)]))
 
     def __sub__(self, other):
-        polys = [self.__coefs] + [other.coefs]
+        polys = [self.__coefs] + [other.__coefs]
         return Poly(*reversed([coef[0] - coef[1] for coef in zip_longest(*polys, fillvalue=0)]))
 
     def __mul__(self, other):
-        prod_deg = self.deg + other.deg + 1
+        prod_deg = 2 * max(self.deg, other.deg)
         prods = list(product(range(prod_deg//2 + 1), repeat=2))
-        part_prod_coefs = [list(filter(lambda tp: tp[0] + tp[1] == k, prods)) for k in range(prod_deg)]
+        part_prod_coefs = [list(filter(lambda tp: sum(tp) == k, prods)) for k in range(prod_deg)]
 
-        if other.deg < self.deg:
-            new_coefs = other.coefs + [0 for _ in range(self.deg - other.deg)]
-            prod_coefs = [sum([self.__coefs[tp[0]] * new_coefs[tp[1]] for tp in coef]) for coef in part_prod_coefs]
-        elif self.deg < other.deg:
-            new_coefs = self.__coefs + [0 for _ in range(other.deg - self.deg)]
-            prod_coefs = [sum([new_coefs[tp[0]] * other.coefs[tp[1]] for tp in coef]) for coef in part_prod_coefs]
-        else:
-            prod_coefs = [sum([self.__coefs[tp[0]] * other.coefs[tp[1]] for tp in coef]) for coef in part_prod_coefs]
+        prod_coefs = []
+        for coef in part_prod_coefs:
+            if other.deg < self.deg:
+                new_coefs = other.__coefs + [0 for _ in range(self.deg - other.deg)]
+                prod_coefs.append(sum([self.__coefs[tp[0]] * new_coefs[tp[1]] for tp in coef]))
+            elif self.deg < other.deg:
+                new_coefs = self.__coefs + [0 for _ in range(other.deg - self.deg)]
+                prod_coefs.append(sum([new_coefs[tp[0]] * other.__coefs[tp[1]] for tp in coef]))
+            else:
+                prod_coefs.append(sum([self.__coefs[tp[0]] * other.__coefs[tp[1]] for tp in coef]))
 
         return Poly(*reversed(prod_coefs))
-
-if __name__ == "__main__":
-    p = Poly(-5, 0, 4, -2, 1+2j, 7)
-    q = Poly(5, 3, 0, -1)
-    t = Poly(4, 0)
-    r = Poly(7)
-
-    # Some test cases.
-
-    p.display()
-    print()
-    print(p.deg)
-    print(q.const)
-    print()
-    s = p + q
-    print(s.coefs)
-    s = p - q
-    s.display()
-    print(p.evaluate(2))
-    print()
-    print(t.is_const())
-    t.display()
-    print()
-    print(r.is_const())
-    r.display()
