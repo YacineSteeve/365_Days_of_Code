@@ -1,6 +1,14 @@
 from itertools import zip_longest, product
 
 
+class MyExceptions(Exception):
+    pass
+
+
+class IntegrationLimitError(Exception):
+    pass
+
+
 class Poly:
     """
     Beautifully manage various lengths and degrees single-variable polynomials.
@@ -49,7 +57,7 @@ class Poly:
         Generate the derivative at the order _order_ of the polynomial.
         :return: Polynomial (object Poly)
         """
-        if not order:
+        if order is None:
             order = 1
 
         new_coefs = self.__coefs
@@ -59,15 +67,40 @@ class Poly:
             return Poly(0)
         return Poly(*reversed(new_coefs))
 
+    def primitive(self, condition=None):
+        if condition is None:
+            x, y = 0, 0
+        else:
+            x, y = condition
+
+        prim_coefs = [1.0]
+
+        for i, a in enumerate(self.__coefs):
+            if type(a) is complex:
+                a = complex(round(a.real / (i + 1), 2), round(a.imag / (i + 1), 2))
+            else:
+                a = round(a / (i + 1), 2)
+            prim_coefs.append(a)
+
+        c = y - (Poly(*reversed(prim_coefs)).evaluate(x) - 1.0)
+
+        return Poly(*reversed([c] + prim_coefs[1:]))
+
+    def integral(self, x1=None, x2=None):
+        if x1 is None and x2 is None:
+            x1, x2 = 0, 1
+        elif x1 is None or x2 is None:
+            raise IntegrationLimitError("Missing one limit of integration.")
+
+        prim = self.primitive()
+        return prim.evaluate(x2) - prim.evaluate(x1)
+
     def test_root(self, x):
         """
         :param x: Float or Integer.
         :return: Boolean
         """
         return self.evaluate(x) == 0
-
-    def integral(self, x, y):
-        pass
 
     def __str__(self):
         """
@@ -109,7 +142,7 @@ class Poly:
 
     def __mul__(self, other):
         prod_deg = 2 * max(self.deg, other.deg)
-        prods = list(product(range(prod_deg//2 + 1), repeat=2))
+        prods = list(product(range(prod_deg // 2 + 1), repeat=2))
         part_prod_coefs = [list(filter(lambda tp: sum(tp) == k, prods)) for k in range(prod_deg)]
 
         prod_coefs = []
@@ -124,3 +157,11 @@ class Poly:
                 prod_coefs.append(sum([self.__coefs[tp[0]] * other.__coefs[tp[1]] for tp in coef]))
 
         return Poly(*reversed(prod_coefs))
+
+
+if __name__ == "__main__":
+    p = Poly(-5, 0, 4, -2, 1 + 2j, 7)
+    q = Poly([5, 3, 0, -1])
+
+    print(p.primitive())
+    print(q.integral(1, 2))
