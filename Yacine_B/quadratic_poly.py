@@ -1,9 +1,5 @@
-from poly import Poly
+from poly import Poly, MyExceptions
 from math import sqrt
-
-
-class MyExceptions(Exception):
-    pass
 
 
 class LengthException(MyExceptions):
@@ -66,4 +62,11 @@ class QuadraticPoly(Poly):
 
     def factorised(self):
         return ''.join([f"({fact})" for fact in self.factors()])
+
+
+if __name__ == '__main__':
+    k = QuadraticPoly(1, -2, 1)
     
+    print(k)
+    print(k.primitive())
+
