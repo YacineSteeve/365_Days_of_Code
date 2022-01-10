@@ -7,6 +7,13 @@ class LengthException(MyExceptions):
 
 
 class QuadraticPoly(Poly):
+    """ A subclass to specifically manage quadratic polynomials.
+    
+    Args:
+        Poly (class): superclass for any degree polynomial.
+    """
+    
+    
     def __init__(self, *coefs):
         if type(coefs[0]) is list:
             super().__init__(*coefs[0])
@@ -26,12 +33,14 @@ class QuadraticPoly(Poly):
         if delta >= 0:
             s1 = (- self.b + sqrt(delta)) / (2 * self.a)
             s2 = (- self.b - sqrt(delta)) / (2 * self.a)
-            if not rounded:
-                return s1, s2
-            else:
+            if rounded:
+                if type(rounded) is not int:
+                    raise TypeError("round value must be integer!")
                 return round(s1, rounded), round(s2, rounded)
+            else:
+                return s1, s2
         else:
-            return None
+            return ()
 
     def complex_roots(self, rounded=None):
         delta = self.get_determinant()
@@ -39,10 +48,12 @@ class QuadraticPoly(Poly):
             real_part = - self.b / (2 * self.a)
             im_part = sqrt(abs(delta)) / (2 * self.a)
             if rounded:
+                if type(rounded) is not int:
+                    raise TypeError("round value must be integer!")
                 real_part, im_part = round(real_part, rounded), round(im_part, rounded)
             return complex(real_part, im_part), complex(real_part, -im_part)
         else:
-            return None
+            return ()
 
     def get_roots(self, rounded=None):
         c = self.complex_roots(rounded=rounded)
@@ -65,8 +76,8 @@ class QuadraticPoly(Poly):
 
 
 if __name__ == '__main__':
-    k = QuadraticPoly(1, -2, 1)
+    k = QuadraticPoly(3, -2, 1)
     
     print(k)
-    print(k.primitive())
+    print(k.complex_roots(rounded=4))
 
