@@ -10,55 +10,48 @@ class IntegrationLimitError(Exception):
 
 
 class Poly:
+    """ Beautifully manage various lengths and degrees single-variable polynomials.
+        Coefficients order should be (an, -->, ao).
+        Zero terms should be specified when they are not the endpoints of the polynomial.
     """
-    Beautifully manage various lengths and degrees single-variable polynomials.
-    Coefficients order should be (an, -->, ao)
-    Zero terms should be specified when they are not the endpoints of the polynomial.
-    """
-
+    
     def __init__(self, *coefs):
         if type(coefs[0]) is list:
             self.__coefs = list(reversed(coefs[0]))
         else:
             self.__coefs = list(reversed(coefs))
 
+        if not all(map(lambda x: type(x) in [int, float, complex], self.__coefs)):
+            raise TypeError(f"Polynomial ill instantiated! The coefficients should be integer, float or complex.")
+        
         self.deg = len(self.__coefs) - 1
         self.const = self.__coefs[0]
 
-        if not all(map(lambda x: type(x) in [int, float, complex], self.__coefs)):
-            raise TypeError(f"Polynomial ill instantiated! The coefficients should be integer, float or complex.")
-
     def is_const(self):
-        """
-        Test whether the polynomial is a constant or not
-        :return: Boolean
-        """
         return self.deg == 0
 
     def is_null(self):
-        """
-        Whether the polynomial is the K-Zero polynomial.
-        :return: Boolean
-        """
         return self.deg == 0 and self.const == 0
 
     def get_coefs(self):
         return list(reversed(self.__coefs))
 
     def evaluate(self, x):
-        """Calculate the polynomial for a given value x"""
+        if type(x) not in [int, float, complex]:
+           raise TypeError("x must be integer, float or complex!")
+        
         terms = [a * (x ** i) for i, a in enumerate(self.__coefs)]
+        
         if not terms:
             return 0
         return sum(terms)
 
     def derivative(self, order=None):
-        """
-        Generate the derivative at the order _order_ of the polynomial.
-        :return: Polynomial (object Poly)
-        """
         if order is None:
             order = 1
+        else:
+            if type(order) is not int or order >= 1:
+                raise TypeError("The order of derivation must be integer and greater than 1.")
 
         new_coefs = self.__coefs
         for _ in range(order):
@@ -67,19 +60,34 @@ class Poly:
             return Poly(0)
         return Poly(*reversed(new_coefs))
 
-    def primitive(self, condition=None):
+    def primitive(self, condition=None, rounded=None):
         if condition is None:
             x, y = 0, 0
         else:
+            if type(condition) is not tuple or len(condition) != 2:
+               raise ValueError("condition must be a couple of two values, (x, p(x))!")
             x, y = condition
 
+            if type(x) not in [int, float] or type(y) not in [int, float]:
+                raise TypeError("condition values must be integers or float!")
+            
+        if rounded is None:
+            rounded = True
+        
         prim_coefs = [1.0]
-
+        
         for i, a in enumerate(self.__coefs):
-            if type(a) is complex:
-                a = complex(round(a.real / (i + 1), 2), round(a.imag / (i + 1), 2))
+            if rounded:
+                if type(a) is complex:
+                    a = complex(round(a.real / (i + 1), 2), round(a.imag / (i + 1), 2))
+                else:
+                    a = round(a / (i + 1), 2)
             else:
-                a = round(a / (i + 1), 2)
+                if type(a) is complex:
+                    a = complex(a.real / (i + 1), a.imag / (i + 1))
+                else:
+                    a = a / (i + 1)
+                
             prim_coefs.append(a)
 
         c = y - (Poly(*reversed(prim_coefs)).evaluate(x) - 1.0)
@@ -91,22 +99,23 @@ class Poly:
             x1, x2 = 0, 1
         elif x1 is None or x2 is None:
             raise IntegrationLimitError("Missing one limit of integration.")
+        else:
+            if type(x1) not in [int, float] or type(x2) not in [int, float]:
+                raise TypeError("integration limits must be integers or float!")
 
-        prim = self.primitive()
+        prim = self.primitive(rounded=False)
         return prim.evaluate(x2) - prim.evaluate(x1)
 
     def test_root(self, x):
-        """
-        :param x: Float or Integer.
-        :return: Boolean
-        """
+        if type(x) not in [int, float, complex]:
+               raise TypeError("x must be integer, float or complex!")
         return self.evaluate(x) == 0
-
+    
+    def test_other(self, other):
+        if type(other) is not Poly:
+            raise TypeError("other must be a Poly() object!")
+        
     def __str__(self):
-        """
-        Make a display of the polynomial.
-        :return: String
-        """
         poly = ""
         if self.is_null():
             return f"({0})"
@@ -126,21 +135,25 @@ class Poly:
                         poly = poly[3:]
             return poly
 
+    def __getitem__(self, i):
+        return self.__coefs[i]
+    
     def __eq__(self, other):
+        self.test_other(other)
         return self.__coefs == other.__coefs
 
-    def __getitem__(self, item):
-        return self.__coefs[item]
-
     def __add__(self, other):
+        self.test_other(other)
         polys = [self.__coefs] + [other.__coefs]
         return Poly(*reversed([sum(coef) for coef in zip_longest(*polys, fillvalue=0)]))
 
     def __sub__(self, other):
+        self.test_other(other)
         polys = [self.__coefs] + [other.__coefs]
         return Poly(*reversed([coef[0] - coef[1] for coef in zip_longest(*polys, fillvalue=0)]))
 
     def __mul__(self, other):
+        self.test_other(other)
         prod_deg = 2 * max(self.deg, other.deg)
         prods = list(product(range(prod_deg // 2 + 1), repeat=2))
         part_prod_coefs = [list(filter(lambda tp: sum(tp) == k, prods)) for k in range(prod_deg)]
@@ -164,4 +177,4 @@ if __name__ == "__main__":
     q = Poly([5, 3, 0, -1])
 
     print(p.primitive())
-    print(q.integral(1, 2))
+    print(p.integral(1, 2))
