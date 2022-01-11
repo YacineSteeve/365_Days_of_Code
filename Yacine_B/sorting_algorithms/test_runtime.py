@@ -1,7 +1,5 @@
 import timeit
-from selection import selection
-from bubble import bubble
-from data import test_arrays
+from data import test_arrays, algos
 
 
 def runtime(f):
@@ -11,4 +9,4 @@ def runtime(f):
 
 for array in test_arrays:
     print(f"Dataset size: {len(array)}\n"
-          f"Runtime: {runtime(bubble(array))} s\n")
+          f"Runtime: {runtime(algos[-1](array))} s\n")
