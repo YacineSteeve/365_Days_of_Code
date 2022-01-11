@@ -13,4 +13,3 @@ def sort_count_swaps(a):
                 swaps += 1
 
     print(f"Array is sorted in {swaps} swaps.")
-

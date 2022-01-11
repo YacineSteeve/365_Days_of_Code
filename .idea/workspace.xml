@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add selection, insertion and comb sort functions.&#10;Reorganization of the directory and files." />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add selection, insertion and comb sort functions.&#10;Reorganization of the directory and files.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/day_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/day_1.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="11372" />
+    <option name="totalTimeSeconds" value="13141" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -48,8 +51,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.functions">
+  <component name="RunManager" selected="Python.day_1">
     <configuration name="bubble" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="365_Days_of_Code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -72,18 +76,40 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="365_Days_of_Code" />
+    <configuration name="day_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="/usr/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Yacine_B" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/day_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/sorting_algorithms/functions.py" />
       <option name="PARAMETERS" value="" />
@@ -116,20 +142,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="selection" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="365_Days_of_Code" />
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="/usr/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/sorting_algorithms/selection.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,13 +186,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.bubble" />
+      <item itemvalue="Python.functions" />
+      <item itemvalue="Python.insertion" />
+      <item itemvalue="Python.test_runtime" />
+      <item itemvalue="Python.day_1" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_runtime" />
+        <item itemvalue="Python.day_1" />
         <item itemvalue="Python.functions" />
+        <item itemvalue="Python.test_runtime" />
         <item itemvalue="Python.insertion" />
         <item itemvalue="Python.bubble" />
-        <item itemvalue="Python.selection" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +215,9 @@
       <workItem from="1641814279711" duration="5196000" />
       <workItem from="1641836247399" duration="3264000" />
       <workItem from="1641903611926" duration="5395000" />
+      <workItem from="1641911913894" duration="4814000" />
+      <workItem from="1641943203466" duration="222000" />
+      <workItem from="1641943427121" duration="394000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
@@ -214,7 +251,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -228,7 +271,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/365_Days_of_Code$main.coverage" NAME="main Coverage Results" MODIFIED="1641835032787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
-    <SUITE FILE_PATH="coverage/365_Days_of_Code$functions.coverage" NAME="functions Coverage Results" MODIFIED="1641908148022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$functions.coverage" NAME="functions Coverage Results" MODIFIED="1641912066785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$day_1.coverage" NAME="day_1 Coverage Results" MODIFIED="1641943682280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$bubble.coverage" NAME="bubble Coverage Results" MODIFIED="1641906779193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$test_git.coverage" NAME="test_git Coverage Results" MODIFIED="1641814503871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$test_runtime.coverage" NAME="test_runtime Coverage Results" MODIFIED="1641908307829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
