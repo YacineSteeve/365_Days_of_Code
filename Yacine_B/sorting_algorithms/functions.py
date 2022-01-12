@@ -56,9 +56,23 @@ def comb(arr):
 
 def shaker(arr):
     """
-    See demo:
+    See demo: https://en.wikipedia.org/wiki/Cocktail_shaker_sort
     """
-    pass
+    for i in range(len(arr)):
+        no_switch = True
+        if not i % 2:
+            for j in range(len(arr)-1):
+                if arr[j] > arr[j+1]:
+                    arr[j], arr[j+1] = arr[j+1], arr[j]
+                    no_switch = False
+        else:
+            for j in range(-1, -len(arr), -1):
+                if arr[j] < arr[j-1]:
+                    arr[j], arr[j - 1] = arr[j - 1], arr[j]
+                    no_switch = False
+
+        if no_switch:
+            break
 
     return arr
 
@@ -67,4 +81,4 @@ if __name__ == "__main__":
     from data import test_arrays
 
     print(test_arrays[1])
-    print(comb(test_arrays[1]))
+    print(shaker(test_arrays[1]))
