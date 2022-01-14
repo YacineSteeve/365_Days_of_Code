@@ -118,11 +118,32 @@ def quick(arr):
         return []
 
 
-def merge(arr):
+def counting(arr):
     """
-    See demo: https://en.wikipedia.org/wiki/Shellsort
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/counting-sort/tutorial/
     """
-    pass
+    max = arr[0]
+    for i in range(len(arr)):
+        if arr[i] > max:
+            max = arr[i]
+
+    frequencies = {n: 0 for n in range(1, max+1)}
+
+    for i in range(len(arr)):
+        frequencies[arr[i]] += 1
+
+    arr = []
+
+    for elem in frequencies.items():
+        arr.extend([elem[0] for _ in range(elem[1])])
+
+    return arr
+
+
+def radix(arr):
+    """
+    See demo:
+    """
 
     return arr
 
@@ -131,4 +152,4 @@ if __name__ == "__main__":
     from data import test_arrays
 
     print(test_arrays[1])
-    print(merge(test_arrays[1]))
+    print(counting(test_arrays[1]))
