@@ -1,6 +1,6 @@
 def bubble(arr):
     """
-    See demo: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
     """
     finished = False
     turn = 0
@@ -18,7 +18,7 @@ def bubble(arr):
 
 def selection(arr):
     """
-    See demo: https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/visualize/
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/tutorial/
     """
     for i in range(len(arr)):
         k = i
@@ -33,7 +33,7 @@ def selection(arr):
 
 def insertion(arr):
     """
-    See demo: https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/visualize/
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/tutorial/
     """
     for i in range(1, len(arr)):
         j = i - 1
@@ -106,7 +106,7 @@ def gnome(arr):
 
 def quick(arr):
     """
-    See demo: https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/
     """
     if arr:
         pivot = arr[-1]
