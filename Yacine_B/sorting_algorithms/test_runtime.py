@@ -4,7 +4,7 @@ from data import test_arrays, algos
 
 def runtime(f):
     test_code = f'''{f}'''
-    return min(timeit.repeat(stmt=test_code))
+    return min(timeit.repeat(stmt=test_code, repeat=1, number=1))
 
 
 if __name__ == "__main__":

@@ -140,16 +140,53 @@ def counting(arr):
     return arr
 
 
-def radix(arr):
+def merge(arr):
     """
-    See demo:
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/
     """
+    def merging(left, right):
+        """
+        To merge two arrays.
+        """
+        if not left:
+            return right
+        elif not right:
+            return left
 
-    return arr
+        res = []
+
+        while left and right:
+            if left[0] < right[0]:
+                res.append(left.pop(0))
+            elif right[0] < left[0]:
+                res.append(right.pop(0))
+
+        if right:
+            res.extend(right)
+        elif left:
+            res.extend(left)
+
+        return res
+
+    def cut(a):
+        """
+        Dividing the array recursively and merging each stage.
+        """
+        if len(a) <= 1:
+            return a
+
+        left = a[:len(a)//2]
+        right = a[len(a)//2:]
+        left = cut(left)
+        right = cut(right)
+
+        return merging(left, right)
+
+    return cut(arr)
 
 
 if __name__ == "__main__":
     from data import test_arrays
 
     print(test_arrays[1])
-    print(counting(test_arrays[1]))
+    print(merge(test_arrays[1]))
