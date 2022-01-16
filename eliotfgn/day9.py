@@ -1,5 +1,5 @@
 def count_substring(string, sub_string):
-    return string.count("sub_string")
+    return string.count(sub_string)
 
 
 if __name__ == '__main__':
