@@ -1,6 +1,6 @@
 def bubble(arr):
     """
-    See demo: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/visualize/
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
     """
     finished = False
     turn = 0
@@ -18,7 +18,7 @@ def bubble(arr):
 
 def selection(arr):
     """
-    See demo: https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/visualize/
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/tutorial/
     """
     for i in range(len(arr)):
         k = i
@@ -33,11 +33,11 @@ def selection(arr):
 
 def insertion(arr):
     """
-    See demo: https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/visualize/
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/tutorial/
     """
     for i in range(1, len(arr)):
         j = i - 1
-        while j >= 0 and not (arr[j] <= arr[i] <= arr[j + 1]):
+        while j >= 0 and arr[j] > arr[i]:
             j -= 1
         arr.insert(j + 1, arr.pop(i))
 
@@ -106,7 +106,7 @@ def gnome(arr):
 
 def quick(arr):
     """
-    See demo: https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/
     """
     if arr:
         pivot = arr[-1]
@@ -140,10 +140,75 @@ def counting(arr):
     return arr
 
 
-def radix(arr):
+def merge(arr):
     """
-    See demo:
+    See demo: https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/
     """
+    def merging(left, right):
+        """
+        To merge two arrays.
+        """
+        if not left:
+            return right
+        elif not right:
+            return left
+
+        res = []
+
+        while left and right:
+            if left[0] < right[0]:
+                res.append(left.pop(0))
+            elif right[0] < left[0]:
+                res.append(right.pop(0))
+
+        if right:
+            res.extend(right)
+        elif left:
+            res.extend(left)
+
+        return res
+
+    def cut(a):
+        """
+        Dividing the array recursively and merging each stage.
+        """
+        if len(a) <= 1:
+            return a
+
+        left = a[:len(a)//2]
+        right = a[len(a)//2:]
+
+        return merging(cut(left), cut(right))
+
+    return cut(arr)
+
+
+def shell(arr):
+    """
+    See demo: https://en.wikipedia.org/wiki/Shellsort
+    """
+
+    # Computing the appropriate gaps to use based on optimal ones and a growth factor.
+    opt_gaps = [1, 4, 10, 23, 57, 132, 301, 701]
+
+    if len(arr) > 701:
+        new_gap = round(opt_gaps[-1] * 2.3)
+
+        while new_gap < len(arr):
+            opt_gaps.append(new_gap)
+            new_gap = round(opt_gaps[-1] * 2.3)
+    else:
+        opt_gaps = list(filter(lambda x: x < len(arr), opt_gaps))
+
+    # Sorting
+    for gap in opt_gaps[::-1]:
+        for i in range(gap):
+            # Insertion sort
+            for j in range(i+gap, len(arr), gap):
+                k = j
+                while k-gap >= i and arr[k-gap] > arr[j]:
+                    k -= gap
+                arr.insert(k, arr.pop(j))
 
     return arr
 
@@ -152,4 +217,4 @@ if __name__ == "__main__":
     from data import test_arrays
 
     print(test_arrays[1])
-    print(counting(test_arrays[1]))
+    print(shell(test_arrays[1]))
