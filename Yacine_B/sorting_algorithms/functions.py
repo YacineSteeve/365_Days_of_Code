@@ -37,7 +37,7 @@ def insertion(arr):
     """
     for i in range(1, len(arr)):
         j = i - 1
-        while j >= 0 and not (arr[j] <= arr[i] <= arr[j + 1]):
+        while j >= 0 and arr[j] > arr[i]:
             j -= 1
         arr.insert(j + 1, arr.pop(i))
 
@@ -177,16 +177,44 @@ def merge(arr):
 
         left = a[:len(a)//2]
         right = a[len(a)//2:]
-        left = cut(left)
-        right = cut(right)
 
-        return merging(left, right)
+        return merging(cut(left), cut(right))
 
     return cut(arr)
+
+
+def shell(arr):
+    """
+    See demo: https://en.wikipedia.org/wiki/Shellsort
+    """
+
+    # Computing the appropriate gaps to use based on optimal ones and a growth factor.
+    opt_gaps = [1, 4, 10, 23, 57, 132, 301, 701]
+
+    if len(arr) > 701:
+        new_gap = round(opt_gaps[-1] * 2.3)
+
+        while new_gap < len(arr):
+            opt_gaps.append(new_gap)
+            new_gap = round(opt_gaps[-1] * 2.3)
+    else:
+        opt_gaps = list(filter(lambda x: x < len(arr), opt_gaps))
+
+    # Sorting
+    for gap in opt_gaps[::-1]:
+        for i in range(gap):
+            # Insertion sort
+            for j in range(i+gap, len(arr), gap):
+                k = j
+                while k-gap >= i and arr[k-gap] > arr[j]:
+                    k -= gap
+                arr.insert(k, arr.pop(j))
+
+    return arr
 
 
 if __name__ == "__main__":
     from data import test_arrays
 
     print(test_arrays[1])
-    print(merge(test_arrays[1]))
+    print(shell(test_arrays[1]))
