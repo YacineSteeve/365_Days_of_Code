@@ -1,7 +1,7 @@
 from collections import Counter
 import sys
 
-sys.stdin = open("input.in", 'r')
+sys.stdin = open("../../input.in", 'r')
 size = int(input())
 numbers = list(map(int, input().split()))
 occ = dict(Counter(numbers))
