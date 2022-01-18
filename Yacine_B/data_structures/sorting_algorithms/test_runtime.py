@@ -10,4 +10,4 @@ def runtime(f):
 if __name__ == "__main__":
     for array in test_arrays:
         print(f"Dataset size: {len(array)}\n"
-              f"Runtime: {runtime(algos[-2](array))} s\n")
+              f"Runtime: {runtime(algos[-1](array))} s\n")
