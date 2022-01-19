@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Improve runtime computing.">
-      <change afterPath="$PROJECT_DIR$/Yacine_B/data_structures/dichotomic_search.py" afterDir="false" />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add a dichotomy search function.">
+      <change afterPath="$PROJECT_DIR$/Yacine_B/game_of_life/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/game_of_life/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/game_of_life/rule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/game_of_life/start_configs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/sorting_algorithms/algorithms" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/algorithms" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/sorting_algorithms/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/sorting_algorithms/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/sorting_algorithms/plot_time_complexity.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/plot_time_complexity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/sorting_algorithms/test_runtime.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/test_runtime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +16,7 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="48425" />
+    <option name="totalTimeSeconds" value="50310" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -76,6 +75,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="23VLO0srFJUYuRfeUpRZfPgyK4f" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -88,13 +90,15 @@
     <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Téléchargements/eduroam-linux-IdT.py" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -303,7 +307,9 @@
       <workItem from="1642165284397" duration="1317000" />
       <workItem from="1642175291679" duration="681000" />
       <workItem from="1642281627439" duration="13840000" />
-      <workItem from="1642451519373" duration="5769000" />
+      <workItem from="1642451519373" duration="7043000" />
+      <workItem from="1642545734672" duration="1700000" />
+      <workItem from="1642616246594" duration="2141000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
@@ -431,7 +437,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642451440811</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Add a dichotomy search function.">
+      <created>1642539073516</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1642539073516</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add a dichotomy search function.">
+      <created>1642539092641</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1642539092641</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,10 +487,11 @@
     <MESSAGE value="Update some links." />
     <MESSAGE value="Add shell sort." />
     <MESSAGE value="Improve runtime computing." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve runtime computing." />
+    <MESSAGE value="Add a dichotomy search function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a dichotomy search function." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/365_Days_of_Code$dichotomic_search.coverage" NAME="dichotomic_search Coverage Results" MODIFIED="1642537735728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$dichotomic_search.coverage" NAME="dichotomic_search Coverage Results" MODIFIED="1642546028124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$main.coverage" NAME="main Coverage Results" MODIFIED="1641835032787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$day_1.coverage" NAME="day_1 Coverage Results" MODIFIED="1641943682280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$test_git.coverage" NAME="test_git Coverage Results" MODIFIED="1641814503871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B" />
