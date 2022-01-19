@@ -1,3 +1,7 @@
+'''
+source: https://www.hackerearth.com/practice/codemonk/ monk and rotation
+'''
+
 t = int(input())
 
 for _ in range(t):
