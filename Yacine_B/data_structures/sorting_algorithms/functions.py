@@ -213,9 +213,74 @@ def shell(arr):
     return arr
 
 
+def bucket(arr, a=None, b=None):
+    """
+    See demo:
+    """
+    # For merging the sorted buckets.
+    def merging(l1, l2):
+        if not l1:
+            return l2
+        elif not l2:
+            return l1
+
+        merged = []
+
+        while l1 and l2:
+            if l1[0] <= l2[0]:
+                merged.append(l1.pop(0))
+            elif l2[0] < l1[0]:
+                merged.append(l2.pop(0))
+
+        if l1:
+            merged.extend(l1)
+        elif l2:
+            merged.extend(l2)
+
+        return merged
+
+    # Auxiliary sorting algorithm.
+    def insertion_sort(t):
+        for i in range(1, len(t)):
+            j = i - 1
+            while j >= 0 and t[j] > t[i]:
+                j -= 1
+            t.insert(j + 1, t.pop(i))
+
+        return t
+
+    # The array numbers range [a, b[.
+    if a is None:
+        a = 1
+    if b is None:
+        b = 1001
+
+    n = len(arr)
+    packs = [[] for _ in range(n)]
+
+    # Creating the buckets.
+    for x in arr:
+        packs[n * (x - a) // (b - a)].append(x)
+
+    # Sorting each bucket.
+    for k in range(n):
+        packs[k] = insertion_sort(packs[k])
+
+    # Merging the buckets
+    while len(packs) > 1:
+        new_packs = [merging(packs[j], packs[j+1]) for j in range(0, len(packs) - 1, 2)]
+
+        if len(packs) % 2:
+            packs = new_packs + [packs[-1]]
+        else:
+            packs = new_packs
+
+    return packs[0]
+
+
 if __name__ == "__main__":
     from data import test_arrays
 
     print(test_arrays[1])
-    print(shell(test_arrays[1]))
+    print(bucket(test_arrays[1]))
     
