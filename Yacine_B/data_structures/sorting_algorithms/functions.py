@@ -267,15 +267,12 @@ def bucket(arr, a=None, b=None):
         packs[k] = insertion_sort(packs[k])
 
     # Merging the buckets
-    while len(packs) > 1:
-        new_packs = [merging(packs[j], packs[j+1]) for j in range(0, len(packs) - 1, 2)]
+    res = packs[0]
 
-        if len(packs) % 2:
-            packs = new_packs + [packs[-1]]
-        else:
-            packs = new_packs
+    while packs:
+        res = merging(res, packs.pop(0))
 
-    return packs[0]
+    return res
 
 
 if __name__ == "__main__":
