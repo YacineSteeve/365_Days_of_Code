@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add bucket sort." />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add bucket sort.">
+      <change beforePath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,7 +11,7 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="57820" />
+    <option name="totalTimeSeconds" value="58221" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -309,7 +311,7 @@
       <workItem from="1642635159250" duration="30000" />
       <workItem from="1642635207162" duration="1210000" />
       <workItem from="1642636438163" duration="474000" />
-      <workItem from="1642636930343" duration="8627000" />
+      <workItem from="1642636930343" duration="9028000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
@@ -465,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642712602360</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add bucket sort.">
+      <created>1642712687308</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1642712687308</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,8 +520,8 @@
     <SUITE FILE_PATH="coverage/365_Days_of_Code$main.coverage" NAME="main Coverage Results" MODIFIED="1641835032787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$day_1.coverage" NAME="day_1 Coverage Results" MODIFIED="1641943682280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$test_git.coverage" NAME="test_git Coverage Results" MODIFIED="1641814503871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B" />
-    <SUITE FILE_PATH="coverage/365_Days_of_Code$functions__1_.coverage" NAME="functions (1) Coverage Results" MODIFIED="1642712028295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
-    <SUITE FILE_PATH="coverage/365_Days_of_Code$test_runtime__1_.coverage" NAME="test_runtime (1) Coverage Results" MODIFIED="1642712122728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$functions__1_.coverage" NAME="functions (1) Coverage Results" MODIFIED="1642712917760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$test_runtime__1_.coverage" NAME="test_runtime (1) Coverage Results" MODIFIED="1642712947418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$data.coverage" NAME="data Coverage Results" MODIFIED="1641945449743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$plot_time_complexity.coverage" NAME="plot_time_complexity Coverage Results" MODIFIED="1642067188076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$functions.coverage" NAME="functions Coverage Results" MODIFIED="1642372841508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
