@@ -5,7 +5,7 @@ def dicho(x, arr) -> bool:
     /!\ arr must be sorted in ascending order.
     """
     n = len(arr)
-
+    arr = sorted(arr)
     if n == 1:
         return x == arr[0]
     else:
