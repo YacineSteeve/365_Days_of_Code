@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Game of life project starting.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/data_structures/dichotomic_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/dichotomic_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/algorithms" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/algorithms" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" afterDir="false" />
-    </list>
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add bucket sort." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +9,7 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="57487" />
+    <option name="totalTimeSeconds" value="57820" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -315,7 +309,7 @@
       <workItem from="1642635159250" duration="30000" />
       <workItem from="1642635207162" duration="1210000" />
       <workItem from="1642636438163" duration="474000" />
-      <workItem from="1642636930343" duration="8294000" />
+      <workItem from="1642636930343" duration="8627000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
@@ -464,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642632778827</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add bucket sort.">
+      <created>1642712602360</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1642712602360</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +503,8 @@
     <MESSAGE value="Improve runtime computing." />
     <MESSAGE value="Add a dichotomy search function." />
     <MESSAGE value="Game of life project starting." />
-    <option name="LAST_COMMIT_MESSAGE" value="Game of life project starting." />
+    <MESSAGE value="Add bucket sort." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add bucket sort." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/365_Days_of_Code$dichotomic_search.coverage" NAME="dichotomic_search Coverage Results" MODIFIED="1642546028124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
