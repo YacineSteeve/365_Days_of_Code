@@ -1,4 +1,7 @@
-def bubble(arr):
+from collections import deque
+
+
+def bubble_sort(arr):
     """
     See demo: https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/
     """
@@ -16,7 +19,7 @@ def bubble(arr):
     return arr
 
 
-def selection(arr):
+def selection_sort(arr):
     """
     See demo: https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/tutorial/
     """
@@ -31,7 +34,7 @@ def selection(arr):
     return arr
 
 
-def insertion(arr):
+def insertion_sort(arr):
     """
     See demo: https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/tutorial/
     """
@@ -44,7 +47,7 @@ def insertion(arr):
     return arr
 
 
-def comb(arr):
+def comb_sort(arr):
     """
     See demo: https://en.wikipedia.org/wiki/Comb_sort
     """
@@ -64,7 +67,7 @@ def comb(arr):
     return arr
 
 
-def shaker(arr):
+def shaker_sort(arr):
     """
     See demo: https://en.wikipedia.org/wiki/Cocktail_shaker_sort
     """
@@ -87,7 +90,7 @@ def shaker(arr):
     return arr
 
 
-def gnome(arr):
+def gnome_sort(arr):
     """
     See demo: https://en.wikipedia.org/wiki/Gnome_sort
     """
@@ -104,7 +107,7 @@ def gnome(arr):
     return arr
 
 
-def quick(arr):
+def quick_sort(arr):
     """
     See demo: https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/
     """
@@ -113,12 +116,12 @@ def quick(arr):
         smaller = [x for x in arr if x < pivot]
         bigger = [x for x in arr[:-1] if x >= pivot]
 
-        return quick(smaller) + [pivot] + quick(bigger)
+        return quick_sort(smaller) + [pivot] + quick_sort(bigger)
     else:
         return []
 
 
-def counting(arr):
+def counting_sort(arr):
     """
     See demo: https://www.hackerearth.com/practice/algorithms/sorting/counting-sort/tutorial/
     """
@@ -140,7 +143,7 @@ def counting(arr):
     return arr
 
 
-def merge(arr):
+def merge_sort(arr):
     """
     See demo: https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/
     """
@@ -156,7 +159,7 @@ def merge(arr):
         res = []
 
         while left and right:
-            if left[0] < right[0]:
+            if left[0] <= right[0]:
                 res.append(left.pop(0))
             elif right[0] < left[0]:
                 res.append(right.pop(0))
@@ -183,7 +186,7 @@ def merge(arr):
     return cut(arr)
 
 
-def shell(arr):
+def shell_sort(arr):
     """
     See demo: https://en.wikipedia.org/wiki/Shellsort
     """
@@ -213,10 +216,11 @@ def shell(arr):
     return arr
 
 
-def bucket(arr, a=None, b=None):
+def bucket_sort(arr, a=None, b=None):
     """
-    See demo:
+    See demo: https://en.wikipedia.org/wiki/Bucket_sort
     """
+    
     # For merging the sorted buckets.
     def merging(l1, l2):
         if not l1:
@@ -240,7 +244,7 @@ def bucket(arr, a=None, b=None):
         return merged
 
     # Auxiliary sorting algorithm.
-    def insertion_sort(t):
+    def insertion(t):
         for i in range(1, len(t)):
             j = i - 1
             while j >= 0 and t[j] > t[i]:
@@ -264,7 +268,7 @@ def bucket(arr, a=None, b=None):
 
     # Sorting each bucket.
     for k in range(n):
-        packs[k] = insertion_sort(packs[k])
+        packs[k] = insertion(packs[k])
 
     # Merging the buckets
     res = packs[0]
@@ -275,9 +279,63 @@ def bucket(arr, a=None, b=None):
     return res
 
 
+def timsort(arr):
+    """
+    See demo:
+    """
+    def merging(l1, l2):
+        if not l1:
+            return l2
+        elif not l2:
+            return l1
+        
+        merged = []
+        
+        while l1 and l2:
+            if l1[0] <= l2[0]:
+                merged.append(l1.pop(0))
+            elif l2[0] < l1[0]:
+                merged.append(l2.pop(0))
+        
+        if l1:
+            merged.extend(l1)
+        elif l2:
+            merged.extend(l2)
+            
+        return merged
+    
+    def insertion(a):
+        for i in range(1, len(a)):
+            j = i - 1
+            while j >= 0 and a[j] > a[i]:
+                j -= 1
+            a.insert(j+1, a.pop(i))
+    
+        return a
+    
+    n = len(arr)
+    MIN = 32
+    # Computing the value of minrun.
+    r = 0
+    while n >= MIN:
+        r |= n & 1
+        n >>= 1
+        
+    minrun =  n + r
+    
+    # Sorting each subarray of size minrun.
+    for i in range(0, len(arr) - minrun + 1, minrun):
+        arr[i:i+minrun] = insertion(arr[i:i+minrun])
+    
+    # Merging the sorted subarrays.
+    size = minrun
+    
+    #for i in range()
+
+
 if __name__ == "__main__":
     from data import test_arrays
 
     print(test_arrays[1])
-    print(bucket(test_arrays[1]))
+    print(timsort(test_arrays[1]))
     
