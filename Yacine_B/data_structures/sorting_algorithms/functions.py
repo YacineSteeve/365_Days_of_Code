@@ -281,27 +281,27 @@ def bucket_sort(arr, a=None, b=None):
 
 def timsort(arr):
     """
-    See demo:
+    See demo: https://www.chrislaux.com/timsort.html
     """
     def merging(l1, l2):
         if not l1:
             return l2
         elif not l2:
             return l1
-        
+
         merged = []
-        
+
         while l1 and l2:
             if l1[0] <= l2[0]:
                 merged.append(l1.pop(0))
             elif l2[0] < l1[0]:
                 merged.append(l2.pop(0))
-        
+
         if l1:
             merged.extend(l1)
         elif l2:
             merged.extend(l2)
-            
+
         return merged
     
     def insertion(a):
@@ -314,8 +314,9 @@ def timsort(arr):
         return a
     
     n = len(arr)
-    MIN = 32
+    
     # Computing the value of minrun.
+    MIN = 32
     r = 0
     while n >= MIN:
         r |= n & 1
@@ -324,18 +325,22 @@ def timsort(arr):
     minrun =  n + r
     
     # Sorting each subarray of size minrun.
-    for i in range(0, len(arr) - minrun + 1, minrun):
-        arr[i:i+minrun] = insertion(arr[i:i+minrun])
-    
+    for i in range(0, len(arr), minrun):
+        arr = arr[:i] + insertion(arr[i:i+minrun]) + arr[i+minrun:]
+
     # Merging the sorted subarrays.
     size = minrun
-    
-    #for i in range()
+    while size <= len(arr):
+        for i in range(0, len(arr), 2 * size):
+            arr = arr[:i] + merging(arr[i:i + size], arr[i + size:i + 2*size]) + arr[i+2*size:]
+        size *= 2
+        
+    return arr
 
 
 if __name__ == "__main__":
     from data import test_arrays
 
-    print(test_arrays[1])
-    print(timsort(test_arrays[1]))
+    print(test_arrays[2])
+    print(timsort(test_arrays[2]))
     
