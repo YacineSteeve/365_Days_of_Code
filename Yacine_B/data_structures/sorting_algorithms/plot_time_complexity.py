@@ -5,8 +5,8 @@ from data import plot_arrays, plot_colors, algos
 from test_runtime import runtime
 
 
-def objective(x, a, b, c, d, e, f):
-    	return (a * x) + (b * x**2) + (c * x**3) + (d * x**4) + (e* x**5) + f
+def objective(x, a, b, c, d, e):
+    	return (a * x) + (b * x**2) + (c * x**3) + (d * x**4) + e
 
 for i in range(len(algos)):
     x, y = [], []
@@ -21,11 +21,11 @@ for i in range(len(algos)):
     
     popt, _ = curve_fit(objective, x, y)
 
-    a, b, c, d, e, f = popt
+    a, b, c, d, e = popt
 
     x_line = arange(min(x), max(x), 1)
 
-    y_line = objective(x_line, a, b, c, d, e, f)
+    y_line = objective(x_line, a, b, c, d, e)
 
     plt.plot(x_line, y_line, color=plot_colors[i], label=algos[i].__name__)
     
