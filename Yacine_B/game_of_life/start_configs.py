@@ -1,20 +1,16 @@
-import numpy as np
-
 WINDOW_WIDTH_RATIO = 0.75
 WINDOW_HEIGHT_RATIO = 0.85
 
 CANVAS_WIDTH_RATIO = 0.80
-CANVAS_HEIGHT_RATIO = 0.95
+CANVAS_HEIGHT_RATIO = 0.90
 
+BUTTON_WIDTH_RATIO = 0.01
+BUTTON_HEIGHT_RATIO = 0.003
 
-CELL_SIZE = 7
+CELL_SIZE = 30
 
-CELLS = np.zeros((140, 200))
+ALIVE_CELL_COLOR = "black"
+DEAD_CELL_COLOR = "white"
 
-CELLS_POS = np.array([
-    [(-700 + x * CELL_SIZE, 490 - y * CELL_SIZE) for x in range(200)] 
-                      for y in range(140)])
-
-
-if __name__ == '__main__':
-    print(CELLS_POS)
+def adapt_canvas(num):
+    return int(num - num % CELL_SIZE)
