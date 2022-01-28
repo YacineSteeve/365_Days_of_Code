@@ -7,10 +7,12 @@ CANVAS_HEIGHT_RATIO = 0.90
 BUTTON_WIDTH_RATIO = 0.01
 BUTTON_HEIGHT_RATIO = 0.003
 
-CELL_SIZE = 30
+PADY_RATIO_1 = 0.02
+PADY_RATIO_2 = 0.1
 
 ALIVE_CELL_COLOR = "black"
 DEAD_CELL_COLOR = "white"
 
-def adapt_canvas(num):
-    return int(num - num % CELL_SIZE)
+canvas = None
+
+cells = []
