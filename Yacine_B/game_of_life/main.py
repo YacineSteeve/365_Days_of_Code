@@ -1,4 +1,6 @@
 import tkinter as tk
+import numpy as np
+from random import randint
 from tkinter import messagebox
 from start_configs import *
 
@@ -31,22 +33,45 @@ window.resizable(False, False)
 buttons_frame = tk.Frame(window)
 
 
-var_launch_pause = tk.StringVar()
-var_launch_pause.set("Launch")
-
-
-def running_status(*args):
-    state = "Launch" if var_launch_pause.get() == "Pause" else "Pause"
-    var_launch_pause.set(state)
+var_launch_pause_text = tk.StringVar()
+var_launch_pause_text.set("Launch Cycle")
+    
     
 def warning(*args):
     exit_decision = messagebox.askyesno("Closing...", "Do you really want to exit?")
     if exit_decision:
         window.quit()
+        
+        
+def cycle(*args):
+    global canvas, CELLS, CELLS_STATE, COLS_NUM, ROWS_NUM, CELL_SIZE
+    
+    if var_launch_pause_text.get() == "Stop Cycle":
+        var_launch_pause_text.set("Launch Cycle")
+        launch_pause_btn.configure(background="green")
+        
+        for cell in CELLS:
+            canvas.delete(cell)
+        
+    else:
+        var_launch_pause_text.set("Stop Cycle")
+        launch_pause_btn.configure(background="red")
+        
+        CELLS_STATE = np.array([randint(0, 1) for _ in range(ROWS_NUM * COLS_NUM)]).reshape(ROWS_NUM, COLS_NUM)
+
+        for i in range(ROWS_NUM):
+            for j in range(COLS_NUM):
+                color = "black" if CELLS_STATE[i, j] else "white"
+                CELLS.append(canvas.create_rectangle(j*CELL_SIZE, i*CELL_SIZE, 
+                                                     (j+1)*CELL_SIZE, (i+1)*CELL_SIZE,
+                                                     fill=color,
+                                                     outline=color
+                                                    )
+                            )
     
 
 def generate_canvas():
-    global canvas
+    global canvas, CELLS, ROWS_NUM, COLS_NUM, CELL_SIZE
     
     try:
         cell_size = int(cell_size_btn.get())
@@ -64,27 +89,19 @@ def generate_canvas():
     canvas_width = adapt_canvas(window_width * CANVAS_WIDTH_RATIO)
     canvas_height = adapt_canvas(window_height * CANVAS_HEIGHT_RATIO)
     
+    CELL_SIZE = cell_size
+    COLS_NUM = canvas_width//cell_size
+    ROWS_NUM = canvas_height//cell_size
+    
     canvas = tk.Canvas(window, 
                 width=canvas_width, 
                 height=canvas_height,
                 background="white"
                 )
-
-    canvas.pack(side="left",
-            pady=(window_height - int(canvas.cget("height")) ) // 2
-            )
-
-
-    def generate_cell(i, j, color):
-        canvas.create_rectangle(i*cell_size, j*cell_size, 
-                                (i+1)*cell_size, (j+1)*cell_size,
-                                fill=color)
     
-
-    for i in range(canvas_width//cell_size):
-        for j in range(canvas_height//cell_size):
-            color = ALIVE_CELL_COLOR if i==j else DEAD_CELL_COLOR
-            generate_cell(i, j, color)
+    canvas.pack(side="left",
+                pady=(window_height - int(canvas.cget("height"))) // 2
+                )
     
     hide_canvas_setting_buttons()
     
@@ -120,25 +137,15 @@ canvas_generator_btn = tk.Button(buttons_frame,
                                command=generate_canvas
                                )
 
-next_btn = tk.Button(buttons_frame, 
-                     text="Next Step",
-                     width=button_width,
-                     height=button_height
-                     )
-
-previous_btn = tk.Button(buttons_frame, 
-                         text="Previous Step",
-                         width=button_width,
-                         height=button_height
-                         )
-                         
 launch_pause_btn = tk.Button(buttons_frame, 
-                             textvariable=var_launch_pause,
-                             command=running_status,
-                             compound="left",
+                             textvariable=var_launch_pause_text,
+                             background="green",
+                             overrelief="groove",
+                             command=cycle,
                              width=button_width,
                              height=button_height
                              )
+
 
 refresh_btn = tk.Button(buttons_frame,
                         text="Refresh",
@@ -178,10 +185,6 @@ def hide_canvas_setting_buttons():
 def show_game_managing_buttons():
     launch_pause_btn.grid(column=1, pady=button_pady_2)
 
-    next_btn.grid(column=1)
-
-    previous_btn.grid(column=1, pady=button_pady_1)
-
     refresh_btn.grid(column=1, pady=button_pady_2)
     
     exit_btn.grid(column=1, pady=button_pady_2)
@@ -189,10 +192,6 @@ def show_game_managing_buttons():
     
 def hide_game_managing_buttons():
     launch_pause_btn.grid_forget()
-
-    next_btn.grid_forget()
-
-    previous_btn.grid_forget()
 
     refresh_btn.grid_forget()
     
