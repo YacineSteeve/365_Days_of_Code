@@ -14,7 +14,7 @@ canvas = None
 
 CELLS_STATE = []
 CELLS = []
-
 CELL_SIZE = 1
+
 ROWS_NUM = 1
 COLS_NUM = 1

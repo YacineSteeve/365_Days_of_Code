@@ -4,8 +4,6 @@ It's a cellular automaton.
 
 Just create an initial configuration and observe how it evolves.
 
-Initially a zero-player game, this version is both a zero-player and a one-player game, as the cells can be live modified.
-
 More information about the process on [Wikipedia](https://en.wikipedia.org/wiki/Conway's_Game_of_Life).
 
 

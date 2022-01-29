@@ -1,8 +1,8 @@
 import tkinter as tk
-import numpy as np
-from random import randint
 from tkinter import messagebox
+import numpy as np
 from start_configs import *
+#from random import randint
 
 
 window = tk.Tk()
@@ -32,9 +32,7 @@ window.resizable(False, False)
 
 buttons_frame = tk.Frame(window)
 
-
 var_launch_pause_text = tk.StringVar()
-var_launch_pause_text.set("Launch Cycle")
     
     
 def warning(*args):
@@ -43,34 +41,124 @@ def warning(*args):
         window.quit()
         
         
-def cycle(*args):
-    global canvas, CELLS, CELLS_STATE, COLS_NUM, ROWS_NUM, CELL_SIZE
+def reverse_color(color):
+    return "black" if color == "white" else "white"
+
+
+def create_cell(x, y, color):
+    global canvas, CELL_SIZE
+    
+    return canvas.create_rectangle(y*CELL_SIZE, 
+                                   x*CELL_SIZE, 
+                                   (y+1)*CELL_SIZE, 
+                                   (x+1)*CELL_SIZE,
+                                    fill=color,
+                                    outline=reverse_color(color)
+                                    )
+        
+        
+def clean_canvas():
+    global canvas, CELLS, CELLS_STATE, ROWS_NUM, COLS_NUM
+    
+    for i in range(ROWS_NUM):
+        for j in range(COLS_NUM):
+            if CELLS_STATE[i, j]:
+                CELLS[i, j] = create_cell(i, j, "white")
+                CELLS_STATE[i, j] = 0
+        
+        
+def look_around(x, y):
+    global ROWS_NUM, COLS_NUM, CELLS_STATE
+    
+    cell_around = [(x-1, y-1), (x-1, y), (x-1, y+1), (x, y-1), 
+                   (x, y+1), (x+1, y-1), (x+1, y), (x+1, y+1)]
+    
+    num_alive = 0
+    
+    for cell in cell_around:
+        if cell[0] in range(ROWS_NUM) and cell[1] in range(COLS_NUM) and CELLS_STATE[cell[0], cell[1]]:
+            num_alive += 1
+            
+    return num_alive
+
+
+def cycle():
+    global canvas, CELLS, CELLS_STATE, ROWS_NUM, COLS_NUM, var_launch_pause_text
+    
+    NEW_CELLS_STATE = np.zeros((ROWS_NUM, COLS_NUM))
+    
+    for i in range(ROWS_NUM):
+        for j in range(COLS_NUM):
+            if not CELLS_STATE[i, j] and look_around(i, j) == 3:
+                NEW_CELLS_STATE[i, j] = 1
+            elif CELLS_STATE[i, j] and look_around(i, j) not in [2, 3]:
+                NEW_CELLS_STATE[i, j] = 0
+            else:
+                NEW_CELLS_STATE[i, j] = CELLS_STATE[i, j]
+                
+    CELLS_STATE = NEW_CELLS_STATE
+    
+    for i in range(ROWS_NUM):
+        for j in range(COLS_NUM):
+            color = "black" if CELLS_STATE[i, j] else "white"
+            CELLS[i, j] = create_cell(i, j, color)
+    
+    if var_launch_pause_text.get() == "Stop Cycle":
+        canvas.after(10, cycle)
+    
+    
+def launch_pause(*args):
+    global canvas, CELLS, var_launch_pause_text, var_launch_pause_btn
     
     if var_launch_pause_text.get() == "Stop Cycle":
         var_launch_pause_text.set("Launch Cycle")
         launch_pause_btn.configure(background="green")
         
-        for cell in CELLS:
-            canvas.delete(cell)
+        clean_canvas()
+        canvas.bind("<Button-1>", set_cell)
         
     else:
         var_launch_pause_text.set("Stop Cycle")
         launch_pause_btn.configure(background="red")
         
-        CELLS_STATE = np.array([randint(0, 1) for _ in range(ROWS_NUM * COLS_NUM)]).reshape(ROWS_NUM, COLS_NUM)
+        canvas.unbind("<Button-1>")
+        
+        cycle()
+        
 
-        for i in range(ROWS_NUM):
-            for j in range(COLS_NUM):
-                color = "black" if CELLS_STATE[i, j] else "white"
-                CELLS.append(canvas.create_rectangle(j*CELL_SIZE, i*CELL_SIZE, 
-                                                     (j+1)*CELL_SIZE, (i+1)*CELL_SIZE,
-                                                     fill=color,
-                                                     outline=color
-                                                    )
-                            )
+def set_cell(event):
+    global canvas, CELL_SIZE, CELLS_STATE, CELLS, ROWS_NUM, COLS_NUM
+    
+    target_y, target_x = event.x // CELL_SIZE, event.y // CELL_SIZE
+    
+    if target_x in range(ROWS_NUM) and target_y in range(COLS_NUM):
+        if not CELLS_STATE[target_x, target_y]:
+            CELLS_STATE[target_x, target_y] = 1
+            color = "black"
+        else:
+            CELLS_STATE[target_x, target_y] = 0
+            color = "white"
+        
+        CELLS[target_x, target_y] = create_cell(target_x, target_y, color)
+        
+        
+def generate_cells(*args):
+    global canvas, CELLS, CELLS_STATE, COLS_NUM, ROWS_NUM
+    
+    CELLS_STATE = np.zeros((ROWS_NUM, COLS_NUM))
+    #CELLS_STATE = np.array([randint(0, 1) for _ in range(ROWS_NUM * COLS_NUM)]).reshape(ROWS_NUM, COLS_NUM)
+    CELLS = np.zeros((ROWS_NUM, COLS_NUM))
+
+    for i in range(ROWS_NUM):
+        for j in range(COLS_NUM):
+            color = "black" if CELLS_STATE[i, j] else "white"
+            CELLS[i, j] = create_cell(i, j, color)
+    
+    canvas.focus_set()
+    canvas.bind("<Button-1>", set_cell)
     
 
-def generate_canvas():
+def generate_canvas(*args):
     global canvas, CELLS, ROWS_NUM, COLS_NUM, CELL_SIZE
     
     try:
@@ -79,8 +167,8 @@ def generate_canvas():
         messagebox.showerror("Error", "Invalid size type (must be integer).")
         return
     else:
-        if cell_size < 3 or cell_size > 300:
-            messagebox.showerror("Error", "The cells size must be between 3 and 300.")
+        if cell_size < 5 or cell_size > 300:
+            messagebox.showerror("Error", "The cells size must be between 5 and 300.")
             return
     
     def adapt_canvas(num):
@@ -103,12 +191,16 @@ def generate_canvas():
                 pady=(window_height - int(canvas.cget("height"))) // 2
                 )
     
+    var_launch_pause_text.set("Launch Cycle")
+    
+    generate_cells()
+    
     hide_canvas_setting_buttons()
     
     show_game_managing_buttons()
     
             
-def clean_window():
+def clean_window(*args):
     global canvas
     
     canvas.destroy()
@@ -124,14 +216,14 @@ label = tk.Label(buttons_frame,
                  )
 
 cell_size_btn = tk.Spinbox(buttons_frame,
-                           from_=3,
+                           from_=5,
                            to=300,
                            width=3,
                            wrap=True
                            )
 
 canvas_generator_btn = tk.Button(buttons_frame,
-                               text="Generate grid",
+                               text="Generate Cells",
                                width=button_width,
                                height=button_height,
                                command=generate_canvas
@@ -141,7 +233,7 @@ launch_pause_btn = tk.Button(buttons_frame,
                              textvariable=var_launch_pause_text,
                              background="green",
                              overrelief="groove",
-                             command=cycle,
+                             command=launch_pause,
                              width=button_width,
                              height=button_height
                              )
