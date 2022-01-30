@@ -4,7 +4,6 @@ import numpy as np
 from start_configs import *
 #from random import randint
 
-
 window = tk.Tk()
 
 screen_height = window.winfo_screenheight()
@@ -32,7 +31,8 @@ window.resizable(False, False)
 
 buttons_frame = tk.Frame(window)
 
-var_launch_pause_text = tk.StringVar()
+var_launch_stop_text = tk.StringVar()
+var_speed = tk.StringVar()
     
     
 def warning(*args):
@@ -83,43 +83,45 @@ def look_around(x, y):
 
 
 def cycle():
-    global canvas, CELLS, CELLS_STATE, ROWS_NUM, COLS_NUM, var_launch_pause_text
+    global canvas, CYCLE_SPEED, CELLS, CELLS_STATE, ROWS_NUM, COLS_NUM
     
-    NEW_CELLS_STATE = np.zeros((ROWS_NUM, COLS_NUM))
+    new_cells_state = np.zeros((ROWS_NUM, COLS_NUM))
     
     for i in range(ROWS_NUM):
         for j in range(COLS_NUM):
             if not CELLS_STATE[i, j] and look_around(i, j) == 3:
-                NEW_CELLS_STATE[i, j] = 1
+                new_cells_state[i, j] = 1
             elif CELLS_STATE[i, j] and look_around(i, j) not in [2, 3]:
-                NEW_CELLS_STATE[i, j] = 0
+                new_cells_state[i, j] = 0
             else:
-                NEW_CELLS_STATE[i, j] = CELLS_STATE[i, j]
+                new_cells_state[i, j] = CELLS_STATE[i, j]
                 
-    CELLS_STATE = NEW_CELLS_STATE
+    CELLS_STATE = new_cells_state
+    
+    del new_cells_state
     
     for i in range(ROWS_NUM):
         for j in range(COLS_NUM):
             color = "black" if CELLS_STATE[i, j] else "white"
             CELLS[i, j] = create_cell(i, j, color)
     
-    if var_launch_pause_text.get() == "Stop Cycle":
-        canvas.after(10, cycle)
+    if var_launch_stop_text.get() == "Stop Cycle":
+        canvas.after(CYCLE_SPEED, cycle)
     
     
-def launch_pause(*args):
-    global canvas, CELLS, var_launch_pause_text, var_launch_pause_btn
+def launch_stop(*args):
+    global canvas, CELLS
     
-    if var_launch_pause_text.get() == "Stop Cycle":
-        var_launch_pause_text.set("Launch Cycle")
-        launch_pause_btn.configure(background="green")
+    if var_launch_stop_text.get() == "Stop Cycle":
+        var_launch_stop_text.set("Launch Cycle")
+        launch_stop_btn.configure(background="green")
         
         clean_canvas()
         canvas.bind("<Button-1>", set_cell)
         
     else:
-        var_launch_pause_text.set("Stop Cycle")
-        launch_pause_btn.configure(background="red")
+        var_launch_stop_text.set("Stop Cycle")
+        launch_stop_btn.configure(background="red")
         
         canvas.unbind("<Button-1>")
         
@@ -167,8 +169,8 @@ def generate_canvas(*args):
         messagebox.showerror("Error", "Invalid size type (must be integer).")
         return
     else:
-        if cell_size < 5 or cell_size > 300:
-            messagebox.showerror("Error", "The cells size must be between 5 and 300.")
+        if cell_size < 10 or cell_size > 300:
+            messagebox.showerror("Error", "The cells size must be between 10 and 300.")
             return
     
     def adapt_canvas(num):
@@ -191,7 +193,8 @@ def generate_canvas(*args):
                 pady=(window_height - int(canvas.cget("height"))) // 2
                 )
     
-    var_launch_pause_text.set("Launch Cycle")
+    var_launch_stop_text.set("Launch Cycle")
+    launch_stop_btn.configure(background="green")
     
     generate_cells()
     
@@ -200,7 +203,7 @@ def generate_canvas(*args):
     show_game_managing_buttons()
     
             
-def clean_window(*args):
+def refresh_window(*args):
     global canvas
     
     canvas.destroy()
@@ -209,14 +212,27 @@ def clean_window(*args):
     
     show_canvas_setting_buttons()
     
+    
+def set_speed(*args):
+    global CYCLE_SPEED, speed_entry
+    
+    try:
+        speed = int(speed_entry.get())
+    except ValueError:
+        messagebox.showerror("Error", "Invalid speed (must be integer).")
+        return
+    
+    CYCLE_SPEED = abs(speed)
+        
+    
 
 label = tk.Label(buttons_frame, 
-                 text="Choose the cells size\n (from 3 to 300)",
+                 text="Choose the cells size\n (from 10 to 300)",
                  height=3
                  )
 
 cell_size_btn = tk.Spinbox(buttons_frame,
-                           from_=5,
+                           from_=10,
                            to=300,
                            width=3,
                            wrap=True
@@ -229,28 +245,43 @@ canvas_generator_btn = tk.Button(buttons_frame,
                                command=generate_canvas
                                )
 
-launch_pause_btn = tk.Button(buttons_frame, 
-                             textvariable=var_launch_pause_text,
+launch_stop_btn = tk.Button(buttons_frame, 
+                             textvariable=var_launch_stop_text,
                              background="green",
                              overrelief="groove",
-                             command=launch_pause,
                              width=button_width,
-                             height=button_height
+                             height=button_height,
+                             command=launch_stop
                              )
+
+
+speed_entry = tk.Entry(buttons_frame,
+                     width=5,
+                     justify="left",
+                     textvariable=var_speed
+                     )
+
+
+speed_btn = tk.Button(buttons_frame,
+                      text="Set Speed (ms)",
+                      width=button_width,
+                      height=button_height,
+                      command=set_speed
+                      )
 
 
 refresh_btn = tk.Button(buttons_frame,
                         text="Refresh",
                         width=button_width,
                         height=button_height,
-                        command=clean_window
+                        command=refresh_window
                         )
 
 exit_btn = tk.Button(buttons_frame, 
                      text="Exit",
-                     command=warning,
                      width=button_width,
-                     height=button_height
+                     height=button_height,
+                     command=warning
                      )
     
 
@@ -275,7 +306,13 @@ def hide_canvas_setting_buttons():
     
 
 def show_game_managing_buttons():
-    launch_pause_btn.grid(column=1, pady=button_pady_2)
+    launch_stop_btn.grid(column=1, pady=button_pady_2)
+    
+    var_speed.set("100")
+    
+    speed_entry.grid(column=1)
+    
+    speed_btn.grid(column=1, pady=button_pady_1)
 
     refresh_btn.grid(column=1, pady=button_pady_2)
     
@@ -283,7 +320,11 @@ def show_game_managing_buttons():
     
     
 def hide_game_managing_buttons():
-    launch_pause_btn.grid_forget()
+    launch_stop_btn.grid_forget()
+    
+    speed_entry.grid_forget()
+    
+    speed_btn.grid_forget()
 
     refresh_btn.grid_forget()
     
