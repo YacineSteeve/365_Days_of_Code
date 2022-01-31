@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import numpy as np
 from start_configs import *
-# from random import randint # for tests
+
 
 window = tk.Tk()
 
@@ -149,8 +149,7 @@ def generate_cells(*args):
     global canvas, CELLS, CELLS_STATE, COLS_NUM, ROWS_NUM
     
     CELLS_STATE = np.zeros((ROWS_NUM, COLS_NUM))
-    # for tests : 
-    #CELLS_STATE = np.array([randint(0, 1) for _ in range(ROWS_NUM * COLS_NUM)]).reshape(ROWS_NUM, COLS_NUM)
+    
     CELLS = np.zeros((ROWS_NUM, COLS_NUM))
 
     for i in range(ROWS_NUM):
@@ -336,4 +335,7 @@ def hide_game_managing_buttons():
 
 buttons_frame.pack(side="right", padx=30, fill="y")
 show_canvas_setting_buttons()
-window.mainloop()
+
+
+if __name__ == "__main__":
+    window.mainloop()
