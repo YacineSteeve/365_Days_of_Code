@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import numpy as np
 from start_configs import *
-#from random import randint
+# from random import randint # for tests
 
 window = tk.Tk()
 
@@ -31,7 +31,6 @@ window.resizable(False, False)
 
 buttons_frame = tk.Frame(window)
 
-var_launch_stop_text = tk.StringVar()
 var_speed = tk.StringVar()
     
     
@@ -95,6 +94,8 @@ def cycle():
                 new_cells_state[i, j] = 0
             else:
                 new_cells_state[i, j] = CELLS_STATE[i, j]
+    
+    modified = (CELLS_STATE != new_cells_state).any()
                 
     CELLS_STATE = new_cells_state
     
@@ -105,22 +106,22 @@ def cycle():
             color = "black" if CELLS_STATE[i, j] else "white"
             CELLS[i, j] = create_cell(i, j, color)
     
-    if var_launch_stop_text.get() == "Stop Cycle":
+    if modified and launch_stop_btn.cget("text") == "Stop Cycle":
         canvas.after(CYCLE_SPEED, cycle)
     
     
 def launch_stop(*args):
     global canvas, CELLS
     
-    if var_launch_stop_text.get() == "Stop Cycle":
-        var_launch_stop_text.set("Launch Cycle")
+    if launch_stop_btn.cget("text") == "Stop Cycle":
+        launch_stop_btn.configure(text="Launch Cycle")
         launch_stop_btn.configure(background="green")
         
         clean_canvas()
         canvas.bind("<Button-1>", set_cell)
         
     else:
-        var_launch_stop_text.set("Stop Cycle")
+        launch_stop_btn.configure(text="Stop Cycle")
         launch_stop_btn.configure(background="red")
         
         canvas.unbind("<Button-1>")
@@ -148,6 +149,7 @@ def generate_cells(*args):
     global canvas, CELLS, CELLS_STATE, COLS_NUM, ROWS_NUM
     
     CELLS_STATE = np.zeros((ROWS_NUM, COLS_NUM))
+    # for tests : 
     #CELLS_STATE = np.array([randint(0, 1) for _ in range(ROWS_NUM * COLS_NUM)]).reshape(ROWS_NUM, COLS_NUM)
     CELLS = np.zeros((ROWS_NUM, COLS_NUM))
 
@@ -193,7 +195,7 @@ def generate_canvas(*args):
                 pady=(window_height - int(canvas.cget("height"))) // 2
                 )
     
-    var_launch_stop_text.set("Launch Cycle")
+    launch_stop_btn.configure(text="Launch Cycle")
     launch_stop_btn.configure(background="green")
     
     generate_cells()
@@ -246,7 +248,7 @@ canvas_generator_btn = tk.Button(buttons_frame,
                                )
 
 launch_stop_btn = tk.Button(buttons_frame, 
-                             textvariable=var_launch_stop_text,
+                             text="Launch Cycle",
                              background="green",
                              overrelief="groove",
                              width=button_width,
