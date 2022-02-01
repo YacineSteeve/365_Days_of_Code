@@ -30,25 +30,29 @@ To play, run ***main.py***
 >- using pip :
 >```
 >pip install python-tk
->
+>```
+>```
 >pip install numpy
 >```
 >For python 3 :
 >```
 >pip install python3-tk
->
+>```
+>```
 >pip3 install numpy
 >```
 >- on Linux :
 >```
 >sudo apt-get install python-tk
->
+>```
+>```
 >sudo apt-get install python-numpy
 >```
 >For python 3 :
 >```
 >sudo apt-get install python3-tk
->
+>```
+>```
 >sudo apt-get install python3-numpy
 >```
 

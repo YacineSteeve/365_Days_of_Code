@@ -40,24 +40,28 @@ def warning(*args):
         window.quit()
         
         
-def reverse_color(color):
+def reverse_color(color:str):
     return "black" if color == "white" else "white"
 
 
-def create_cell(x, y, color):
+def create_cell(x:int, y:int, color:str):
     global canvas, CELL_SIZE
     
     return canvas.create_rectangle(y*CELL_SIZE, 
                                    x*CELL_SIZE, 
                                    (y+1)*CELL_SIZE, 
                                    (x+1)*CELL_SIZE,
-                                    fill=color,
-                                    outline=reverse_color(color)
-                                    )
+                                   fill=color,
+                                   outline=reverse_color(color)
+                                  )
         
         
 def clean_canvas():
-    global canvas, CELLS, CELLS_STATE, ROWS_NUM, COLS_NUM
+    """
+    Replace all the current living cells by dead cells.
+    """
+    
+    global CELLS, CELLS_STATE, ROWS_NUM, COLS_NUM
     
     for i in range(ROWS_NUM):
         for j in range(COLS_NUM):
@@ -66,15 +70,22 @@ def clean_canvas():
                 CELLS_STATE[i, j] = 0
         
         
-def look_around(x, y):
+def look_around(x:int, y:int):
+    """
+    Args:
+        x, y (int): The cell coordinates.
+    Returns:
+        int: The numbers of living cells around the given cell.
+    """
+    
     global ROWS_NUM, COLS_NUM, CELLS_STATE
     
-    cell_around = [(x-1, y-1), (x-1, y), (x-1, y+1), (x, y-1), 
+    cells_around = [(x-1, y-1), (x-1, y), (x-1, y+1), (x, y-1), 
                    (x, y+1), (x+1, y-1), (x+1, y), (x+1, y+1)]
     
     num_alive = 0
     
-    for cell in cell_around:
+    for cell in cells_around:
         if cell[0] in range(ROWS_NUM) and cell[1] in range(COLS_NUM) and CELLS_STATE[cell[0], cell[1]]:
             num_alive += 1
             
@@ -82,6 +93,10 @@ def look_around(x, y):
 
 
 def cycle():
+    """
+    Recursively update each cell to its state in the next generation
+    """
+    
     global canvas, CYCLE_SPEED, CELLS, CELLS_STATE, ROWS_NUM, COLS_NUM
     
     new_cells_state = np.zeros((ROWS_NUM, COLS_NUM))
@@ -89,10 +104,14 @@ def cycle():
     for i in range(ROWS_NUM):
         for j in range(COLS_NUM):
             if not CELLS_STATE[i, j] and look_around(i, j) == 3:
+                # Any dead cell with three live neighbours becomes a live cell.
                 new_cells_state[i, j] = 1
             elif CELLS_STATE[i, j] and look_around(i, j) not in [2, 3]:
+                # Any live cell with fewer than two live neighbours dies.
+                # Any live cell with more than three live neighbours dies.
                 new_cells_state[i, j] = 0
             else:
+                # All other cells don't change.
                 new_cells_state[i, j] = CELLS_STATE[i, j]
     
     modified = (CELLS_STATE != new_cells_state).any()
@@ -100,6 +119,8 @@ def cycle():
     CELLS_STATE = new_cells_state
     
     del new_cells_state
+    
+    # Draw the cells corresponding to the new computed generation.
     
     for i in range(ROWS_NUM):
         for j in range(COLS_NUM):
@@ -110,14 +131,15 @@ def cycle():
         canvas.after(CYCLE_SPEED, cycle)
     
     
-def launch_stop(*args):
-    global canvas, CELLS
+def launch_stop_cycle(*args):
+    global canvas
     
     if launch_stop_btn.cget("text") == "Stop Cycle":
         launch_stop_btn.configure(text="Launch Cycle")
         launch_stop_btn.configure(background="green")
         
         clean_canvas()
+        
         canvas.bind("<Button-1>", set_cell)
         
     else:
@@ -130,10 +152,20 @@ def launch_stop(*args):
         
 
 def set_cell(event):
-    global canvas, CELL_SIZE, CELLS_STATE, CELLS, ROWS_NUM, COLS_NUM
+    """
+    Turn cell alive (resp. dead) if dead (resp. alive).
+    Helps to easily define initial configurations for the cells.
     
+    Args:
+        event (tk.Event): A left-click on a cell.
+    """
+    
+    global CELL_SIZE, CELLS_STATE, CELLS, ROWS_NUM, COLS_NUM
+    
+    # Convert the coordinates of the left-click event into cells coordinates.
     target_y, target_x = event.x // CELL_SIZE, event.y // CELL_SIZE
     
+    # Only if the click is made inside the canvas...
     if target_x in range(ROWS_NUM) and target_y in range(COLS_NUM):
         if not CELLS_STATE[target_x, target_y]:
             CELLS_STATE[target_x, target_y] = 1
@@ -146,6 +178,11 @@ def set_cell(event):
         
         
 def generate_cells(*args):
+    """
+    Create the initial dead cells.
+    The resulting grid will be set by the user depending on the wanted inital states.
+    """
+    
     global canvas, CELLS, CELLS_STATE, COLS_NUM, ROWS_NUM
     
     CELLS_STATE = np.zeros((ROWS_NUM, COLS_NUM))
@@ -162,6 +199,11 @@ def generate_cells(*args):
     
 
 def generate_canvas(*args):
+    """
+    Create the cells canvas (with the cells) depending on the cells size selected by the user,
+    so as the canvas can be perfectly fit with the cells.
+    """
+    
     global canvas, CELLS, ROWS_NUM, COLS_NUM, CELL_SIZE
     
     try:
@@ -174,15 +216,15 @@ def generate_canvas(*args):
             messagebox.showerror("Error", "The cells size must be between 10 and 300.")
             return
     
-    def adapt_canvas(num):
-        return int(num - num % cell_size)
+    def adapt_canvas(dimension):
+        return int(dimension - dimension % cell_size)
     
     canvas_width = adapt_canvas(window_width * CANVAS_WIDTH_RATIO)
     canvas_height = adapt_canvas(window_height * CANVAS_HEIGHT_RATIO)
     
     CELL_SIZE = cell_size
-    COLS_NUM = canvas_width//cell_size
-    ROWS_NUM = canvas_height//cell_size
+    COLS_NUM = canvas_width // cell_size
+    ROWS_NUM = canvas_height // cell_size
     
     canvas = tk.Canvas(window, 
                 width=canvas_width, 
@@ -215,7 +257,7 @@ def refresh_window(*args):
     
     
 def set_speed(*args):
-    global CYCLE_SPEED, speed_entry
+    global CYCLE_SPEED
     
     try:
         speed = int(speed_entry.get())
@@ -252,7 +294,7 @@ launch_stop_btn = tk.Button(buttons_frame,
                              overrelief="groove",
                              width=button_width,
                              height=button_height,
-                             command=launch_stop
+                             command=launch_stop_cycle
                              )
 
 
@@ -330,12 +372,13 @@ def hide_game_managing_buttons():
     refresh_btn.grid_forget()
     
     exit_btn.grid_forget()
-    
-            
 
+            
 buttons_frame.pack(side="right", padx=30, fill="y")
+
 show_canvas_setting_buttons()
 
 
 if __name__ == "__main__":
+    
     window.mainloop()
