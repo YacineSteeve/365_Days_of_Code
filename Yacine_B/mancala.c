@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+//#include <windows.h>
 
 
 typedef struct Joueur Joueur;
@@ -25,10 +26,12 @@ void init(Joueur *A, int n, int x)
     }
 }
 
+
 void init_IA(Joueur *A, Joueur *B, int x)
 {
     B->nom[0] = 'I';
     B->nom[1] = 'A';
+    B->nom[2] ='\0';
     B->score = 0;
     int j=0;
     while(j<7)
@@ -36,7 +39,7 @@ void init_IA(Joueur *A, Joueur *B, int x)
         B->tab[j]=x;
         j++;
     }
-    printf("IA prête!\n\n");
+    printf("\nIA prête!\n\n");
 
     printf("Nom du joueur : ");
     scanf("%60s", A->nom);
@@ -52,7 +55,10 @@ void init_IA(Joueur *A, Joueur *B, int x)
 
 void affiche(Joueur *A, Joueur *B)
 {
-    printf("|%3d",A->score);
+    //Color(2,0);
+    printf("\n               ****** %s ******",A->nom);
+
+    printf("\n\n\t (%3d) ",A->score);
 
     int i=1;
     while(i<=6)
@@ -60,16 +66,21 @@ void affiche(Joueur *A, Joueur *B)
         printf("| %2d", A->tab[i]);
         i++;
     }
+    printf("|");
 
-    printf("|   |  %s\n|   ", A->nom);
+    printf("\n \n");
 
+    //Color(8,0);
+    printf("\t       ");
     int j=6;
     while(j>=1)
     {
         printf("| %2d", B->tab[j]);
         j--;
     }
-    printf ("|%3d|  %s", B->score, B->nom);
+    printf ("| (%3d)  ", B->score);
+    printf("\n\n\n               ******  %s  ******",B->nom);
+    //Color(15,0);
 }
 
 
@@ -97,6 +108,51 @@ int choix(Joueur *A)
     return c;
 }
 
+int choixMenu()
+{
+     int m;
+
+    printf("\n--------  Menu  --------\n");
+    printf("\n   1. Nombre de graines par défaut.");
+    printf("\n   2. Choisir un nombre de graines.");
+
+    do
+    {
+        printf("\n\n Choisissez un menu (entre 1 et 2) : ");
+        scanf("%d", &m);
+
+        if (m<1 || m>2)
+        {
+            printf("Non défini!");
+        }
+    } while (m<1 || m>2);
+
+    return m;
+}
+
+
+int choixNiveau()
+{
+    int m;
+
+    printf("\n--------  Niveau d'IA  --------\n");
+    printf("\n   1. Facile.");
+    printf("\n   2. Difficile.");
+
+    do
+    {
+        printf("\n\n Choisissez un niveau (entre 1 et 2) : ");
+        scanf("%d", &m);
+
+        if (m<1 || m>2)
+        {
+            printf("Non défini!");
+        }
+    } while (m<1 || m>2);
+
+    return m;
+}
+
 
 int nombre_de_grains()
 {
@@ -114,10 +170,10 @@ int game_mode()
     printf("\n--------  Mode de jeu  --------\n");
     printf("\n   1. J vs J");
     printf("\n   2. J vs IA");
-    
+
     do
     {
-        printf("\n\nChoisissez un mode (entre 1 et 2) : ");
+        printf("\n\n Choisissez un mode (entre 1 et 2) : ");
         scanf("%d", &n);
 
         if (n<1 || n>2)
@@ -137,33 +193,56 @@ int partie()
     printf("\n--------  Type de Partie  --------\n");
     printf("\n   1. Normal");
     printf("\n   2. Jeu en N coups");
-    printf("\n   3. Contre-la-montre");
-    
+
     do
     {
-        printf("\n\nChoisissez une partie (entre 1 et 3) : ");
+        printf("\n\n Choisissez une partie (entre 1 et 2) : ");
         scanf("%d", &n);
 
-        if (n<1 || n>3)
+        if (n<1 || n>2)
         {
             printf("Non définie!");
         }
-    } while (n<1 || n>3);
+    } while (n<1 || n>2);
 
     return n;
 }
 
 
-int nb_aleatoire(Joueur *B)
+int nb_aleatoire_facile(Joueur *B)
 {
     int n;
-    srandom(time(NULL));
+    srand(time(NULL));
     do
-    {    
-        n = random()%6 + 1;
+    {
+        n = rand()%6 + 1;
     } while (B->tab[n] == 0);
 
     return n;
+}
+
+
+int nb_aleatoire_difficile(Joueur *B)
+{
+    int n=6;
+    while (n>=1 && (B->tab[n]==0 || B->tab[n]>=n))
+    {
+        n--;
+    }
+
+    if (n==0)
+    {
+        int k=6;
+        while (k>=1 && B->tab[k]==0)
+        {
+            k--;
+        }
+        return k;
+    }
+    else
+    {
+        return n;
+    }
 }
 
 
@@ -250,16 +329,15 @@ int move(Joueur *j1, Joueur *j2, int c)
                 Main--;
                 j--;
             }
+             c = 7;
         }
-
-        c = 7;
 
     }
 
-    if (cote == 1 && j1->tab[c] == 1)
+    if (cote == 1 && j1->tab[c+1] == 1)
     {
-        j1->score += j2->tab[7-c];
-        j2->tab[7-c] = 0;
+        j1->score += j2->tab[6-c];
+        j2->tab[6-c] = 0;
     }
 
     return cote;
@@ -267,19 +345,72 @@ int move(Joueur *j1, Joueur *j2, int c)
 }
 
 
+void enregistrement(Joueur A, Joueur B)
+{
+    FILE * fichier = NULL;
+    fichier=fopen("sauvegarde.txt","a+");
+    if(fichier != NULL)
+    {   
+        int h, min, s, jour, mois, an;
+
+        time_t now; //Variable de type temps.
+
+        time(&now); // Renvoie l'heure actuelle
+
+        struct tm *local = localtime(&now);
+
+        h = local->tm_hour;        
+        min = local->tm_min;       
+        s = local->tm_sec;       
+        jour = local->tm_mday;          
+        mois = local->tm_mon + 1;     
+        an = local->tm_year + 1900;
+    
+        fprintf(fichier,"**  %02d:%02d:%02d  %02d/%02d/%d\n", h, min, s, jour, mois, an);
+        fprintf(fichier,"Joueur 1 : %s , Score = %d ;\n", A.nom, A.score);
+        fprintf(fichier,"Joueur 2 : %s , Score = %d ;\n", B.nom, B.score);
+        fprintf(fichier,"--------------------------------------------------\n");
+
+        fclose(fichier);
+    }
+    else
+    {
+        printf("Échec d'enregistrement!");
+    }
+}
+
+/*
+void Color(int t , int f)
+{
+    HANDLE H = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(H,f*16+t);
+}
+*/
+
+
 int main()
 {
     Joueur A, B;
-    int tourDeQui=1, nb, mode, party, game=0, coups=1, coups_max=1000, choice, dans_grenier;
+    int tourDeQui=1, menu, niveau, mode, party, game=0, coups=1, coups_max=1000, choice, dans_grenier;
 
+    //Color(3,0);
     printf("\n*******************************************");
     printf("\n*************** MANCALA 2.0 ***************");
     printf("\n*******************************************");
     printf("\n\n");
-
+    //Color(15,0);
+    printf("Mancala est en fait une famille de jeux similaires, et pas juste un nom specifique de jeu.\nLa partie se joue sur le plateau de 6 x 2 (avec deux greniers de chaque cote) et chaque trou contient 4 graines au depart (Menu par defaut).\n");
+    printf("\nLe but du jeu est d'obtenir plus de points que son adversaire en deplaçant des graines de son camp ou en capturant celles de l'adversaire.\n");
+    
     mode = game_mode();
     printf("\n");
-    nb = nombre_de_grains();
+    if (mode == 2)
+    {
+        niveau = choixNiveau();
+    }
+    printf("\n");
+    menu = choixMenu();
+    printf("\n");
     party = partie();
 
     if (party == 2)
@@ -292,22 +423,45 @@ int main()
 
     if (mode == 1)
     {
-        init(&A, 1, nb);
-        printf("Vous comptez de 1 à 6 de la gauche vers la droite.\n\n");
+        if(menu == 1)
+        {
+            init(&A, 1, 4);
+            printf("Vous comptez de 1 a 6 de la gauche vers la droite.\n\n");
 
-        init(&B, 2, nb);
-        printf("Vous comptez de 1 à 6 de la droite vers la gauche.\n\n\n");
+            init(&B, 2, 4);
+            printf("Vous comptez de 1 a 6 de la droite vers la gauche.\n\n\n");
+        }
+        else if (menu == 2)
+        {
+            int nb =nombre_de_grains();
+            init(&A, 1,nb);
+            printf("Vous comptez de 1 a 6 de la gauche vers la droite.\n\n");
+
+            init(&B, 2, nb);
+            printf("Vous comptez de 1 a 6 de la droite vers la gauche.\n\n\n");
+        }
     }
     else if (mode == 2)
     {
-        init_IA(&A, &B, nb);
-        printf("Vous comptez de 1 à 6 de la droite vers la gauche.\n\n\n");
+        if(menu == 1)
+        {
+            init_IA(&A, &B, 4);
+            printf("Vous comptez de 1 a 6 de la droite vers la gauche.\n\n\n");
+        }
+        else if(menu==2)
+        {
+            init_IA(&A, &B, nombre_de_grains());
+            printf("Vous comptez de 1 a 6 de la droite vers la gauche.\n\n\n");
+        }
+
     }
-    
+
+    //Color(5,0);
     printf("       ********************       ");
     printf("\n*******    C'est parti!    *******\n");
-    printf("       ********************       \n\n\n");
-
+    printf("       ********************       \n\n");
+    
+    //Color(15,0);
     affiche(&A,&B);
 
     printf("\n");
@@ -329,7 +483,14 @@ int main()
             {
                 printf("\n\n--- Tour de l'IA ---\n");
                 attendre(4);
-                choice = nb_aleatoire(&B);
+                if (niveau == 1)
+                {
+                    choice = nb_aleatoire_facile(&B);
+                }
+                else if (niveau == 2)
+                {
+                    choice = nb_aleatoire_difficile(&B);
+                }
                 printf("Je choisis la case %d\n", choice);
             }
             dans_grenier = move(&B, &A, choice);
@@ -342,7 +503,7 @@ int main()
 
         game = arret(&A, &B);
 
-        if (dans_grenier != 0 || party==2)
+        if (dans_grenier != 0 )
         {
             if (tourDeQui == 1)
             {
@@ -357,21 +518,49 @@ int main()
         coups += 1;
     }
 
+    //Color(2,0);
     printf("\n\n\n       *********************       ");
     printf("\n*******  Fin de la partie!  *******\n");
-    printf("       *********************       \n\n\n");
+    printf("       *********************       \n\n");
 
-    int i=1;
-    while(i<7)
+    if (game==1 && tourDeQui == 1 )
     {
-        A.score += B.tab[i];
-        B.score += A.tab[i];
-        A.tab[i] = 0;
-        B.tab[i] = 0;
-        i++;
+        int i=1;
+        while(i<7)
+        {
+            A.score += A.tab[i];
+            A.tab[i] = 0;
+            i++;
+
+        }
+    }
+    else if (game==1 && tourDeQui == 2)
+    {
+        int j=1;
+        while(j<7)
+        {
+            B.score += B.tab[j];
+            B.tab[j] = 0;
+            j++;
+        }
     }
 
     affiche(&A, &B);
+
+    if(A.score>B.score)
+    {
+        printf("\nFélicitations %s, vous avez gagné", A.nom);
+    }
+    else if(A.score<B.score)
+    {
+         printf("\nFélicitations %s, vous avez gagné", B.nom);
+    }
+    else
+    {
+        printf("\nMatch nul !");
+    }
+
+    enregistrement(A, B);
 
     return EXIT_SUCCESS;
 }
