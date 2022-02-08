@@ -1,0 +1,4 @@
+**  hh:mm:ss  dd/mm/yyyy
+Joueur 1 : Name1 , Score = _ ;
+Joueur 2 : Name2 , Score = _ ;
+--------------------------------------------------
