@@ -171,10 +171,3 @@ class Poly:
 
         return Poly(*reversed(prod_coefs))
 
-
-if __name__ == "__main__":
-    p = Poly(-5, 0, 4, -2, 1 + 2j, 7)
-    q = Poly([5, 3, 0, -1])
-
-    print(p.primitive())
-    print(p.integral(1, 2))
