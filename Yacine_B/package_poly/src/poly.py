@@ -16,13 +16,15 @@ class Poly:
     """
     
     def __init__(self, *coefs):
-        if type(coefs[0]) is list:
+        if not coefs:
+            raise IndexError("No coefficient found!")
+        elif type(coefs[0]) is list:
             self.__coefs = list(reversed(coefs[0]))
         else:
             self.__coefs = list(reversed(coefs))
 
         if not all(map(lambda x: type(x) in [int, float, complex], self.__coefs)):
-            raise TypeError(f"Polynomial ill instantiated! The coefficients should be integer, float or complex.")
+            raise TypeError("Polynomial ill instantiated! The coefficients should be integer, float or complex.")
         
         self.deg = len(self.__coefs) - 1
         self.const = self.__coefs[0]
@@ -31,7 +33,7 @@ class Poly:
         return self.deg == 0
 
     def is_null(self):
-        return self.deg == 0 and self.const == 0
+        return all(map(lambda a: a==0, self.get_coefs()))
 
     def get_coefs(self):
         return list(reversed(self.__coefs))
@@ -42,8 +44,6 @@ class Poly:
         
         terms = [a * (x ** i) for i, a in enumerate(self.__coefs)]
         
-        if not terms:
-            return 0
         return sum(terms)
 
     def derivative(self, order=None):
@@ -106,19 +106,19 @@ class Poly:
         prim = self.primitive(rounded=False)
         return prim.evaluate(x2) - prim.evaluate(x1)
 
-    def test_root(self, x):
+    def check_root(self, x):
         if type(x) not in [int, float, complex]:
-               raise TypeError("x must be integer, float or complex!")
+            raise TypeError("x must be integer, float or complex!")
         return self.evaluate(x) == 0
     
-    def test_other(self, other):
+    def _check_other(self, other):
         if type(other) is not Poly:
             raise TypeError("other must be a Poly() object!")
         
     def __str__(self):
         poly = ""
         if self.is_null():
-            return f"({0})"
+            return "(0)"
         else:
             for i, a in enumerate(self.__coefs):
                 if a != 0:
@@ -139,21 +139,21 @@ class Poly:
         return self.__coefs[i]
     
     def __eq__(self, other):
-        self.test_other(other)
+        self._check_other(other)
         return self.__coefs == other.__coefs
 
     def __add__(self, other):
-        self.test_other(other)
+        self._check_other(other)
         polys = [self.__coefs] + [other.__coefs]
         return Poly(*reversed([sum(coef) for coef in zip_longest(*polys, fillvalue=0)]))
 
     def __sub__(self, other):
-        self.test_other(other)
+        self._check_other(other)
         polys = [self.__coefs] + [other.__coefs]
         return Poly(*reversed([coef[0] - coef[1] for coef in zip_longest(*polys, fillvalue=0)]))
 
     def __mul__(self, other):
-        self.test_other(other)
+        self._check_other(other)
         prod_deg = 2 * max(self.deg, other.deg)
         prods = list(product(range(prod_deg // 2 + 1), repeat=2))
         part_prod_coefs = [list(filter(lambda tp: sum(tp) == k, prods)) for k in range(prod_deg)]
