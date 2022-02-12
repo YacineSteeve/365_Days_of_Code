@@ -50,9 +50,11 @@ class Poly:
         if order is None:
             order = 1
         else:
-            if type(order) is not int or order >= 1:
-                raise TypeError("The order of derivation must be integer and greater than 1.")
-
+            if type(order) is not int:
+                raise TypeError("The order of derivation must be integer.")
+            elif order < 1:
+                raise ValueError("The order of derivation must be greater than 1.")
+        
         new_coefs = self.__coefs
         for _ in range(order):
             new_coefs = [a * i for i, a in enumerate(new_coefs)][1:]
@@ -171,3 +173,14 @@ class Poly:
 
         return Poly(*reversed(prod_coefs))
 
+    def __pow__(self, n):
+        if type(n) is not int:
+            raise TypeError("The power must be integer!")
+        elif n < 0:
+            raise ValueError("Negative power undefined for polynomial!")
+        
+        res = self
+        for _ in range(1, n):
+            res *= self
+            
+        return res
