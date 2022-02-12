@@ -66,12 +66,16 @@ def test_eq():
     
 def test_add():
     assert p + q == Poly(-5, 0, 9, 1, 2+2j, 6)
+    assert p + q == q + p
+    assert (p + q).deg <= max(p.deg, q.deg)
     
     
 def test_sub():
     assert (p - r).is_null()
     assert q - t == q
     assert q - k == Poly(5, 5, 8, -10)
+    assert (q - k).deg <= max(q.deg, k.deg)
+
     
     
 def test_check_other():
@@ -87,3 +91,42 @@ def test_check_root():
     
     with pytest.raises(TypeError):
         q.check_root('string')
+        
+        
+def test_derivative():
+    assert q.derivative() == Poly(15, 6, 1)
+    assert q.derivative(1) == q.derivative()
+    assert s.derivative() == Poly(0)
+    
+    with pytest.raises(TypeError):
+        a = q.derivative('string')
+    with pytest.raises(TypeError):
+        a = q.derivative([64])
+    with pytest.raises(ValueError):
+        a = q.derivative(-2)
+        
+        
+def test_str():
+    assert k.__str__() == "(-2)x^2 + (-7)x + (9)"
+    assert t.__str__() == "(0)"
+        
+    a = Poly(0, 4, -1, 12)
+    assert a.__str__() == "(4)x^2 + (-1)x + (12)"
+  
+        
+def test_mul():
+    assert q * k == Poly(-10, -41, 22, 22, 16, -9)
+    assert k * q == q * k
+    assert (q * k).deg <= q.deg + k.deg
+
+
+def test_pow():
+    assert k**0 == k
+    assert k**2 == k * k == Poly(28, 13, -126, 81)
+    
+    with pytest.raises(TypeError):
+        a = k**'string'
+    with pytest.raises(TypeError):
+        a = k**[6, '2']    
+    with pytest.raises(ValueError):
+        a = k**(-4)
