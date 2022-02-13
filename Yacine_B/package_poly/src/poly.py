@@ -68,6 +68,7 @@ class Poly:
         else:
             if type(condition) is not tuple or len(condition) != 2:
                raise ValueError("condition must be a couple of two values, (x, p(x))!")
+            
             x, y = condition
 
             if type(x) not in [int, float] or type(y) not in [int, float]:
@@ -96,17 +97,17 @@ class Poly:
 
         return Poly(*reversed([c] + prim_coefs[1:]))
 
-    def integral(self, x1=None, x2=None):
-        if x1 is None and x2 is None:
-            x1, x2 = 0, 1
-        elif x1 is None or x2 is None:
+    def integral(self, a=None, b=None):
+        if a is None and b is None:
+            a, b = 0, 1
+        elif a is None or b is None:
             raise IntegrationLimitError("Missing one limit of integration.")
         else:
-            if type(x1) not in [int, float] or type(x2) not in [int, float]:
+            if type(a) not in [int, float] or type(b) not in [int, float]:
                 raise TypeError("integration limits must be integers or float!")
 
         prim = self.primitive(rounded=False)
-        return prim.evaluate(x2) - prim.evaluate(x1)
+        return prim.evaluate(b) - prim.evaluate(a)
 
     def check_root(self, x):
         if type(x) not in [int, float, complex]:
