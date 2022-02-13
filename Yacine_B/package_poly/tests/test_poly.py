@@ -9,15 +9,14 @@ from src.poly import *
 del sys.path[0]
 
 
-p = Poly(-5, 0, 4, -2, 1+2j, 7)
-q = Poly([5, 3, 1, -1])
-r = Poly([-5, 0, 4, -2, 1+2j, 7])
-s = Poly(-3+4j)
-t = Poly([0])
-k = Poly([-2, -7, 9])
-
-
 def test_init():
+    p = Poly(-5, 0, 4, -2, 1+2j, 7)
+    q = Poly([5, 3, 1, -1])
+    r = Poly([-5, 0, 4, -2, 1+2j, 7])
+    s = Poly(-3+4j)
+    t = Poly([0])
+    k = Poly([-2, -7, 9])
+    
     with pytest.raises(IndexError):
         a = Poly()
         
@@ -32,8 +31,23 @@ def test_init():
         
     with pytest.raises(TypeError):
         a = Poly([5, True, 4, -1])
+
+
+p = Poly(-5, 0, 4, -2, 1+2j, 7)
+q = Poly([5, 3, 1, -1])
+r = Poly([-5, 0, 4, -2, 1+2j, 7])
+s = Poly(-3+4j)
+t = Poly([0])
+k = Poly([-2, -7, 9])        
         
-        
+
+def test_deg():   
+    assert q.deg == 3
+    
+
+def test_const():
+    assert p.const == 7
+
 
 def test_is_const():
     assert p.is_const() == False
@@ -97,6 +111,7 @@ def test_derivative():
     assert q.derivative() == Poly(15, 6, 1)
     assert q.derivative(1) == q.derivative()
     assert s.derivative() == Poly(0)
+    assert t.derivative() == t
     
     with pytest.raises(TypeError):
         a = q.derivative('string')
@@ -130,3 +145,34 @@ def test_pow():
         a = k**[6, '2']    
     with pytest.raises(ValueError):
         a = k**(-4)
+        
+        
+def test_integral():
+    assert q.integral() == q.integral(0, 1)
+    assert q.integral(-1, 2) == 26.25
+    
+    with pytest.raises(IntegrationLimitError):
+        q.integral(a=4)
+    with pytest.raises(IntegrationLimitError):
+        q.integral(b=-1)
+    with pytest.raises(TypeError):
+        q.integral('string', 1)
+    with pytest.raises(TypeError):
+        q.integral(2+1j, 1)
+        
+        
+def test_primitive():
+    assert q.primitive() == q.primitive(condition=(0, 0))
+    assert q.primitive() == q.primitive(rounded=True)
+    
+    with pytest.raises(ValueError):
+        q.primitive(condition=(2, 4, 1))
+    with pytest.raises(ValueError):
+        q.primitive(condition=[2, 4])
+    with pytest.raises(TypeError):
+        q.primitive(condition=(2, 'string'))
+        
+    assert p.primitive() == Poly(-0.83, 0, 1, -0.67, 0.5+1j, 7, 0)
+    assert p.primitive(rounded=False) == Poly(-0.8333333333333334, 0, 1, 
+                                              -0.6666666666666666, 0.5+1j, 7, 0)
+    
