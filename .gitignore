@@ -1,18 +1,14 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-.*
+.idea/
 
-
-# C extensions
 *.so
 *.xml
 
 # Distribution / packaging
 .Python
 .dist/
-.idea/
-.vscode/
 env/
 build/
 develop-eggs/
