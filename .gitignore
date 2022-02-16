@@ -2,9 +2,10 @@
 __pycache__/
 *.py[cod]
 .idea/
-
+workspace.xml
+tasks.xml
+.iws
 *.so
-*.xml
 
 # Distribution / packaging
 .Python
