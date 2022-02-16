@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add bucket sort.">
-      <change beforePath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/numpy_zoom_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/machine_learning/linear_regression_random_dataset.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/linear_regression_random_dataset.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +13,7 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="58221" />
+    <option name="totalTimeSeconds" value="61174" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -91,16 +93,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Téléchargements/eduroam-linux-IdT.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_runtime (1)">
+  <component name="RunManager" selected="Python.numpy_zoom_img">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,29 +118,7 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="eduroam-linux-IdT" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="/usr" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Téléchargements/eduroam-linux-IdT.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -211,6 +191,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="numpy_zoom_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="365_Days_of_Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="/usr" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/machine_learning/numpy_zoom_img.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test_runtime (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -257,19 +259,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.eduroam-linux-IdT" />
+      <item itemvalue="Python.functions (1)" />
       <item itemvalue="Python.functions" />
       <item itemvalue="Python.test_runtime (1)" />
       <item itemvalue="Python.test_runtime" />
-      <item itemvalue="Python.functions (1)" />
+      <item itemvalue="Python.numpy_zoom_img" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_runtime (1)" />
-        <item itemvalue="Python.functions (1)" />
+        <item itemvalue="Python.numpy_zoom_img" />
         <item itemvalue="Python.test_runtime" />
+        <item itemvalue="Python.test_runtime (1)" />
         <item itemvalue="Python.functions" />
-        <item itemvalue="Python.eduroam-linux-IdT" />
+        <item itemvalue="Python.functions (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -312,6 +314,10 @@
       <workItem from="1642635207162" duration="1210000" />
       <workItem from="1642636438163" duration="474000" />
       <workItem from="1642636930343" duration="9028000" />
+      <workItem from="1644760503826" duration="81000" />
+      <workItem from="1644954582747" duration="363000" />
+      <workItem from="1644954978554" duration="137000" />
+      <workItem from="1644955149811" duration="3585000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
@@ -522,6 +528,7 @@
     <SUITE FILE_PATH="coverage/365_Days_of_Code$test_git.coverage" NAME="test_git Coverage Results" MODIFIED="1641814503871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$functions__1_.coverage" NAME="functions (1) Coverage Results" MODIFIED="1642712917760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$test_runtime__1_.coverage" NAME="test_runtime (1) Coverage Results" MODIFIED="1642712947418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$numpy_zoom_img.coverage" NAME="numpy_zoom_img Coverage Results" MODIFIED="1644957899171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$data.coverage" NAME="data Coverage Results" MODIFIED="1641945449743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$plot_time_complexity.coverage" NAME="plot_time_complexity Coverage Results" MODIFIED="1642067188076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$functions.coverage" NAME="functions Coverage Results" MODIFIED="1642372841508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
