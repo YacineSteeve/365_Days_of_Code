@@ -176,6 +176,9 @@
       <module name="365_Days_of_Code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="/usr/bin/python3.9" />
       <option name="WORKING_DIRECTORY" value="/usr" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -258,12 +261,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.functions" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.numpy_img_manip" />
+      <item itemvalue="Python.numpy_zoom_img" />
       <item itemvalue="Python.test_runtime (1)" />
       <item itemvalue="Python.test_runtime" />
-      <item itemvalue="Python.numpy_zoom_img" />
-      <item itemvalue="Python.numpy_img_manip" />
     </list>
     <recent_temporary>
       <list>
