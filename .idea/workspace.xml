@@ -256,8 +256,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.functions" />
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.numpy_img_manip" />
       <item itemvalue="Python.numpy_zoom_img" />
       <item itemvalue="Python.test_runtime (1)" />
