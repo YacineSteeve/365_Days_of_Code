@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="OK">
-      <change afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/nature.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/z-score_feature_scaling.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/machine_learning/numpy_img_manip.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/numpy_img_manip.py" afterDir="false" />
-    </list>
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add functions for image zoom and rotation.&#10;Add feature scaling application with z-score normalisation." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -261,8 +256,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.functions" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.functions" />
       <item itemvalue="Python.numpy_img_manip" />
       <item itemvalue="Python.numpy_zoom_img" />
       <item itemvalue="Python.test_runtime (1)" />
@@ -491,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644983930529</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add functions for image zoom and rotation.&#10;Add feature scaling application with z-score normalisation.">
+      <created>1645053323006</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1645053323006</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,6 +508,17 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
@@ -532,7 +545,8 @@
     <MESSAGE value="Game of life project starting." />
     <MESSAGE value="Add bucket sort." />
     <MESSAGE value="OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="OK" />
+    <MESSAGE value="Add functions for image zoom and rotation.&#10;Add feature scaling application with z-score normalisation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add functions for image zoom and rotation.&#10;Add feature scaling application with z-score normalisation." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/365_Days_of_Code$dichotomic_search.coverage" NAME="dichotomic_search Coverage Results" MODIFIED="1642546028124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
