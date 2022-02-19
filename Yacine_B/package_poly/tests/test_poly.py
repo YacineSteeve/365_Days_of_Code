@@ -1,8 +1,8 @@
 import pytest
-import sys, os
+import sys
+import os
 
-sys.path.insert(0,
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.poly import *
 
@@ -50,13 +50,13 @@ def test_const():
 
 
 def test_is_const():
-    assert p.is_const() == False
-    assert s.is_const() == True
+    assert p.is_const() is False
+    assert s.is_const() is True
     
     
 def test_is_null():
-    assert p.is_null() == False
-    assert t.is_null() == True
+    assert p.is_null() is False
+    assert t.is_null() is True
 
 
 def test_get_coefs():
@@ -69,13 +69,14 @@ def test_evaluate():
     with pytest.raises(TypeError):
         q.evaluate('string')
 
+
 def test_getitem():
-    assert q[2] ==  3
+    assert q[2] == 3
     
     
 def test_eq():
-    assert (p == q) == False
-    assert (p == r) == True
+    assert (p == q) is False
+    assert (p == r) is True
     
     
 def test_add():
@@ -91,7 +92,6 @@ def test_sub():
     assert (q - k).deg <= max(q.deg, k.deg)
 
     
-    
 def test_check_other():
     p._check_other(Poly(4))
     
@@ -100,8 +100,8 @@ def test_check_other():
     
     
 def test_check_root():
-    assert k.check_root(1) == True
-    assert q.check_root(7) == False
+    assert k.check_root(1) is True
+    assert q.check_root(7) is False
     
     with pytest.raises(TypeError):
         q.check_root('string')
