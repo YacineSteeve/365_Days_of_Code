@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add .idea to .gitignore&#10;Delete .vscode" />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Improve predictions observing by using a confusion matrix.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,7 +11,7 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="74034" />
+    <option name="totalTimeSeconds" value="141342" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -59,6 +61,9 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="5a96a946-0bb2-4715-961a-edb93cb40dc4" />
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentSearchFilters">
       <list>
@@ -78,6 +83,7 @@
   </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
+    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
@@ -89,18 +95,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Yacine_B/machine_learning" />
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.numpy_img_manip">
+  <component name="RunManager" selected="Python tests.pytest in test_poly.py">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,28 +131,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="functions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="/usr" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/sorting_algorithms/functions.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -159,50 +145,6 @@
       <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="numpy_img_manip" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="365_Days_of_Code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="/usr" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/machine_learning/numpy_img_manip.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="numpy_zoom_img" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="365_Days_of_Code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="/usr" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/machine_learning/numpy_zoom_img.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -255,21 +197,72 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_poly.test_deg" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="365_Days_of_Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Yacine_B/package_poly/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_poly.test_deg&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_poly.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="365_Days_of_Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Yacine_B/package_poly/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Yacine_B/package_poly/tests/test_poly.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_quadratic_poly.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="365_Days_of_Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Yacine_B/package_poly/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Yacine_B/package_poly/tests/test_quadratic_poly.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.functions" />
-      <item itemvalue="Python.numpy_img_manip" />
-      <item itemvalue="Python.numpy_zoom_img" />
       <item itemvalue="Python.test_runtime (1)" />
       <item itemvalue="Python.test_runtime" />
+      <item itemvalue="Python tests.pytest for test_poly.test_deg" />
+      <item itemvalue="Python tests.pytest in test_poly.py" />
+      <item itemvalue="Python tests.pytest in test_quadratic_poly.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.numpy_img_manip" />
-        <item itemvalue="Python.numpy_zoom_img" />
+        <item itemvalue="Python tests.pytest in test_poly.py" />
+        <item itemvalue="Python tests.pytest in test_quadratic_poly.py" />
+        <item itemvalue="Python tests.pytest for test_poly.test_deg" />
         <item itemvalue="Python.test_runtime" />
         <item itemvalue="Python.test_runtime (1)" />
-        <item itemvalue="Python.functions" />
       </list>
     </recent_temporary>
   </component>
@@ -320,6 +313,26 @@
       <workItem from="1644954978554" duration="137000" />
       <workItem from="1644955149811" duration="3585000" />
       <workItem from="1644982773113" duration="16090000" />
+      <workItem from="1645126503277" duration="13310000" />
+      <workItem from="1645238092926" duration="928000" />
+      <workItem from="1645376772668" duration="6792000" />
+      <workItem from="1645383691417" duration="7391000" />
+      <workItem from="1645393800733" duration="3634000" />
+      <workItem from="1645397463070" duration="13781000" />
+      <workItem from="1645474304055" duration="589000" />
+      <workItem from="1645560063142" duration="6317000" />
+      <workItem from="1645566412944" duration="218000" />
+      <workItem from="1645566664043" duration="1129000" />
+      <workItem from="1645567823375" duration="1543000" />
+      <workItem from="1645569401876" duration="3986000" />
+      <workItem from="1645573890552" duration="5944000" />
+      <workItem from="1645653425753" duration="1605000" />
+      <workItem from="1645655098839" duration="6712000" />
+      <workItem from="1645740209235" duration="2536000" />
+      <workItem from="1645743297298" duration="9838000" />
+      <workItem from="1645829582217" duration="2146000" />
+      <workItem from="1645833398562" duration="952000" />
+      <workItem from="1645908301130" duration="503000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
@@ -517,7 +530,112 @@
       <option name="project" value="LOCAL" />
       <updated>1645054830278</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Add .idea to .gitignore&#10;Delete .vscode">
+      <created>1645055355210</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1645055355210</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Improve the standardisation algorithm using axis instead of a for loop.">
+      <created>1645127453852</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1645127453852</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Improve and make more clear the visualization of data conservation.">
+      <created>1645131140769</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1645131140769</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Improve and make more clear the visualization of data conservation.">
+      <created>1645224759154</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1645224759154</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Add image analysis with matplotlib and ndimage.">
+      <created>1645229531658</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1645229531658</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Refactor the test files.">
+      <created>1645238960899</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1645238960900</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add a pandas TimeSeries training exercise based on bitcoin and dogecoin prices data.">
+      <created>1645397640963</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1645397640963</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add a file for data-visualization with Seaborn.">
+      <created>1645474435919</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1645474435919</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add a classification model for heart disease.">
+      <created>1645569602559</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1645569602559</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Improve the learning score by replacing the classification model by a KNN one.&#10;.">
+      <created>1645656655147</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1645656655147</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Refactor some variables.">
+      <created>1645743358341</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1645743358341</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Add model selection training on titanic dataset.">
+      <created>1645829685772</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1645829685772</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Fix an argument missing in parameters for GridSearchCV.">
+      <created>1645833245273</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1645833245273</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fix inverted axes labels on learning curves.">
+      <created>1645833634175</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1645833634175</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Improve predictions observing by using a confusion matrix.">
+      <created>1645834313764</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1645834313764</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,13 +671,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Just to try something, he he..." />
-    <MESSAGE value="End of the test" />
-    <MESSAGE value="Add selection, insertion and comb sort functions.&#10;Reorganization of the directory and files." />
-    <MESSAGE value="no message" />
-    <MESSAGE value="Add shaker sort." />
-    <MESSAGE value="Add gnome sort and quicksort.&#10;Optimisation of the existing functions." />
-    <MESSAGE value="Add runtime plotting system." />
     <MESSAGE value="Add counting sort and update data." />
     <MESSAGE value="Add merge sort." />
     <MESSAGE value="Update some links." />
@@ -572,7 +683,20 @@
     <MESSAGE value="Add functions for image zoom and rotation.&#10;Add feature scaling application with z-score normalisation." />
     <MESSAGE value="add .idea to .gitignore&#10;Delete .vscode" />
     <MESSAGE value="Add .idea to .gitignore&#10;Delete .vscode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add .idea to .gitignore&#10;Delete .vscode" />
+    <MESSAGE value="Improve the standardisation algorithm using axis instead of a for loop." />
+    <MESSAGE value="Improve and make more clear the visualization of data conservation." />
+    <MESSAGE value="Add image analysis with matplotlib and ndimage." />
+    <MESSAGE value="Refactor the test files." />
+    <MESSAGE value="Add a pandas TimeSeries training exercise based on bitcoin and dogecoin prices data." />
+    <MESSAGE value="Add a file for data-visualization with Seaborn." />
+    <MESSAGE value="Add a classification model for heart disease." />
+    <MESSAGE value="Improve the learning score by replacing the classification model by a KNN one.&#10;." />
+    <MESSAGE value="Refactor some variables." />
+    <MESSAGE value="Add model selection training on titanic dataset." />
+    <MESSAGE value="Fix an argument missing in parameters for GridSearchCV." />
+    <MESSAGE value="Fix inverted axes labels on learning curves." />
+    <MESSAGE value="Improve predictions observing by using a confusion matrix." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve predictions observing by using a confusion matrix." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/365_Days_of_Code$dichotomic_search.coverage" NAME="dichotomic_search Coverage Results" MODIFIED="1642546028124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
@@ -584,6 +708,7 @@
     <SUITE FILE_PATH="coverage/365_Days_of_Code$numpy_zoom_img.coverage" NAME="numpy_zoom_img Coverage Results" MODIFIED="1645023634580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$data.coverage" NAME="data Coverage Results" MODIFIED="1641945449743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$plot_time_complexity.coverage" NAME="plot_time_complexity Coverage Results" MODIFIED="1642067188076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$pytest_in_test_poly_py.coverage" NAME="pytest in test_poly.py Coverage Results" MODIFIED="1645238885552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/package_poly/tests" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$functions.coverage" NAME="functions Coverage Results" MODIFIED="1642372841508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$t.coverage" NAME="t Coverage Results" MODIFIED="1641945664157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$numpy_img_manip.coverage" NAME="numpy_img_manip Coverage Results" MODIFIED="1645054213998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/machine_learning" />
@@ -592,8 +717,10 @@
     <SUITE FILE_PATH="coverage/365_Days_of_Code$test_runtime.coverage" NAME="test_runtime Coverage Results" MODIFIED="1642451327667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$sorting_algorithms.coverage" NAME="sorting_algorithms Coverage Results" MODIFIED="1641985123187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$poly.coverage" NAME="poly Coverage Results" MODIFIED="1641985490211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$pytest_for_test_poly_test_deg.coverage" NAME="pytest for test_poly.test_deg Coverage Results" MODIFIED="1645238415666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/package_poly/tests" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$show.coverage" NAME="show Coverage Results" MODIFIED="1641985144047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$selection.coverage" NAME="selection Coverage Results" MODIFIED="1641906711937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
+    <SUITE FILE_PATH="coverage/365_Days_of_Code$pytest_in_test_quadratic_poly_py.coverage" NAME="pytest in test_quadratic_poly.py Coverage Results" MODIFIED="1645238874119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/package_poly/tests" />
     <SUITE FILE_PATH="coverage/365_Days_of_Code$insertion.coverage" NAME="insertion Coverage Results" MODIFIED="1641906949172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Yacine_B/sorting_algorithms" />
   </component>
 </project>
