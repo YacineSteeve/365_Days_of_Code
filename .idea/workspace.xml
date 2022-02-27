@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Improve predictions observing by using a confusion matrix.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/machine_learning/titanic_with_pre-processing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/titanic_with_pre-processing.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +12,7 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="141342" />
+    <option name="totalTimeSeconds" value="141634" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -333,6 +334,8 @@
       <workItem from="1645829582217" duration="2146000" />
       <workItem from="1645833398562" duration="952000" />
       <workItem from="1645908301130" duration="503000" />
+      <workItem from="1645957556915" duration="163000" />
+      <workItem from="1645957982339" duration="300000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
