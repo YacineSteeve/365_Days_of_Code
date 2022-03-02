@@ -1,3 +1,8 @@
+body {
+    background: radial-gradient(purple, blue, red, orange, yellow, green, purple);
+}
+
+
 #lorem {
     color: green;
 }
