@@ -1,0 +1,44 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding-top: 55;
+    background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: contain;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.logo {
+    position: relative;
+    display: block;
+    height: 12%;
+    width: 15%;
+    margin-left: 5%;
+}
+
+li.menu {
+    display: inline;
+}
+
+div.menu {
+    float: right;
+    display: block;
+    border: 1px solid;
+    margin-top: 0px;
+}
+
+footer {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
