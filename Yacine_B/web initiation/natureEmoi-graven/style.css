@@ -46,6 +46,7 @@ nav.nav {
 
 nav.nav li {
     color: white;
+    text-align: center;
 }
 
 
@@ -53,6 +54,7 @@ nav.nav li {
 
 .landing-page {
     padding: 20px 50px;
+    width: 80vw;
 }
 
 .slogan {
@@ -67,3 +69,56 @@ nav.nav li {
     position: absolute;
     top: 78vh;
 }
+
+
+/* Services section */
+
+.services {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 75px
+}
+
+.services-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delivery-icon {
+    font-size: 50px;
+    color: #ADD981;
+}
+
+.services p {
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/* Best sells */
+
+.best-sells {
+    margin: 25px;
+}
+
+.best-sells-title {
+    font-family: "Abril FatFace", cursive;
+    font-weight: 100;
+    font-size: 50px;
+    position: relative;
+    padding-left: 10px;
+    border-left: 10px solid #ADD981;
+    border-bottom-left-radius: 10px;
+}
+
+.best-sells-title::before {
+    content: "";
+    position: absolute;
+    background-color: #ADD981;
+    width: 50px;
+    height: 10px;
+    bottom: 0;
+    left: 0;
+}
+
