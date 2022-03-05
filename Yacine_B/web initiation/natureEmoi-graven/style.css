@@ -1,44 +1,69 @@
-body {
-    margin: 0px;
-    padding: 0px;
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap);
+
+
+* {
+    font-family: "Montserrat";
 }
 
-nav {
-    position: relative;
-    display: block;
-    height: 100%;
-    padding-top: 55;
-    background-image: url("images/bg.jpg");
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    background-size: contain;
+body {
+    margin: 0 auto;
+    padding: 0 auto;
 }
 
 a {
+    color: inherit;
     text-decoration: none;
-    color: #000000;
 }
 
-.logo {
-    position: relative;
-    display: block;
-    height: 12%;
-    width: 15%;
-    margin-left: 5%;
+section.top-page {
+    background: url('images/bg.jpg');
+    background-size: cover;
+    height: 80vh;
+    padding: 20px;
 }
 
-li.menu {
-    display: inline;
+header.header {
+    display: flex;
+    align-items: center;
 }
 
-div.menu {
-    float: right;
-    display: block;
-    border: 1px solid;
-    margin-top: 0px;
+header.header img {
+    width: 150px;
 }
 
-footer {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+
+/* Navigation menu */
+
+nav.nav {
+    display: flex;
+    list-style: none;
+    margin-left: 50px;
+    width: 70vh;
+    justify-content: space-between;
+}
+
+
+nav.nav li {
+    color: white;
+}
+
+
+/* Landing page */
+
+.landing-page {
+    padding: 20px 50px;
+}
+
+.slogan {
+    color: white;
+    font-size: 80px;
+    font-family: "Abril FatFace", cursive;
+    font-weight: 100;
+}
+
+.scroll-down {
+    color: white;
+    position: absolute;
+    top: 78vh;
 }
