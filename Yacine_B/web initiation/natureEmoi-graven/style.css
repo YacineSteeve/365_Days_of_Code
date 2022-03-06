@@ -17,7 +17,7 @@ a {
 }
 
 section.top-page {
-    background: url('images/bg.jpg');
+    background: url("images/bg.jpg");
     background-size: cover;
     height: 80vh;
     padding: 20px;
@@ -110,6 +110,7 @@ nav.nav li {
     padding-left: 10px;
     border-left: 10px solid #ADD981;
     border-bottom-left-radius: 10px;
+    margin: 5vw;
 }
 
 .best-sells-title::before {
@@ -122,3 +123,67 @@ nav.nav li {
     left: 0;
 }
 
+.best-sells-items {
+    display: flex;
+    min-height: 500px;
+    flex-wrap: wrap;
+    margin: 5vw;
+}
+
+.best-item {
+    min-width: 350px;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    flex: 1;
+    position: relative;
+}
+
+.item1 {
+    background-image: url("images/nos_meilleures_ventes/1.jpg");
+}
+
+.item2 {
+    background-image: url("images/nos_meilleures_ventes/2.jpg");
+}
+
+.item3 {
+    background-image: url("images/nos_meilleures_ventes/3.jpg");
+}
+
+.item4 {
+    background-image: url("images/nos_meilleures_ventes/4.jpg");
+}
+
+.name-price {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 20%;
+    background-color: #FFFFFFBF;
+    padding-left: 5%;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.name {
+    margin-bottom: 0px;
+}
+.price {
+    margin-top: 0px;
+}
+
+.show-more {
+    position: absolute;
+    width: 220px;
+    height: 65px;
+    bottom: 15px;
+    right: 0px;
+    margin-right: 10%;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    border: 1px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: #ADD981;
+}
