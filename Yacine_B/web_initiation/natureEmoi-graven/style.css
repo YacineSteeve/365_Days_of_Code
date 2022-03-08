@@ -1,0 +1,193 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap);
+
+
+* {
+    font-family: "Montserrat";
+}
+
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section.top-page {
+    background: url("images/bg.jpg");
+    background-size: cover;
+    height: 80vh;
+    padding: 20px;
+}
+
+header.header {
+    display: flex;
+    align-items: center;
+}
+
+header.header img {
+    width: 150px;
+}
+
+
+/* Navigation menu */
+
+nav.nav {
+    display: flex;
+    list-style: none;
+    margin-left: 50px;
+    width: 70vh;
+    justify-content: space-between;
+}
+
+
+nav.nav li {
+    color: white;
+    text-align: center;
+}
+
+
+/* Landing page */
+
+.landing-page {
+    padding: 20px 50px;
+    width: 60vw;
+}
+
+.slogan {
+    color: white;
+    font-size: 65px;
+    font-family: "Abril FatFace", cursive;
+    font-weight: 100;
+}
+
+.scroll-down {
+    color: white;
+    position: absolute;
+    top: 78vh;
+}
+
+
+/* Services section */
+
+.services {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 75px
+}
+
+.services-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delivery-icon {
+    font-size: 50px;
+    color: #ADD981;
+}
+
+.services p {
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/* Best sells */
+
+.best-sells {
+    margin: 25px;
+}
+
+.best-sells-title {
+    font-family: "Abril FatFace", cursive;
+    font-weight: 100;
+    font-size: 50px;
+    position: relative;
+    padding-left: 10px;
+    border-left: 10px solid #ADD981;
+    border-bottom-left-radius: 10px;
+    margin: 5vw;
+}
+
+.best-sells-title::before {
+    content: "";
+    position: absolute;
+    background-color: #ADD981;
+    width: 50px;
+    height: 10px;
+    bottom: 0;
+    left: 0;
+}
+
+.best-sells-items {
+    display: flex;
+    min-height: 500px;
+    flex-wrap: wrap;
+    margin: 5vw;
+}
+
+.best-item {
+    min-width: 350px;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    flex: 1;
+    position: relative;
+}
+
+.item1 {
+    background-image: url("images/nos_meilleures_ventes/1.jpg");
+}
+
+.item2 {
+    background-image: url("images/nos_meilleures_ventes/2.jpg");
+}
+
+.item3 {
+    background-image: url("images/nos_meilleures_ventes/3.jpg");
+}
+
+.item4 {
+    background-image: url("images/nos_meilleures_ventes/4.jpg");
+}
+
+.name-price {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 20%;
+    background-color: #FFFFFFBF;
+    padding-left: 5%;
+    
+}
+
+.name {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.price {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 25px;
+    color: #007000;
+}
+
+.show-more {
+    position: absolute;
+    bottom: 3%;
+    right: 0px;
+    margin-right: 10%;
+    border-radius: 50px;
+    text-align: center;
+    width: 40%;
+    background-color: #ADD981;
+}
