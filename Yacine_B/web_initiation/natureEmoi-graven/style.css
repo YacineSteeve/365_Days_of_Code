@@ -2,6 +2,10 @@
 @import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap);
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     font-family: "Montserrat";
 }
@@ -117,7 +121,7 @@ nav.nav li {
     content: "";
     position: absolute;
     background-color: #ADD981;
-    width: 50px;
+    width: 40px;
     height: 10px;
     bottom: 0;
     left: 0;
@@ -131,12 +135,15 @@ nav.nav li {
 }
 
 .best-item {
-    min-width: 350px;
-    height: 500px;
     background-position: center;
     background-size: cover;
-    flex: 1;
     position: relative;
+}
+
+.not-grid {
+    min-width: 350px;
+    height: 500px;
+    flex: 1;
 }
 
 .item1 {
@@ -161,9 +168,9 @@ nav.nav li {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 20%;
+    height: 100px;
     background-color: #FFFFFFBF;
-    padding-left: 5%;
+    padding-left: 10px;
     
 }
 
@@ -183,11 +190,99 @@ nav.nav li {
 
 .show-more {
     position: absolute;
-    bottom: 3%;
+    bottom: 17px;
     right: 0px;
-    margin-right: 10%;
+    width: 150px;
+    margin-right: 20px;
     border-radius: 50px;
     text-align: center;
-    width: 40%;
     background-color: #ADD981;
+}
+
+
+/* All plants */
+
+.all-plants {
+    margin: 25px;
+}
+
+.all-plants-title {
+    font-family: "Abril FatFace", cursive;
+    font-weight: 100;
+    font-size: 50px;
+    position: relative;
+    padding-left: 10px;
+    border-left: 10px solid #ADD981;
+    border-bottom-left-radius: 10px;
+    margin: 5vw;
+}
+
+.all-plants-title::before {
+    content: "";
+    position: absolute;
+    background-color: #ADD981;
+    width: 40px;
+    height: 10px;
+    bottom: 0;
+    left: 0;
+}
+
+.all-plants-grid {
+    display: grid;
+    min-height: 150vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 400px);
+    margin: 5vw;
+}
+
+.grid-item {
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.grid-item1 {
+    background-image: url("images/nos_plantes/1.jpg");
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.grid-item2 {
+    background-image: url("images/nos_plantes/2.jpg");
+    grid-column: 3/5;
+    grid-row: 1/2;
+}
+
+.grid-item3 {
+    background-image: url("images/nos_plantes/3.jpg");
+    grid-column: 3/5;
+    grid-row: 2/3;
+}
+
+.grid-item4 {
+    background-image: url("images/nos_plantes/4.jpg");
+    grid-column: 1/2;
+    grid-row: 3/5;
+}
+
+.grid-item5 {
+    background-image: url("images/nos_plantes/5.jpg");
+    grid-column: 2/4;
+    grid-row: 3/5;
+}
+
+.grid-item6 {
+    background-image: url("images/nos_plantes/6.jpg");
+    grid-column: 4/5;
+    grid-row: 3/5;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600px;
+    align-items: center;
+    text-align: center;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
