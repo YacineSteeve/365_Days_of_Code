@@ -23,7 +23,7 @@ a {
 section.top-page {
     background: url("images/bg.jpg");
     background-size: cover;
-    height: 80vh;
+    height: 100vh;
     padding: 20px;
 }
 
@@ -57,7 +57,7 @@ nav.nav li {
 /* Landing page */
 
 .landing-page {
-    padding: 20px 50px;
+    padding: 0px 20px 50px;
     width: 60vw;
 }
 
@@ -71,7 +71,7 @@ nav.nav li {
 .scroll-down {
     color: white;
     position: absolute;
-    top: 78vh;
+    top: 95vh;
 }
 
 
@@ -188,17 +188,6 @@ nav.nav li {
     color: #007000;
 }
 
-.show-more {
-    position: absolute;
-    bottom: 17px;
-    right: 0px;
-    width: 150px;
-    margin-right: 20px;
-    border-radius: 50px;
-    text-align: center;
-    background-color: #ADD981;
-}
-
 
 /* All plants */
 
@@ -239,6 +228,7 @@ nav.nav li {
     background-position: center;
     background-size: cover;
     position: relative;
+    min-width: 150px;
 }
 
 .grid-item1 {
@@ -276,6 +266,9 @@ nav.nav li {
     grid-column: 4/5;
     grid-row: 3/5;
 }
+
+
+/* Footer */
 
 .footer {
     display: flex;
