@@ -71,6 +71,11 @@ header {
     text-align: center;
 }
 
+.menu li a:hover {
+    color: #11A1A1;
+    font-size: 22px;
+}
+
 .landing-page {
     position: absolute;
     top: 38%;
@@ -103,3 +108,62 @@ header {
     margin-top: 50px;
 }
 
+
+/* PRESENTATION/DESCRIPTION SECTION */
+
+.presentation {
+    padding: 100px 10vw 100px 10vw;
+    background-color: #FFEFEF;
+}
+
+.description {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 100px
+}
+
+.slogan {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.description-text {
+    text-align: justify;
+    margin-top: 50px;
+}
+
+
+/* PRESENTATION/DETAILS SECTION */
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.details-item {
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.details-text {
+    font-family: "Dancing Script", cursive;
+    font-weight: 2px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.details-image {
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px black;
+    margin-top: 15px;
+}
+
+.details-image:hover {
+    width: 204px;
+    height: 254px;
+    box-shadow: 5px 5px 7px black;
+    margin-top: 11px;
+}
