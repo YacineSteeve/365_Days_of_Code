@@ -167,3 +167,96 @@ header {
     box-shadow: 5px 5px 7px black;
     margin-top: 11px;
 }
+
+
+/* BOTTOM-PAGE SECTION */
+
+
+.bottom-page {
+    height: 600px;
+    padding: 80px 10vw 0px 10vw;
+    color: white;
+    background-color: #5a4d4d;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.contact-title {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.contact-box {
+    border-radius:10px;
+    width: 70vw;
+    min-width: 400px;
+    max-width: 550px;
+    height: 50px;
+}
+
+#contact-message {
+    min-width: 400px;
+    height: 150px;
+}
+
+#contact-submit {
+    margin-top: 15px;
+    padding-right: 0px;
+    width: 30vw;
+}
+
+#contact-submit:hover {
+    width: 29.5vw;
+    height: 49px;
+    margin-top: 16px;
+    color: white;
+    background-color: green;
+    box-shadow: 1px 1px 3px black;
+    transition: 0.2s ease-in-out;
+}
+
+.line2 {
+    margin-left: 50%;
+    margin-right: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.social-links {
+    display: flex;
+    width: 200px;
+    max-width: 200px;
+    justify-content: space-evenly;
+    font-size: 25px;
+}
+
+.fa-facebook:hover {
+    color: rgb(66, 66, 216);
+}
+
+.fa-twitter:hover {
+    color: rgb(0, 140, 255);
+}
+
+.fa-instagram:hover {
+    color: rgb(177, 8, 8);
+}
+
+.fa:hover {
+    font-size: 31px;
+}
