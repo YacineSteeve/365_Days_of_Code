@@ -6,8 +6,8 @@ html {
 }
 
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -46,7 +46,7 @@ header {
     padding: 15px;
     background: #FFFFFFBF;
     position: fixed;
-    top: 0px;
+    top: 0;
     z-index: 1;
 }
 
@@ -113,7 +113,7 @@ header {
 
 .presentation {
     padding: 100px 10vw 100px 10vw;
-    background-color: #FFEFEF;
+    background-color: #FFFAE1;
 }
 
 .description {
@@ -124,7 +124,7 @@ header {
 }
 
 .slogan {
-    font-size: 1.8em;
+    font-size: 1.7em;
     text-align: center;
 }
 
@@ -156,16 +156,81 @@ header {
 }
 
 .details-image {
+    width: 180px;
     border-radius: 15px;
     box-shadow: 3px 3px 5px black;
     margin-top: 15px;
 }
 
 .details-image:hover {
-    width: 204px;
-    height: 254px;
+    width: 184px;
+    height: 227px;
+    margin-bottom: -2px;
     box-shadow: 5px 5px 7px black;
-    margin-top: 11px;
+    transition: 0.1s ease-in-out;
+    opacity: 0.7;
+}
+
+
+/* DISCOVER SECTION */
+
+.discover {
+    height: 1500px;
+    padding: 100px 10vw 0px 10vw;
+    background-color: #F1F2F6;
+}
+
+.discover-title {
+    font-size: 1.7em;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+
+.destinations-item {
+    position: relative;
+    margin-bottom: 12vh;
+}
+
+.destinations-image {
+    width: 40vw;
+    min-width: 300px;
+    height: 35vh;
+    box-shadow: 5px 5px 30px 2px black;
+}
+
+#dest1, #dest3 {
+    float: left;
+}
+
+#dest2, #dest4 {
+    float: right;
+}
+
+.destination-name {
+    width: 250px;
+    height: 50px;
+    padding-top: 17px;
+    position: absolute;
+}
+
+.destination-name p {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#ocean, #lighthouse {
+    left: 35vw;
+    top: 20%;
+    box-shadow: 5px 5px green;
+    background-color: #01DF74;
+}
+
+#castle, #vineyard {
+    right: 35vw;
+    top: 20%;
+    box-shadow: -5px 5px #0E8899;
+    background-color: cyan;
 }
 
 
@@ -174,7 +239,7 @@ header {
 
 .bottom-page {
     height: 600px;
-    padding: 80px 10vw 0px 10vw;
+    padding: 80px 10vw 0 10vw;
     color: white;
     background-color: #5a4d4d;
 }
@@ -208,7 +273,7 @@ header {
 
 #contact-submit {
     margin-top: 15px;
-    padding-right: 0px;
+    padding-right: 0;
     width: 30vw;
 }
 
