@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="style/normalize.css"/>
         <link rel="stylesheet" href="style/index.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <script src="js/index.js" async></script>
     </head>
 
     <body>
@@ -88,10 +89,11 @@
         <section class="bottom-page">
             <form class="contact" id="contact">
                 <p class ="contact-title" id="contact-title">CONTACTEZ-NOUS</p>
-                <input type="text" class="contact-box" id="contact-name" placeholder="Votre nom" required/>
-                <input type="email" class="contact-box" id="contact-email" placeholder="Votre email" required/>
-                <textarea class="contact-box" id="contact-message" placeholder="Message" required></textarea>
-                <button class="contact-box" id="contact-submit">Envoyer</button>
+                <input type="text" class="contact-box" id="contact-name" placeholder="Votre nom"/>
+                <input type="email" class="contact-box" id="contact-email" placeholder="Votre email"/>
+                <textarea class="contact-box" id="contact-message" placeholder="Message"></textarea>
+                <button type="button" class="contact-box" id="contact-submit">Envoyer</button>
+                <p class="contact-box" id="submitted"></p>
             </form>
             <hr class="line2"/>
             <footer class="footer">
