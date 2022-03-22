@@ -68,7 +68,8 @@ button:hover {
     box-shadow: 0 0 2px black;
 }
 
-.story-para {
+.story-para {    
+    visibility: hidden;
     text-align: justify;
     font-size: 22px;
     max-width: 100%;
