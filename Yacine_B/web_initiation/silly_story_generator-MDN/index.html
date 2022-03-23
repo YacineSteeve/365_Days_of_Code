@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <!-- Metadata -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Linked files -->
-        <script src="main.js" defer></script>
-        <link rel="stylesheet" href="style.css"/>
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Silly Story Generator - YacineSteeve</title>
-    </head>
-    <body>
-        <header class="header">
-            <h1>~ SILLY STORY GENERATOR ~</h1>
-        </header>
+    <!-- Linked files -->
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
 
-        <main>
-            <div class="name-div">
-                <label for="playerName" class="name-label">Enter custom name:</label>
-                <input type="text" name="name" class="name-input"/>
+    <title>Silly Story Generator - YacineSteeve</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>~ SILLY STORY GENERATOR ~</h1>
+    </header>
+
+    <main>
+        <div class="name-div">
+            <label for="playerName" class="name-label">Enter custom name:</label>
+            <input type="text" name="name" class="name-input" />
+        </div>
+
+        <div class="radio-div">
+            <div class="radio1">
+                <label for="US" class="unit-label">US</label>
+                <input type="radio" name="unit" value="US" checked class="unit-radio" />
             </div>
-    
-            <div class="radio-div">
-                <div class="radio1">
-                    <label for="US" class="unit-label">US</label>
-                    <input type="radio" name="unit" value="US" checked class="unit-radio"/>
-                </div>
-                <div class="radio2">
-                    <label for="UK" class="unit-label">UK</label>
-                    <input type="radio" name="unit" value="UK" class="unit-radio"/>
-                </div>
+            <div class="radio2">
+                <label for="UK" class="unit-label">UK</label>
+                <input type="radio" name="unit" value="UK" class="unit-radio" />
             </div>
-    
-            <button type="button" class="generator-button">Generate random story</button>
-    
-            <p class="story-para"></p>
-        </main>
+        </div>
 
-        <footer>
-            <div class="copyright">
-                <p>&copy; 2022 - Yacine BOUKARI</p>
-            </div>
-        </footer>
-    </body>
+        <button type="button" class="generator-button">Generate random story</button>
+
+        <p class="story-para"></p>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2022 - Yacine BOUKARI</p>
+        </div>
+    </footer>
+</body>
+
 </html>
