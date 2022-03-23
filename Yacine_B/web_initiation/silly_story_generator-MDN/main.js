@@ -62,11 +62,17 @@ function displayStory() {
     for (const radio of unitSystemRadio) {
         if (radio.checked) {
             unitSystem = radio.value;
+            break;
         }
     }
 
     if (customName !== "") {
         newStory = newStory.replace("Bob", customName);
+    }
+
+    if (unitSystem == "UK") {
+        newStory = newStory.replace("94 fahrenheit", "34 centigrade");
+        newStory = newStory.replace("300 pounds", "21 stone");
     }
 
     newStory = replaceStrings(newStory);
