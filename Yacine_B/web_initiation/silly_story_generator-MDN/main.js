@@ -70,7 +70,7 @@ function displayStory() {
         newStory = newStory.replace("Bob", customName);
     }
 
-    if (unitSystem == "UK") {
+    if (unitSystem === "uk") {
         newStory = newStory.replace("94 fahrenheit", "34 centigrade");
         newStory = newStory.replace("300 pounds", "21 stone");
     }
