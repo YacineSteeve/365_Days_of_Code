@@ -42,6 +42,11 @@ main {
     background-size: cover;
 }
 
+.to-display-img:hover {
+    opacity: 0.75;
+    border: 1px solid;
+}
+
 #to-display-1 {
     background-image: url("../images/pic1.jpg");
 }
