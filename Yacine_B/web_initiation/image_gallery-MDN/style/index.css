@@ -23,7 +23,6 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-bottom: 3px solid;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }

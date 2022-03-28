@@ -1,5 +1,5 @@
-const displayedImage = document.getElementById('displayed');
-const toDisplayImages = document.getElementsByClassName('to-display-img');
+const displayedImage = document.getElementById("displayed");
+const toDisplayImages = document.getElementsByClassName("to-display-img");
 
 function getUrl(div) {
     return window.getComputedStyle(div).backgroundImage;
@@ -10,5 +10,5 @@ function display(e) {
 }
 
 for (let i = 0; i < toDisplayImages.length; i++) {
-    toDisplayImages[i].addEventListener('click', display);
+    toDisplayImages[i].addEventListener("click", display);
 }
