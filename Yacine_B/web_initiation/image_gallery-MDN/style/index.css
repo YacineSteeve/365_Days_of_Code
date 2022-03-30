@@ -38,6 +38,11 @@ main {
     border-top-right-radius: 7px;
 }
 
+.veil {
+    width: 100%;
+    height: 450px;
+}
+
 .luminosity-btn {
     font-size: 20px;
     margin-top: 5px;
