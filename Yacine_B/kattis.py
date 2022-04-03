@@ -1,11 +1,13 @@
 for _ in range(int(input())):
-    _ = input()
-    
-    g, m = map(int, input().split())
-    armies = {'Godzilla': list(map(int, input().split())),
-              'MechaGodzilla': list(map(int, input().split()))}
-    
-    if max(armies['Godzilla']) >= max(armies['MechaGodzilla']):
-        print('Godzilla')
-    else:
-        print('MechaGodzilla')
+    n, *grades = map(int, input().split())
+
+    average = sum(grades) / n
+
+    above = list(filter(lambda x: x > average, grades))
+
+    percentage = round(100 * len(above) / n, 3)
+
+    if percentage == int(percentage):
+        percentage = str(percentage) + '00'
+
+    print(percentage, '%', sep='')
