@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Improve predictions observing by using a confusion matrix.">
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Solution submitted for https://open.kattis.com/problems/2048">
+      <change afterPath="$PROJECT_DIR$/Yacine_B/state_changing_2048.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/machine_learning/titanic_with_pre-processing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/titanic_with_pre-processing.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +13,7 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="141634" />
+    <option name="totalTimeSeconds" value="141866" />
     <option name="naggedAbout" value="1" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -37,7 +38,7 @@
     </file-type-list>
   </component>
   <component name="GitToolBoxStore">
-    <option name="projectConfigVersion" value="4" />
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -99,7 +100,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Yacine_B" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -109,7 +110,7 @@
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_poly.py">
+  <component name="RunManager" selected="Python.kattis">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -132,6 +133,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="kattis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="365_Days_of_Code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.9" />
+      <option name="WORKING_DIRECTORY" value="/usr" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/kattis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -146,28 +169,6 @@
       <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_runtime (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="/usr" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Yacine_B/data_structures/sorting_algorithms/test_runtime.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -251,19 +252,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.test_runtime (1)" />
       <item itemvalue="Python.test_runtime" />
+      <item itemvalue="Python.kattis" />
       <item itemvalue="Python tests.pytest for test_poly.test_deg" />
       <item itemvalue="Python tests.pytest in test_poly.py" />
       <item itemvalue="Python tests.pytest in test_quadratic_poly.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.kattis" />
         <item itemvalue="Python tests.pytest in test_poly.py" />
         <item itemvalue="Python tests.pytest in test_quadratic_poly.py" />
         <item itemvalue="Python tests.pytest for test_poly.test_deg" />
         <item itemvalue="Python.test_runtime" />
-        <item itemvalue="Python.test_runtime (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -336,6 +337,8 @@
       <workItem from="1645908301130" duration="503000" />
       <workItem from="1645957556915" duration="163000" />
       <workItem from="1645957982339" duration="300000" />
+      <workItem from="1649171897306" duration="417000" />
+      <workItem from="1649172351867" duration="860000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
@@ -638,7 +641,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645834313764</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Solution submitted for https://open.kattis.com/problems/2048">
+      <created>1649071441796</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1649071441796</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,7 +684,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add counting sort and update data." />
     <MESSAGE value="Add merge sort." />
     <MESSAGE value="Update some links." />
     <MESSAGE value="Add shell sort." />
@@ -699,7 +708,8 @@
     <MESSAGE value="Fix an argument missing in parameters for GridSearchCV." />
     <MESSAGE value="Fix inverted axes labels on learning curves." />
     <MESSAGE value="Improve predictions observing by using a confusion matrix." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve predictions observing by using a confusion matrix." />
+    <MESSAGE value="Solution submitted for https://open.kattis.com/problems/2048" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solution submitted for https://open.kattis.com/problems/2048" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/365_Days_of_Code$dichotomic_search.coverage" NAME="dichotomic_search Coverage Results" MODIFIED="1642546028124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
