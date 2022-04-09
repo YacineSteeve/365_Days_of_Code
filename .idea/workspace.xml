@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Solution submitted for https://open.kattis.com/problems/anothercandies">
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Partial solution submitted for https://open.kattis.com/problems/awkwardparty">
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/kattis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/kattis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +12,7 @@
   </component>
   <component name="ChangesViewManager" show_ignored="true" />
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="7000" />
+    <option name="totalTimeSeconds" value="8728" />
     <option name="pauseOtherTrackerInstances" value="false" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -22,6 +22,7 @@
         <option value="Python Unit Test" />
         <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -345,7 +346,7 @@
       <workItem from="1649236762216" duration="1442000" />
       <workItem from="1649331235795" duration="5122000" />
       <workItem from="1649436126268" duration="234000" />
-      <workItem from="1649437328424" duration="5068000" />
+      <workItem from="1649437328424" duration="7645000" />
     </task>
     <task id="LOCAL-00001" summary="Just to try something, he he...">
       <created>1641814469166</created>
@@ -676,7 +677,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649334291977</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Partial solution submitted for https://open.kattis.com/problems/awkwardparty">
+      <created>1649453044301</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1649453044301</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -712,7 +720,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improve runtime computing." />
     <MESSAGE value="Add a dichotomy search function." />
     <MESSAGE value="Game of life project starting." />
     <MESSAGE value="Add bucket sort." />
@@ -737,7 +744,8 @@
     <MESSAGE value="Store the code for 2048 game state changing in a separated file." />
     <MESSAGE value="Solution submitted for https://open.kattis.com/problems/combinationlock" />
     <MESSAGE value="Solution submitted for https://open.kattis.com/problems/anothercandies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solution submitted for https://open.kattis.com/problems/anothercandies" />
+    <MESSAGE value="Partial solution submitted for https://open.kattis.com/problems/awkwardparty" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partial solution submitted for https://open.kattis.com/problems/awkwardparty" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/365_Days_of_Code$dichotomic_search.coverage" NAME="dichotomic_search Coverage Results" MODIFIED="1642546028124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/usr" />
