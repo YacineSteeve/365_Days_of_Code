@@ -10,10 +10,10 @@ function Personne(prenom, famille, age, genre, interets) {
         let string = this.nom.prenom + ' ' + this.nom.famille + ' a ' + this.age + ' ans. ';
         let pronom;
 
-        if (this.genre === 'homme' || this.gender === 'Homme' || this.gender === 'h' || this.gender === 'H') {
+        if (this.genre === 'homme' || this.genre === 'Homme' || this.genre === 'h' || this.genre === 'H') {
             pronom = 'Il aime ';
         }
-        else if (this.genre === 'femme' || this.gender === 'Femme' || this.gender === 'f' || this.gender === 'F') {
+        else if (this.genre === 'femme' || this.genre === 'Femme' || this.genre === 'f' || this.genre === 'F') {
             pronom = 'Elle aime ';
         }
         else {
@@ -43,7 +43,7 @@ function Personne(prenom, famille, age, genre, interets) {
     this.salutation = function() {
         alert('Bonjour ! Je m\'appelle ' + this.nom.prenom + '.');
     };
-};
+}
 
 let personne1 = new Personne('Jean', 'Biche', 32, 'neutre', ['musique', 'tricot', 'boxe']);
 
