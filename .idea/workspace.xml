@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Create a constructor for training.">
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="nothing important">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +31,14 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="YacineSteeve &lt;steeveboukari9@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -107,13 +111,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yacine/WebstormProjects/YacineSteeve.github.io&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.JavaScript&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="ReaderModeSettings">
-    <option name="showWarnings" value="true" />
-  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Yacine_B" />
@@ -123,7 +125,7 @@
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.again.js">
+  <component name="RunManager" selected="JavaScript Debug.opp.html">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -147,6 +149,9 @@
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/clos_marsault-fromScratch/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="opp.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/opp.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="again.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
@@ -180,24 +185,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_quadratic_poly.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="365_Days_of_Code" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Yacine_B/package_poly/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Yacine_B/package_poly/tests/test_quadratic_poly.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.opp.html" />
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Node.js.opp.html" />
       <item itemvalue="Node.js.opp.js" />
@@ -205,9 +194,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.again.js" />
+        <item itemvalue="JavaScript Debug.opp.html" />
         <item itemvalue="Node.js.opp.js" />
         <item itemvalue="Node.js.opp.html" />
+        <item itemvalue="Node.js.again.js" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -299,14 +289,12 @@
       <workItem from="1649696542590" duration="2078000" />
       <workItem from="1649700384981" duration="1325000" />
       <workItem from="1649701731471" duration="74000" />
-      <workItem from="1649701824261" duration="319000" />
-    </task>
-    <task id="LOCAL-00001" summary="Just to try something, he he...">
-      <created>1641814469166</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1641814469166</updated>
+      <workItem from="1649701824261" duration="1352000" />
+      <workItem from="1649703209703" duration="325000" />
+      <workItem from="1649703567460" duration="802000" />
+      <workItem from="1649753260382" duration="1315000" />
+      <workItem from="1649952839502" duration="617000" />
+      <workItem from="1650038081119" duration="1053000" />
     </task>
     <task id="LOCAL-00002" summary="End of the test">
       <created>1641814687775</created>
@@ -637,7 +625,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649453044301</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="nothing important">
+      <created>1649702666332</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1649702666332</updated>
+    </task>
+    <task id="LOCAL-00050" summary="nothing important">
+      <created>1649702794516</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1649702794517</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -677,7 +679,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Add a dichotomy search function." />
     <MESSAGE value="Game of life project starting." />
     <MESSAGE value="Add bucket sort." />
     <MESSAGE value="OK" />
@@ -702,7 +703,8 @@
     <MESSAGE value="Solution submitted for https://open.kattis.com/problems/combinationlock" />
     <MESSAGE value="Solution submitted for https://open.kattis.com/problems/anothercandies" />
     <MESSAGE value="Partial solution submitted for https://open.kattis.com/problems/awkwardparty" />
-    <option name="LAST_COMMIT_MESSAGE" value="Partial solution submitted for https://open.kattis.com/problems/awkwardparty" />
+    <MESSAGE value="nothing important" />
+    <option name="LAST_COMMIT_MESSAGE" value="nothing important" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

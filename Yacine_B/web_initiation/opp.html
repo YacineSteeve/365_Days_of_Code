@@ -1,85 +1,106 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Object-oriented JavaScript inheritance</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>Our superheroes</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <style>
+        /* || general styles */
 
-    <body>
-        <div>
-            <label for="jscode">Enter code:</label>
-            <input type="text" id="jscode">
-            <button>Submit code</button>
-        </div>
-        <p></p>
-    </body>
+        html {font-family: 'helvetica neue', helvetica, arial, sans-serif;}
+
+        body {width: 800px; margin: 0 auto;}
+
+        h1, h2 {font-family: 'Faster One', cursive;}
+
+        /* header styles */
+
+        h1 {font-size: 4rem; text-align: center;}
+
+        header p {font-size: 1.3rem; font-weight: bold; text-align: center;}
+
+        /* section styles */
+
+        section article {width: 33%; float: left;}
+
+        section p {margin: 5px 0;}
+
+        section ul {margin-top: 0;}
+
+        h2 {font-size: 2.5rem; letter-spacing: -5px; margin-bottom: 10px;}
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+
+    <section>
+
+    </section>
 
     <script>
-        const input = document.querySelector('input');
-        const btn = document.querySelector('button');
-        const para = document.querySelector('p');
+        let header = document.querySelector('header');
+        let section = document.querySelector('section');
+        let requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+        let request = new XMLHttpRequest();
 
-        btn.onclick = function() {
-            const code = input.value;
-            para.textContent = eval(code);
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function() {
+            let superHeroes = request.response;
+            populateHeader(superHeroes);
+            showHeroes(superHeroes);
         };
 
-        function Person(first, last, age, gender, interests) {
-            this.name = {
-                first,
-                last
-            };
-            this.age = age;
-            this.gender = gender;
-            this.interests = interests;
+        function populateHeader(jsonObj) {
+            let myH1 = document.createElement('h1');
+            myH1.textContent = jsonObj['squadName'];
+            header.appendChild(myH1);
+
+            let myPara = document.createElement('p');
+            myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + jsonObj['formed'];
+            header.appendChild(myPara);
         }
 
-        Person.prototype.bio = function() {
-            let string = this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ';
-            let pronoun;
+        function showHeroes(jsonObj) {
+            let heroes = jsonObj['members'];
 
-            if (this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M') {
-                pronoun = 'He likes ';
-            }
-            else if (this.gender === 'female' || this.gender === 'Female' || this.gender === 'f' || this.gender === 'F') {
-                pronoun = 'She likes ';
-            }
-            else {
-                pronoun = 'They like ';
-            }
+            for (let i = 0; i < heroes.length; i++) {
+                let myArticle = document.createElement('article');
+                let myH2 = document.createElement('h2');
+                let myPara1 = document.createElement('p');
+                let myPara2 = document.createElement('p');
+                let myPara3 = document.createElement('p');
+                let myList = document.createElement('ul');
 
-            string += pronoun;
+                myH2.textContent = heroes[i].name;
+                myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
+                myPara2.textContent = 'Age: ' + heroes[i].age;
+                myPara3.textContent = 'Superpowers:';
 
-            if (this.interests.length === 1) {
-                string += this.interests[0] + '.';
-            }
-            else if (this.interests.length === 2) {
-                string += this.interests[0] + ' and ' + this.interests[1] + '.';
-            }
-            else {
-                for (let i = 0; i < this.interests.length; i++) {
-                    if (i === this.interests.length - 1) {
-                        string += 'and ' + this.interests[i] + '.';
-                    }
-                    else {
-                        string += this.interests[i] + ', ';
-                    }
+                let superPowers = heroes[i].powers;
+                for (let j = 0; j < superPowers.length; j++) {
+                    let listItem = document.createElement('li');
+                    listItem.textContent = superPowers[j];
+                    myList.appendChild(listItem);
                 }
+
+                myArticle.appendChild(myH2);
+                myArticle.appendChild(myPara1);
+                myArticle.appendChild(myPara2);
+                myArticle.appendChild(myPara3);
+                myArticle.appendChild(myList);
+
+                section.appendChild(myArticle);
             }
-
-            alert(string);
-        };
-
-        Person.prototype.greeting = function() {
-            alert('Hi! I\'m ' + this.name.first + '.');
-        };
-
-        Person.prototype.farewell = function() {
-            alert(this.name.first + ' has left the building. Bye for now!');
-        };
-
-        let person1 = new Person('Tammi', 'Smith', 17, 'female', ['music', 'skiing', 'kickboxing']);
-
+        }
+        console.log(request.response);
     </script>
+</body>
 </html>
