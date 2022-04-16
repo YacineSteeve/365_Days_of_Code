@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="nothing important">
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +29,8 @@
         <option value="Python Unit Test" />
         <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="HTML File" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -85,7 +90,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Yacine_B/web_initiation/again.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -102,20 +106,21 @@
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
-    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/yacine/WebstormProjects/YacineSteeve.github.io&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.JavaScript&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/yacine/WebstormProjects/YacineSteeve.github.io",
+    "list.type.of.created.stylesheet": "CSS",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Yacine_B" />
@@ -125,7 +130,7 @@
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.opp.html">
+  <component name="RunManager" selected="Node.js.main.js">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,13 +153,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/clos_marsault-fromScratch/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
     <configuration name="opp.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/opp.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="again.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN">
       <method v="2" />
     </configuration>
     <configuration name="opp.html" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
@@ -187,18 +192,18 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.opp.html" />
-      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Node.js.main.js" />
       <item itemvalue="Node.js.opp.html" />
       <item itemvalue="Node.js.opp.js" />
       <item itemvalue="Node.js.again.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.main.js" />
         <item itemvalue="JavaScript Debug.opp.html" />
         <item itemvalue="Node.js.opp.js" />
         <item itemvalue="Node.js.opp.html" />
         <item itemvalue="Node.js.again.js" />
-        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -294,14 +299,8 @@
       <workItem from="1649703567460" duration="802000" />
       <workItem from="1649753260382" duration="1315000" />
       <workItem from="1649952839502" duration="617000" />
-      <workItem from="1650038081119" duration="1053000" />
-    </task>
-    <task id="LOCAL-00002" summary="End of the test">
-      <created>1641814687775</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1641814687775</updated>
+      <workItem from="1650038081119" duration="2653000" />
+      <workItem from="1650053657684" duration="8493000" />
     </task>
     <task id="LOCAL-00003" summary="Add selection, insertion and comb sort functions.&#10;Reorganization of the directory and files.">
       <created>1641908935812</created>
@@ -639,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649702794517</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Json manipulation in JS.">
+      <created>1650039761763</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1650039761764</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -679,7 +685,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Game of life project starting." />
     <MESSAGE value="Add bucket sort." />
     <MESSAGE value="OK" />
     <MESSAGE value="Add functions for image zoom and rotation.&#10;Add feature scaling application with z-score normalisation." />
@@ -704,7 +709,8 @@
     <MESSAGE value="Solution submitted for https://open.kattis.com/problems/anothercandies" />
     <MESSAGE value="Partial solution submitted for https://open.kattis.com/problems/awkwardparty" />
     <MESSAGE value="nothing important" />
-    <option name="LAST_COMMIT_MESSAGE" value="nothing important" />
+    <MESSAGE value="Json manipulation in JS." />
+    <option name="LAST_COMMIT_MESSAGE" value="Json manipulation in JS." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
