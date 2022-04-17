@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/style.css" afterDir="false" />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Initial commit.&#10;Add the first features to the project.">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +35,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="YacineSteeve &lt;steeveboukari9@gmail.com&gt;" />
@@ -117,7 +117,7 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/home/yacine/WebstormProjects/YacineSteeve.github.io",
     "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "Errors",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -130,7 +130,7 @@
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.main.js">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -153,7 +153,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="opp.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/opp.html" useBuiltInWebServerPort="true">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="again.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
@@ -191,7 +191,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.opp.html" />
+      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Node.js.main.js" />
       <item itemvalue="Node.js.opp.html" />
       <item itemvalue="Node.js.opp.js" />
@@ -199,10 +199,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.main.js" />
-        <item itemvalue="JavaScript Debug.opp.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Node.js.opp.js" />
         <item itemvalue="Node.js.opp.html" />
+        <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.again.js" />
       </list>
     </recent_temporary>
@@ -300,14 +300,12 @@
       <workItem from="1649753260382" duration="1315000" />
       <workItem from="1649952839502" duration="617000" />
       <workItem from="1650038081119" duration="2653000" />
-      <workItem from="1650053657684" duration="8493000" />
-    </task>
-    <task id="LOCAL-00003" summary="Add selection, insertion and comb sort functions.&#10;Reorganization of the directory and files.">
-      <created>1641908935812</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1641908935812</updated>
+      <workItem from="1650053657684" duration="10389000" />
+      <workItem from="1650132362299" duration="1034000" />
+      <workItem from="1650140837692" duration="1313000" />
+      <workItem from="1650151239708" duration="650000" />
+      <workItem from="1650154581154" duration="1151000" />
+      <workItem from="1650155821279" duration="5669000" />
     </task>
     <task id="LOCAL-00004" summary="no message">
       <created>1641945616452</created>
@@ -645,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650039761764</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Initial commit.&#10;Add the first features to the project.">
+      <created>1650118952937</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1650118952938</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -685,7 +690,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Add bucket sort." />
     <MESSAGE value="OK" />
     <MESSAGE value="Add functions for image zoom and rotation.&#10;Add feature scaling application with z-score normalisation." />
     <MESSAGE value="add .idea to .gitignore&#10;Delete .vscode" />
@@ -710,7 +714,8 @@
     <MESSAGE value="Partial solution submitted for https://open.kattis.com/problems/awkwardparty" />
     <MESSAGE value="nothing important" />
     <MESSAGE value="Json manipulation in JS." />
-    <option name="LAST_COMMIT_MESSAGE" value="Json manipulation in JS." />
+    <MESSAGE value="Initial commit.&#10;Add the first features to the project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit.&#10;Add the first features to the project." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -14,6 +14,24 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+/**
+ * Generate a random RGB color.
+ * @returns {String} - A color with rgb format.
+ */
+function randomColor() {
+    return 'rgb(' + random(0, 255) + ',' + random(0, 255) + ',' + random(0, 255) +')';
+}
+
+/**
+ * A constructor representing a ball.
+ * @param {Number} posX   - The position of the ball about axis X.
+ * @param {Number} posY   - The position of the ball bout axis Y.
+ * @param {Number} speedX - The speed of the ball about axis X.
+ * @param {Number} speedY - The speed of the ball about axis Y.
+ * @param {String} color  - The ball color (can be explicit, rgb or rgba).
+ * @param {Number} size   - The ball radius.
+ * @constructor
+ */
 function Ball(posX, posY, speedX, speedY, color, size) {
     this.posX = posX;
     this.posY = posY;
@@ -30,7 +48,7 @@ Ball.prototype.draw = function() {
     context.fill();
 };
 
-Ball.prototype.update = function() {
+Ball.prototype.updateBall = function() {
     if (this.posX + this.size >= width || this.posX - this.size <= 0) {
         this.speedX = -(this.speedX);
     }
@@ -42,3 +60,52 @@ Ball.prototype.update = function() {
     this.posX += this.speedX;
     this.posY += this.speedY;
 };
+
+Ball.prototype.collisionDetect = function() {
+    for (let i = 0; i < balls.length; i++) {
+        if (!(this === balls[i])) {
+            const dx = this.posX - balls[i].posX;
+            const dy = this.posY - balls[i].posY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance <= this.size + balls[i].size) {
+                balls[i].color = this.color = randomColor();
+            }
+        }
+    }
+};
+
+
+let balls = [];
+const ballsNumber = 15;
+const minSpeed = -7;
+const maxSpeed = 7;
+
+while (balls.length < ballsNumber) {
+    let size = random(10, 30);
+    let ball = new Ball(
+        random(size, width - size),  // To avoid drawing outside the canvas.
+        random(size, height - size), // Same.
+        random(minSpeed, maxSpeed), 
+        random(minSpeed, maxSpeed), 
+        randomColor(),
+        size
+    );
+
+    balls.push(ball);
+}
+
+function loop() {
+    context.fillStyle = 'rgba(0, 0, 0, 0.25)';
+    context.fillRect(0, 0, width, height);
+
+    for (let i = 0; i < balls.length; i++) {
+        balls[i].draw();
+        balls[i].updateBall();
+        balls[i].collisionDetect();
+    }
+
+    requestAnimationFrame(loop);
+}
+
+loop();
