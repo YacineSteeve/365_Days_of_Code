@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Initial commit.&#10;Add the first features to the project.">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Json manipulation in JS.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/machine_learning/classification_model.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/classification_model.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/machine_learning/titanic_with_pre-processing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/machine_learning/titanic_with_pre-processing.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +117,7 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "/home/yacine/WebstormProjects/YacineSteeve.github.io",
     "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "editor.preferences.appearance",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -131,6 +131,21 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="again.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN">
+      <method v="2" />
+    </configuration>
+    <configuration name="opp.html" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
+      <method v="2" />
+    </configuration>
+    <configuration name="opp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -151,21 +166,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="again.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
-      <method v="2" />
-    </configuration>
-    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN">
-      <method v="2" />
-    </configuration>
-    <configuration name="opp.html" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
-      <method v="2" />
-    </configuration>
-    <configuration name="opp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
       <method v="2" />
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -196,6 +196,7 @@
       <item itemvalue="Node.js.opp.html" />
       <item itemvalue="Node.js.opp.js" />
       <item itemvalue="Node.js.again.js" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
@@ -306,6 +307,7 @@
       <workItem from="1650151239708" duration="650000" />
       <workItem from="1650154581154" duration="1151000" />
       <workItem from="1650155821279" duration="5669000" />
+      <workItem from="1650272447839" duration="5861000" />
     </task>
     <task id="LOCAL-00004" summary="no message">
       <created>1641945616452</created>

@@ -1,5 +1,5 @@
 const canvas = document.querySelector('canvas');
-const context = canvas.getContext('2d');
+const ctx = canvas.getContext('2d');
 
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
@@ -23,29 +23,47 @@ function randomColor() {
 }
 
 /**
- * A constructor representing a ball.
- * @param {Number} posX   - The position of the ball about axis X.
- * @param {Number} posY   - The position of the ball bout axis Y.
- * @param {Number} speedX - The speed of the ball about axis X.
- * @param {Number} speedY - The speed of the ball about axis Y.
- * @param {String} color  - The ball color (can be explicit, rgb or rgba).
- * @param {Number} size   - The ball radius.
+ * Represent a shape on the canvas.
+ * @param {Number}  posX   - The position of the shape about axis X.
+ * @param {Number}  posY   - The position of the shape about axis Y.
+ * @param {Number}  speedX - The speed of the shape about axis X.
+ * @param {Number}  speedY - The speed of the shape about axis Y.
+ * @param {Boolean} exists - Whether the shape exists or not.
  * @constructor
  */
-function Ball(posX, posY, speedX, speedY, color, size) {
+function Shape(posX, posY, speedX, speedY, exists) {
     this.posX = posX;
     this.posY = posY;
     this.speedX = speedX;
     this.speedY = speedY;
+    this.exists = exists;
+}
+
+/**
+ * Representing a ball.
+ * @param {Number}  posX   - The position of the ball about axis X.
+ * @param {Number}  posY   - The position of the ball about axis Y.
+ * @param {Number}  speedX - The speed of the ball about axis X.
+ * @param {Number}  speedY - The speed of the ball about axis Y.
+ * @param {Boolean} exists - Whether the ball exists or not.
+ * @param {String}  color  - The ball color (can be explicit, rgb or rgba).
+ * @param {Number}  size   - The ball radius.
+ * @constructor
+ */
+function Ball(posX, posY, speedX, speedY, exists, color, size) {
+    Shape.call(this, posX, posY, speedX, speedY, exists);
     this.color = color;
     this.size = size;
 }
 
+Ball.prototype = Object.create(Shape.prototype);
+Ball.prototype.constructor = Ball;
+
 Ball.prototype.draw = function() {
-    context.beginPath();
-    context.fillStyle = this.color;
-    context.arc(this.posX, this.posY, this.size, 0, 2 * Math.PI);
-    context.fill();
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.arc(this.posX, this.posY, this.size, 0, 2 * Math.PI);
+    ctx.fill();
 };
 
 Ball.prototype.updateBall = function() {
@@ -75,19 +93,52 @@ Ball.prototype.collisionDetect = function() {
     }
 };
 
+/**
+ * Represent the visor that will be used to destroy the balls.
+ * @param {Number}  posX   - The position of the visor about axis X.
+ * @param {Number}  posY   - The position of the visor about axis Y.
+ * @constructor
+ */
+function Visor(posX, posY) {
+    Shape.call(this, posX, posY, 20, 20, true);
+    this.color = 'white';
+    this.size = 12;
+}
 
+Visor.prototype = Object.create(Shape.prototype);
+Visor.prototype.constructor = Visor;
+
+Visor.prototype.draw = function() {
+    ctx.beginPath();
+    ctx.arc(this.posX, this.posY, this.size, 0, 2* Math.PI);
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = this.color;
+    ctx.moveTo(this.posX, this.posY - 0.5 * this.size);
+    ctx.lineTo(this.posX, this.posY - 1.5 * this.size);
+    ctx.moveTo(this.posX, this.posY + 0.5 * this.size);
+    ctx.lineTo(this.posX, this.posY + 1.5 * this.size);
+    ctx.moveTo(this.posX - 0.5 * this.size, this.posY);
+    ctx.lineTo(this.posX - 1.5 * this.size, this.posY);
+    ctx.moveTo(this.posX + 0.5 * this.size, this.posY);
+    ctx.lineTo(this.posX + 1.5 * this.size, this.posY);
+    ctx.stroke();
+};
+
+
+let visor = new Visor(width/2, height/2);
 let balls = [];
 const ballsNumber = 15;
 const minSpeed = -7;
 const maxSpeed = 7;
 
 while (balls.length < ballsNumber) {
-    let size = random(10, 30);
+    let size = random(10, 20);
     let ball = new Ball(
         random(size, width - size),  // To avoid drawing outside the canvas.
         random(size, height - size), // Same.
         random(minSpeed, maxSpeed), 
-        random(minSpeed, maxSpeed), 
+        random(minSpeed, maxSpeed),
+        true,
         randomColor(),
         size
     );
@@ -96,15 +147,21 @@ while (balls.length < ballsNumber) {
 }
 
 function loop() {
-    context.fillStyle = 'rgba(0, 0, 0, 0.25)';
-    context.fillRect(0, 0, width, height);
+    let scoreText = "Balls remaining : " + balls.length.toString() + '/' + ballsNumber.toString();
+    
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+    ctx.fillRect(0, 0, width, height);
+    ctx.font = "20px Arial";
+    ctx.fillStyle = 'white';
+    ctx.fillText(scoreText, 50, 50);
 
     for (let i = 0; i < balls.length; i++) {
         balls[i].draw();
         balls[i].updateBall();
         balls[i].collisionDetect();
     }
-
+    
+    visor.draw();
     requestAnimationFrame(loop);
 }
 
