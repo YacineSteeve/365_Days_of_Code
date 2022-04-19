@@ -81,12 +81,12 @@ Ball.prototype.updateBall = function() {
 
 Ball.prototype.collisionDetect = function() {
     for (let i = 0; i < balls.length; i++) {
-        if (!(this === balls[i])) {
+        if (balls[i].exists && !(this === balls[i])) {
             const dx = this.posX - balls[i].posX;
             const dy = this.posY - balls[i].posY;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance <= this.size + balls[i].size) {
+            if (distance < this.size + balls[i].size) {
                 balls[i].color = this.color = randomColor();
             }
         }
@@ -102,7 +102,7 @@ Ball.prototype.collisionDetect = function() {
 function Visor(posX, posY) {
     Shape.call(this, posX, posY, 20, 20, true);
     this.color = 'white';
-    this.size = 12;
+    this.size = 10;
 }
 
 Visor.prototype = Object.create(Shape.prototype);
@@ -124,18 +124,32 @@ Visor.prototype.draw = function() {
     ctx.stroke();
 };
 
+Visor.prototype.collisionDetect = function() {
+    for (let i = 0; i < balls.length; i++) {
+        if (balls[i].exists) {
+            const dx = this.posX - balls[i].posX;
+            const dy = this.posY - balls[i].posY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < balls[i].size + 0.5 * this.size) {
+                balls[i].exists = false;
+            }
+        }
+    }
+};
+
 
 let visor = new Visor(width/2, height/2);
 let balls = [];
-const ballsNumber = 15;
+const initialBallsNumber = 15;
 const minSpeed = -7;
 const maxSpeed = 7;
 
-while (balls.length < ballsNumber) {
+while (balls.length < initialBallsNumber) {
     let size = random(10, 20);
     let ball = new Ball(
-        random(size, width - size),  // To avoid drawing outside the canvas.
-        random(size, height - size), // Same.
+        random(size, width - size),
+        random(size, height - size),
         random(minSpeed, maxSpeed), 
         random(minSpeed, maxSpeed),
         true,
@@ -146,23 +160,92 @@ while (balls.length < ballsNumber) {
     balls.push(ball);
 }
 
+/**
+ * @returns {Number} - The number of balls with exists property value at true.
+ */
+function countBalls() {
+    let count = 0;
+    for (let i = 0; i < balls.length; i++) {
+        if (balls[i].exists) {
+            count += 1;
+        }
+    }
+    return count;
+}
+
 function loop() {
-    let scoreText = "Balls remaining : " + balls.length.toString() + '/' + ballsNumber.toString();
+    let ballsNumber = countBalls();
+    let scoreText = 'Balls remaining : ' + ballsNumber.toString() + '/' + initialBallsNumber.toString();
     
     ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
     ctx.fillRect(0, 0, width, height);
-    ctx.font = "20px Arial";
+
+    ctx.font = '20px Arial';
     ctx.fillStyle = 'white';
     ctx.fillText(scoreText, 50, 50);
 
+    if (ballsNumber === 0) {
+        ctx.font = '100px Ubuntu';
+        ctx.fillStyle = 'green';
+        ctx.fillText('Victoire !!', width/2.75, height/2.5);
+    }
+
     for (let i = 0; i < balls.length; i++) {
-        balls[i].draw();
-        balls[i].updateBall();
-        balls[i].collisionDetect();
+        if (balls[i].exists) {
+            balls[i].draw();
+            balls[i].updateBall();
+            balls[i].collisionDetect();
+        }
     }
     
     visor.draw();
+    visor.collisionDetect();
+    
     requestAnimationFrame(loop);
 }
+
+window.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'ArrowUp':
+        case 'z':
+        case 'Z':
+        {
+            if (visor.posY - visor.speedY >= 1.5 * visor.size) {
+                visor.posY -= visor.speedY;
+            }
+            break;
+        }
+        case 'ArrowDown':
+        case 's':
+        case 'S':
+        {
+            if (visor.posY + visor.speedY <= height - 1.5 * visor.size) {
+                visor.posY += visor.speedY;
+            }
+            break;
+        }
+        case 'ArrowLeft':
+        case 'q':
+        case 'Q':
+        {
+            if (visor.posX - visor.speedX >= 1.5 * visor.size) {
+                visor.posX -= visor.speedX;
+            }
+            break;
+        }
+        case 'ArrowRight':
+        case 'd':
+        case 'D':
+        {
+            if (visor.posX + visor.speedX <= width - 1.5 * visor.size) {
+                visor.posX += visor.speedX;
+            }
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+})
 
 loop();
