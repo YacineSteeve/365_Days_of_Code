@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add a balls counter and a visor.">
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add controls settings and victory announcements.&#10;Last commit.">
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/async.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/async.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +26,9 @@
         <option value="Python Unit Test" />
         <option value="Python Script" />
         <option value="Jupyter Notebook" />
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -108,16 +109,18 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/yacine/WebstormProjects/YacineSteeve.github.io&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.appearance&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/yacine/WebstormProjects/YacineSteeve.github.io",
+    "list.type.of.created.stylesheet": "CSS",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Yacine_B" />
@@ -127,11 +130,11 @@
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="Node.js.async.js">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="again.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/again.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
+    <configuration name="async.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/async.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
       <method v="2" />
     </configuration>
     <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN">
@@ -189,19 +192,19 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Node.js.async.js" />
       <item itemvalue="Node.js.main.js" />
       <item itemvalue="Node.js.opp.html" />
       <item itemvalue="Node.js.opp.js" />
-      <item itemvalue="Node.js.again.js" />
       <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.async.js" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Node.js.opp.js" />
         <item itemvalue="Node.js.opp.html" />
         <item itemvalue="Node.js.main.js" />
-        <item itemvalue="Node.js.again.js" />
       </list>
     </recent_temporary>
   </component>
@@ -307,13 +310,8 @@
       <workItem from="1650272447839" duration="6730000" />
       <workItem from="1650312687908" duration="3617000" />
       <workItem from="1650365956071" duration="4362000" />
-    </task>
-    <task id="LOCAL-00005" summary="no message">
-      <created>1641945919790</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1641945919790</updated>
+      <workItem from="1650391343131" duration="389000" />
+      <workItem from="1650489757264" duration="1922000" />
     </task>
     <task id="LOCAL-00006" summary="no message">
       <created>1641985882886</created>
@@ -651,7 +649,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650280623295</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Add controls settings and victory announcements.&#10;Last commit.">
+      <created>1650391703978</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1650391703979</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -691,7 +696,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Add functions for image zoom and rotation.&#10;Add feature scaling application with z-score normalisation." />
     <MESSAGE value="add .idea to .gitignore&#10;Delete .vscode" />
     <MESSAGE value="Add .idea to .gitignore&#10;Delete .vscode" />
     <MESSAGE value="Improve the standardisation algorithm using axis instead of a for loop." />
@@ -716,7 +720,8 @@
     <MESSAGE value="Json manipulation in JS." />
     <MESSAGE value="Initial commit.&#10;Add the first features to the project." />
     <MESSAGE value="Add a balls counter and a visor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a balls counter and a visor." />
+    <MESSAGE value="Add controls settings and victory announcements.&#10;Last commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add controls settings and victory announcements.&#10;Last commit." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
