@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Add controls settings and victory announcements.&#10;Last commit.">
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/async.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/async.js" afterDir="false" />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Try asynchronous JS running.">
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bases.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +26,8 @@
         <option value="Python Script" />
         <option value="Jupyter Notebook" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -115,9 +114,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "16.14.2",
+    "javascript.nodejs.core.library.typings.version": "",
     "last_opened_file_path": "/home/yacine/WebstormProjects/YacineSteeve.github.io",
     "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.selected.package.stylelint": "",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -130,14 +134,14 @@
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.async.js">
+  <component name="RunManager" selected="Node.js.bases.js">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="async.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/async.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
       <method v="2" />
     </configuration>
-    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN">
+    <configuration name="bases.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/bases.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
       <method v="2" />
     </configuration>
     <configuration name="opp.html" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
@@ -192,19 +196,19 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Node.js.bases.js" />
       <item itemvalue="Node.js.async.js" />
-      <item itemvalue="Node.js.main.js" />
       <item itemvalue="Node.js.opp.html" />
       <item itemvalue="Node.js.opp.js" />
       <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.bases.js" />
         <item itemvalue="Node.js.async.js" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Node.js.opp.js" />
         <item itemvalue="Node.js.opp.html" />
-        <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
   </component>
@@ -311,14 +315,8 @@
       <workItem from="1650312687908" duration="3617000" />
       <workItem from="1650365956071" duration="4362000" />
       <workItem from="1650391343131" duration="389000" />
-      <workItem from="1650489757264" duration="1922000" />
-    </task>
-    <task id="LOCAL-00006" summary="no message">
-      <created>1641985882886</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1641985882886</updated>
+      <workItem from="1650489757264" duration="3979000" />
+      <workItem from="1650553945698" duration="2088000" />
     </task>
     <task id="LOCAL-00007" summary="no message">
       <created>1641986707784</created>
@@ -656,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650391703979</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Try asynchronous JS running.">
+      <created>1650491819370</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1650491819371</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -696,7 +701,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="add .idea to .gitignore&#10;Delete .vscode" />
     <MESSAGE value="Add .idea to .gitignore&#10;Delete .vscode" />
     <MESSAGE value="Improve the standardisation algorithm using axis instead of a for loop." />
     <MESSAGE value="Improve and make more clear the visualization of data conservation." />
@@ -721,7 +725,8 @@
     <MESSAGE value="Initial commit.&#10;Add the first features to the project." />
     <MESSAGE value="Add a balls counter and a visor." />
     <MESSAGE value="Add controls settings and victory announcements.&#10;Last commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add controls settings and victory announcements.&#10;Last commit." />
+    <MESSAGE value="Try asynchronous JS running." />
+    <option name="LAST_COMMIT_MESSAGE" value="Try asynchronous JS running." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
