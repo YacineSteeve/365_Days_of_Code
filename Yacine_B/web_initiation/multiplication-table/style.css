@@ -1,0 +1,51 @@
+* {
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lemonchiffon;
+}
+
+h1 {
+    font-family: Arial, cursive;
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.selectors {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+input {
+    width: 100px;
+    height: 20px;
+    padding: 2px;
+}
+
+button {
+    width: 75px;
+    height: 28px;
+    text-align: center;
+}
+
+hr {
+    width: 50vw;
+    background-color: black;
+    margin-top: 8vh;
+}
+
+ul {
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: fit-content;
+    margin-top: 16vh;
+    text-align: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Try asynchronous JS running.">
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bases.js" afterDir="false" />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="An exercice for input/output with NodeJS.">
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/multiplication-table/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/multiplication-table/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/multiplication-table/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +27,9 @@
         <option value="Python Unit Test" />
         <option value="Python Script" />
         <option value="Jupyter Notebook" />
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -115,13 +117,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.14.2",
-    "javascript.nodejs.core.library.typings.version": "",
+    "javascript.nodejs.core.library.typings.version": "16.11.27",
     "last_opened_file_path": "/home/yacine/WebstormProjects/YacineSteeve.github.io",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.stylelint": "true",
     "node.js.selected.package.stylelint": "",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -316,14 +318,8 @@
       <workItem from="1650365956071" duration="4362000" />
       <workItem from="1650391343131" duration="389000" />
       <workItem from="1650489757264" duration="3979000" />
-      <workItem from="1650553945698" duration="2088000" />
-    </task>
-    <task id="LOCAL-00007" summary="no message">
-      <created>1641986707784</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1641986707784</updated>
+      <workItem from="1650553945698" duration="4990000" />
+      <workItem from="1650650574602" duration="7321000" />
     </task>
     <task id="LOCAL-00008" summary="Add shaker sort.">
       <created>1641991382540</created>
@@ -661,7 +657,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650491819371</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="An exercice for input/output with NodeJS.">
+      <created>1650568231701</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1650568231709</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -701,7 +704,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Add .idea to .gitignore&#10;Delete .vscode" />
     <MESSAGE value="Improve the standardisation algorithm using axis instead of a for loop." />
     <MESSAGE value="Improve and make more clear the visualization of data conservation." />
     <MESSAGE value="Add image analysis with matplotlib and ndimage." />
@@ -726,7 +728,8 @@
     <MESSAGE value="Add a balls counter and a visor." />
     <MESSAGE value="Add controls settings and victory announcements.&#10;Last commit." />
     <MESSAGE value="Try asynchronous JS running." />
-    <option name="LAST_COMMIT_MESSAGE" value="Try asynchronous JS running." />
+    <MESSAGE value="An exercice for input/output with NodeJS." />
+    <option name="LAST_COMMIT_MESSAGE" value="An exercice for input/output with NodeJS." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
