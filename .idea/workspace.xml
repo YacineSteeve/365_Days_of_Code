@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="An exercice for input/output with NodeJS.">
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/multiplication-table/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/multiplication-table/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/multiplication-table/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="A simple multiplication table." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,23 +105,23 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "16.14.2",
-    "javascript.nodejs.core.library.typings.version": "16.11.27",
-    "last_opened_file_path": "/home/yacine/WebstormProjects/YacineSteeve.github.io",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.selected.package.stylelint": "",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.14.2&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.11.27&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yacine/WebstormProjects/YacineSteeve.github.io&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Yacine_B" />
@@ -319,14 +314,7 @@
       <workItem from="1650391343131" duration="389000" />
       <workItem from="1650489757264" duration="3979000" />
       <workItem from="1650553945698" duration="4990000" />
-      <workItem from="1650650574602" duration="7321000" />
-    </task>
-    <task id="LOCAL-00008" summary="Add shaker sort.">
-      <created>1641991382540</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1641991382540</updated>
+      <workItem from="1650650574602" duration="8166000" />
     </task>
     <task id="LOCAL-00009" summary="Add gnome sort and quicksort.&#10;Optimisation of the existing functions.">
       <created>1642023143587</created>
@@ -664,7 +652,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650568231709</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="A simple multiplication table.">
+      <created>1650663973866</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1650663973867</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -704,7 +699,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Improve the standardisation algorithm using axis instead of a for loop." />
     <MESSAGE value="Improve and make more clear the visualization of data conservation." />
     <MESSAGE value="Add image analysis with matplotlib and ndimage." />
     <MESSAGE value="Refactor the test files." />
@@ -729,7 +723,8 @@
     <MESSAGE value="Add controls settings and victory announcements.&#10;Last commit." />
     <MESSAGE value="Try asynchronous JS running." />
     <MESSAGE value="An exercice for input/output with NodeJS." />
-    <option name="LAST_COMMIT_MESSAGE" value="An exercice for input/output with NodeJS." />
+    <MESSAGE value="A simple multiplication table." />
+    <option name="LAST_COMMIT_MESSAGE" value="A simple multiplication table." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
