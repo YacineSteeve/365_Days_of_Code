@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="A simple multiplication table." />
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Change the page title.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/current-time/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/current-time/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/current-time/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/current-time/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/current-time/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/current-time/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -201,11 +206,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.opp.js" />
+        <item itemvalue="Node.js.opp.html" />
         <item itemvalue="Node.js.bases.js" />
         <item itemvalue="Node.js.async.js" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="Node.js.opp.js" />
-        <item itemvalue="Node.js.opp.html" />
       </list>
     </recent_temporary>
   </component>
@@ -315,13 +320,7 @@
       <workItem from="1650489757264" duration="3979000" />
       <workItem from="1650553945698" duration="4990000" />
       <workItem from="1650650574602" duration="8166000" />
-    </task>
-    <task id="LOCAL-00009" summary="Add gnome sort and quicksort.&#10;Optimisation of the existing functions.">
-      <created>1642023143587</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1642023143587</updated>
+      <workItem from="1650709963900" duration="7630000" />
     </task>
     <task id="LOCAL-00010" summary="Add runtime plotting system.">
       <created>1642035734142</created>
@@ -659,7 +658,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650663973867</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Change the page title.">
+      <created>1650710141400</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1650710141401</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -699,7 +705,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Improve and make more clear the visualization of data conservation." />
     <MESSAGE value="Add image analysis with matplotlib and ndimage." />
     <MESSAGE value="Refactor the test files." />
     <MESSAGE value="Add a pandas TimeSeries training exercise based on bitcoin and dogecoin prices data." />
@@ -724,7 +729,8 @@
     <MESSAGE value="Try asynchronous JS running." />
     <MESSAGE value="An exercice for input/output with NodeJS." />
     <MESSAGE value="A simple multiplication table." />
-    <option name="LAST_COMMIT_MESSAGE" value="A simple multiplication table." />
+    <MESSAGE value="Change the page title." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the page title." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
