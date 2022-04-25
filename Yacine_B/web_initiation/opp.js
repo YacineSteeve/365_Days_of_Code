@@ -49,8 +49,24 @@ class Person {
     }
 }
 
-const person1 = new Person('Tammi', 'Smith', 17, 'female', ['music', 'skiing', 'kickboxing'])
+class Teacher extends Person {
+    constructor(first, last, age, gender, interests, subject) {
+        super(first, last, age, gender, interests)
+        this.subject = subject
+    }
 
+    greeting = function () {
+        (this.gender === 'male' || this.gender === 'Male' || this.gender === 'm' || this.gender === 'M')
+            ? console.log(`Hello! I'm Mr ${this.name.first} ${this.name.last} and I'm the ${this.subject} teacher.`)
+            : console.log(`Hello! I'm Mrs ${this.name.first} ${this.name.last} and I'm the ${this.subject} teacher.`)
+    }
+}
+
+const person1 = new Person('Tammi', 'Smith', 17, 'female', ['music', 'skiing', 'kickboxing'])
+const teacher1 = new Teacher('Duncan', 'McLeon', 46, 'm', ['golf', 'bike'], 'Physics')
+
+console.log(Person)
+console.log()
 console.log(person1)
 console.log()
 person1.bio()
@@ -58,3 +74,14 @@ console.log()
 person1.greeting()
 console.log()
 person1.farewell()
+
+console.log()
+console.log(Teacher)
+console.log()
+console.log(teacher1)
+console.log()
+teacher1.bio()
+console.log()
+teacher1.greeting()
+console.log()
+teacher1.farewell()

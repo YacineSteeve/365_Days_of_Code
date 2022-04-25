@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="A clock and date displayer.">
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Apply standardjs rules to all the JS files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/async.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/async.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bases.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bases.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/bouncing_balls-MDN/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/clos_marsault-fromScratch/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/clos_marsault-fromScratch/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/current-time/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/current-time/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/image_gallery-MDN/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/image_gallery-MDN/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/multiplication-table/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/multiplication-table/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/silly_story_generator-MDN/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/silly_story_generator-MDN/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +121,7 @@
     "node.js.detected.package.stylelint": "true",
     "node.js.selected.package.stylelint": "",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CodeWithMe",
+    "settings.editor.selected.configurable": "fileTemplates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -327,14 +319,8 @@
       <workItem from="1650553945698" duration="4990000" />
       <workItem from="1650650574602" duration="8166000" />
       <workItem from="1650709963900" duration="8492000" />
-      <workItem from="1650794748347" duration="2294000" />
-    </task>
-    <task id="LOCAL-00011" summary="Add counting sort and update data.">
-      <created>1642164355766</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1642164355766</updated>
+      <workItem from="1650794748347" duration="2747000" />
+      <workItem from="1650883009705" duration="1348000" />
     </task>
     <task id="LOCAL-00012" summary="Add counting sort and update data.">
       <created>1642164470853</created>
@@ -672,7 +658,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650735889818</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Apply standardjs rules to all the JS files.">
+      <created>1650813734411</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1650813734412</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -712,7 +705,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Refactor the test files." />
     <MESSAGE value="Add a pandas TimeSeries training exercise based on bitcoin and dogecoin prices data." />
     <MESSAGE value="Add a file for data-visualization with Seaborn." />
     <MESSAGE value="Add a classification model for heart disease." />
@@ -737,7 +729,8 @@
     <MESSAGE value="A simple multiplication table." />
     <MESSAGE value="Change the page title." />
     <MESSAGE value="A clock and date displayer." />
-    <option name="LAST_COMMIT_MESSAGE" value="A clock and date displayer." />
+    <MESSAGE value="Apply standardjs rules to all the JS files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Apply standardjs rules to all the JS files." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
