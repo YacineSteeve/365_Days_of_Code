@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Apply standardjs rules to all the JS files.">
+    <list default="true" id="738ddd84-0aed-473d-9140-220e967a25b7" name="Changes" comment="Train on inheritance concepts.">
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/animation-MDN/alice.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/animation-MDN/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/animation-MDN/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/animation-MDN/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" beforeDir="false" afterPath="$PROJECT_DIR$/Yacine_B/web_initiation/opp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,23 +111,23 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortByType" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "16.14.2",
-    "javascript.nodejs.core.library.typings.version": "16.11.27",
-    "last_opened_file_path": "/home/yacine/WebstormProjects/YacineSteeve.github.io",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.selected.package.stylelint": "",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "fileTemplates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.14.2&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.11.27&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yacine/WebstormProjects/YacineSteeve.github.io&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Yacine_B" />
@@ -134,14 +137,14 @@
       <recent name="$PROJECT_DIR$/Yacine_B/data_structures" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.opp.js">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/365_Days_of_Code/Yacine_B/web_initiation/bouncing_balls-MDN/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Node.js.main.js">
     <configuration name="async.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/async.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
       <method v="2" />
     </configuration>
     <configuration name="bases.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/bases.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/animation-MDN/main.js" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation/animation-MDN">
       <method v="2" />
     </configuration>
     <configuration name="opp.html" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Yacine_B/web_initiation/opp.html" working-dir="$PROJECT_DIR$/Yacine_B/web_initiation">
@@ -195,7 +198,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Node.js.main.js" />
       <item itemvalue="Node.js.bases.js" />
       <item itemvalue="Node.js.async.js" />
       <item itemvalue="Node.js.opp.html" />
@@ -204,11 +207,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.opp.js" />
         <item itemvalue="Node.js.opp.html" />
         <item itemvalue="Node.js.bases.js" />
         <item itemvalue="Node.js.async.js" />
-        <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -320,14 +323,9 @@
       <workItem from="1650650574602" duration="8166000" />
       <workItem from="1650709963900" duration="8492000" />
       <workItem from="1650794748347" duration="2747000" />
-      <workItem from="1650883009705" duration="1348000" />
-    </task>
-    <task id="LOCAL-00012" summary="Add counting sort and update data.">
-      <created>1642164470853</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1642164470853</updated>
+      <workItem from="1650883009705" duration="1514000" />
+      <workItem from="1650884965022" duration="1610000" />
+      <workItem from="1650976858566" duration="2879000" />
     </task>
     <task id="LOCAL-00013" summary="Add counting sort and update data.">
       <created>1642164747372</created>
@@ -665,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650813734412</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Train on inheritance concepts.">
+      <created>1650884531251</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1650884531252</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -705,7 +710,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
-    <MESSAGE value="Add a pandas TimeSeries training exercise based on bitcoin and dogecoin prices data." />
     <MESSAGE value="Add a file for data-visualization with Seaborn." />
     <MESSAGE value="Add a classification model for heart disease." />
     <MESSAGE value="Improve the learning score by replacing the classification model by a KNN one.&#10;." />
@@ -730,7 +734,8 @@
     <MESSAGE value="Change the page title." />
     <MESSAGE value="A clock and date displayer." />
     <MESSAGE value="Apply standardjs rules to all the JS files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Apply standardjs rules to all the JS files." />
+    <MESSAGE value="Train on inheritance concepts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Train on inheritance concepts." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
