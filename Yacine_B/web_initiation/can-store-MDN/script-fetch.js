@@ -1,23 +1,21 @@
-const displaySection = document.querySelector('main');
+const main = document.querySelector('main');
+const filterButton = document.querySelector('button');
+const categorySelector = document.querySelector('select');
+let products;
 
-/**
- * Fill <main> with the products.
- * @param products {Object}
- */
-function fillMain(products) {
-    products.forEach((product) => {
-        const url = `images/${product.image}`;
 
-        fetch(url)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(`${response.status}`);
-                }
-                return response.blob()
-            })
-            .then((blob) => showProduct(product, blob))
-            .catch(error => console.error(`Image fetch failed! ${error}`));
-    })
+function fetchBlobAndShow(product) {
+    const url = `images/${product.image}`;
+
+    fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`${response.status}`);
+            }
+            return response.blob()
+        })
+        .then((blob) => showProduct(product, blob))
+        .catch(error => console.error(`Image fetch failed! ${error}`));
 }
 
 /**
@@ -46,7 +44,7 @@ function showProduct(product, productBlob) {
 
     productSection.setAttribute('class', product.type);
 
-    displaySection.appendChild(productSection);
+    main.appendChild(productSection);
 }
 
 fetch('products.json')
@@ -56,5 +54,31 @@ fetch('products.json')
         }
         return response.json()
     })
-    .then(json => fillMain(json))
+    .then(json => {
+        products = json;
+        products.forEach((product) => { fetchBlobAndShow(product) });
+    })
     .catch(error => console.error(`Fetch failed! ${error}`));
+
+
+filterButton.addEventListener('click', () => {
+    const currentChildren = document.querySelectorAll('main section');
+    
+    if (categorySelector.value !== 'All') {
+        for (const child of currentChildren) {
+            main.removeChild(child);
+        }
+        
+        for (const product of products) {
+            if (product.type === categorySelector.value.toLowerCase()) {
+                fetchBlobAndShow(product);
+            }
+        }
+    } else if (currentChildren.length !== products.length) {
+        for (const child of currentChildren) {
+            main.removeChild(child);
+        }
+        
+        products.forEach((product) => { fetchBlobAndShow(product) });
+    }
+})
