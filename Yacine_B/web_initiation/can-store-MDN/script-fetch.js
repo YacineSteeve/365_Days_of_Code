@@ -1,6 +1,7 @@
 const main = document.querySelector('main');
 const filterButton = document.querySelector('button');
 const categorySelector = document.querySelector('select');
+const input = document.querySelector('input');
 let products;
 
 
@@ -47,6 +48,35 @@ function showProduct(product, productBlob) {
     main.appendChild(productSection);
 }
 
+function checkMatching(product, condition) {
+    if (condition) {
+        fetchBlobAndShow(product);
+    }
+}
+
+function filterProducts() {
+
+    while (main.firstChild) {
+        main.removeChild(main.firstChild);
+    }
+
+    products.forEach((product) => {
+        const productNameAndType = product.name + ' ' + product.type;
+
+        if (categorySelector.value === 'All' && input.value === '') {
+            fetchBlobAndShow(product)
+        } else if (categorySelector.value !== 'All' && input.value !== '') {
+            checkMatching(product, product.type === categorySelector.value.toLowerCase()
+                && productNameAndType.includes(input.value.toLowerCase()));
+        } else if (categorySelector.value === 'All' && input.value !== '') {
+            checkMatching(product, productNameAndType.includes(input.value.toLowerCase()));
+        } else if (categorySelector.value !== 'All' && input.value === '') {
+            checkMatching(product, product.type === categorySelector.value.toLowerCase());
+        }
+    })
+}
+
+
 fetch('products.json')
     .then((response) => {
         if (!response.ok) {
@@ -56,29 +86,17 @@ fetch('products.json')
     })
     .then(json => {
         products = json;
-        products.forEach((product) => { fetchBlobAndShow(product) });
+        products.forEach((product) => {
+            fetchBlobAndShow(product)
+        });
     })
     .catch(error => console.error(`Fetch failed! ${error}`));
 
+filterButton.addEventListener('click', filterProducts);
 
-filterButton.addEventListener('click', () => {
-    const currentChildren = document.querySelectorAll('main section');
-    
-    if (categorySelector.value !== 'All') {
-        for (const child of currentChildren) {
-            main.removeChild(child);
-        }
-        
-        for (const product of products) {
-            if (product.type === categorySelector.value.toLowerCase()) {
-                fetchBlobAndShow(product);
-            }
-        }
-    } else if (currentChildren.length !== products.length) {
-        for (const child of currentChildren) {
-            main.removeChild(child);
-        }
-        
-        products.forEach((product) => { fetchBlobAndShow(product) });
+input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        filterProducts();
     }
 })
