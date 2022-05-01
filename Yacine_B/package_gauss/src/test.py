@@ -21,6 +21,6 @@ if __name__ == "__main__":
 
     print("\nTest matrix:\n")
     display_matrix(mt, n)
-    mt = triangularize_matrix(mt, n)
+    mt = triangulate_matrix(mt, n)
     compute_solutions(mt, n)
     print()
