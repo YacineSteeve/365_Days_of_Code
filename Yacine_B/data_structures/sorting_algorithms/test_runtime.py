@@ -27,7 +27,7 @@ if __name__ == "__main__":
     
     print("\nBest algorithm(s) for your array in average:\n")
     
-    array = test_arrays[1] # Replace test_array[1] by the array to test.
+    array = test_arrays[1]  # Replace test_array[1] by the array to test.
     
     optims = best_sorting_algo(array)
     

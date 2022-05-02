@@ -1,4 +1,6 @@
-from collections import deque
+"""
+    The sorting algorithms functions.
+"""
 
 
 def bubble_sort(arr):
@@ -125,12 +127,12 @@ def counting_sort(arr):
     """
     See demo: https://www.hackerearth.com/practice/algorithms/sorting/counting-sort/tutorial/
     """
-    max = arr[0]
+    max_value = arr[0]
     for i in range(len(arr)):
-        if arr[i] > max:
-            max = arr[i]
+        if arr[i] > max_value:
+            max_value = arr[i]
 
-    frequencies = {n: 0 for n in range(1, max+1)}
+    frequencies = {n: 0 for n in range(1, max_value+1)}
 
     for i in range(len(arr)):
         frequencies[arr[i]] += 1
