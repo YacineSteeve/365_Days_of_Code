@@ -14,7 +14,7 @@ class Poly:
         Coefficients order should be (an, -->, ao).
         Zero terms should be specified when they are not the endpoints of the polynomial.
     """
-    
+
     def __init__(self, *coefs):
         if not coefs:
             raise IndexError("No coefficient found!")
@@ -25,7 +25,7 @@ class Poly:
 
         if not all(map(lambda x: type(x) in [int, float, complex], self.__coefs)):
             raise TypeError("Polynomial ill instantiated! The coefficients should be integer, float or complex.")
-        
+
         self.deg = len(self.__coefs) - 1
         self.const = self.__coefs[0]
 
@@ -33,17 +33,17 @@ class Poly:
         return self.deg == 0
 
     def is_null(self):
-        return all(map(lambda a: a==0, self.get_coefs()))
+        return all(map(lambda a: a == 0, self.get_coefs()))
 
     def get_coefs(self):
         return list(reversed(self.__coefs))
 
     def evaluate(self, x):
         if type(x) not in [int, float, complex]:
-           raise TypeError("x must be integer, float or complex!")
-        
+            raise TypeError("x must be integer, float or complex!")
+
         terms = [a * (x ** i) for i, a in enumerate(self.__coefs)]
-        
+
         return sum(terms)
 
     def derivative(self, order=None):
@@ -54,7 +54,7 @@ class Poly:
                 raise TypeError("The order of derivation must be integer.")
             elif order < 1:
                 raise ValueError("The order of derivation must be greater than 1.")
-        
+
         new_coefs = self.__coefs
         for _ in range(order):
             new_coefs = [a * i for i, a in enumerate(new_coefs)][1:]
@@ -67,18 +67,18 @@ class Poly:
             x, y = 0, 0
         else:
             if type(condition) is not tuple or len(condition) != 2:
-               raise ValueError("condition must be a couple of two values, (x, p(x))!")
-            
+                raise ValueError("condition must be a couple of two values, (x, p(x))!")
+
             x, y = condition
 
             if type(x) not in [int, float] or type(y) not in [int, float]:
                 raise TypeError("condition values must be integers or float!")
-            
+
         if rounded is None:
             rounded = True
-        
+
         prim_coefs = [1.0]
-        
+
         for i, a in enumerate(self.__coefs):
             if rounded:
                 if type(a) is complex:
@@ -90,7 +90,7 @@ class Poly:
                     a = complex(a.real / (i + 1), a.imag / (i + 1))
                 else:
                     a = a / (i + 1)
-                
+
             prim_coefs.append(a)
 
         c = y - (Poly(*reversed(prim_coefs)).evaluate(x) - 1.0)
@@ -113,11 +113,11 @@ class Poly:
         if type(x) not in [int, float, complex]:
             raise TypeError("x must be integer, float or complex!")
         return self.evaluate(x) == 0
-    
+
     def _check_other(self, other):
         if type(other) is not Poly:
             raise TypeError("other must be a Poly() object!")
-        
+
     def __str__(self):
         poly = ""
         if self.is_null():
@@ -140,7 +140,7 @@ class Poly:
 
     def __getitem__(self, i):
         return self.__coefs[i]
-    
+
     def __eq__(self, other):
         self._check_other(other)
         return self.__coefs == other.__coefs
@@ -179,9 +179,9 @@ class Poly:
             raise TypeError("The power must be integer!")
         elif n < 0:
             raise ValueError("Negative power undefined for polynomial!")
-        
+
         res = self
         for _ in range(1, n):
             res *= self
-            
+
         return res

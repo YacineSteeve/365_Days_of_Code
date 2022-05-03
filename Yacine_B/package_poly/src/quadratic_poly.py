@@ -1,4 +1,4 @@
-from src.poly import Poly, MyExceptions
+from poly import Poly, MyExceptions
 from math import sqrt
 
 
@@ -12,8 +12,7 @@ class QuadraticPoly(Poly):
     Args:
         Poly (class): superclass for any degree polynomial.
     """
-    
-    
+
     def __init__(self, *coefs):
         if type(coefs[0]) is list:
             super().__init__(*coefs[0])
@@ -26,12 +25,12 @@ class QuadraticPoly(Poly):
         self.a, self.b, self.c = self.get_coefs()
 
     def get_determinant(self):
-        return self.b**2 - 4 * self.a * self.c
+        return self.b ** 2 - 4 * self.a * self.c
 
     def get_real_roots(self, rounded=None):
         if rounded is not None and type(rounded) is not int:
             raise TypeError("round value must be integer!")
-        
+
         delta = self.get_determinant()
         if delta >= 0:
             s1 = (- self.b + sqrt(delta)) / (2 * self.a)
@@ -46,7 +45,7 @@ class QuadraticPoly(Poly):
     def get_complex_roots(self, rounded=None):
         if rounded is not None and type(rounded) is not int:
             raise TypeError("round value must be integer!")
-        
+
         delta = self.get_determinant()
         if delta < 0:
             real_part = - self.b / (2 * self.a)
@@ -75,4 +74,3 @@ class QuadraticPoly(Poly):
 
     def factorised(self):
         return '*'.join([f"({fact})" for fact in self.factors()])
-
