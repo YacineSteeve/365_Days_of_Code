@@ -1,27 +1,8 @@
-game = ["ball", "empty", "empty"]
+n = int(input())
 
+if n % 2:
+    print("still running")
+else:
+    press = [int(input()) for _ in range(n)]
 
-def move_a(cups):
-    cups[0], cups[1] = cups[1], cups[0]
-
-
-def move_b(cups):
-    cups[1], cups[2] = cups[2], cups[1]
-
-
-def move_c(cups):
-    cups[0], cups[2] = cups[2], cups[0]
-
-
-moves = {
-    "A": move_a,
-    "B": move_b,
-    "C": move_c
-}
-
-for move in input():
-    moves[move](game)
-
-for i, cup in enumerate(game):
-    if cup == "ball":
-        print(i+1)
+    print(sum(press[i + 1] - press[i] for i in range(0, n, 2)))
