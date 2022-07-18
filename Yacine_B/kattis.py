@@ -1,9 +1,5 @@
-speeds = []
-photos = [tuple(map(int, input().split())) for _ in range(int(input()))]
+n, p = input().split()
 
-for i in range(1, len(photos)):
-    time = photos[i][0] - photos[i-1][0]
-    distance = photos[i][1] - photos[i - 1][1]
-    speeds.append(distance // time)
+desc = [input() for _ in range(n)]
 
-print(max(speeds))
+print(p)
