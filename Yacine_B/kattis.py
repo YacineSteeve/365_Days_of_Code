@@ -1,10 +1,3 @@
-x, y = int(input()), int(input())
+ps = [input() for _ in range(int(input()))]
 
-if x > 0 and y > 0:
-    print(1)
-elif x > 0 and y < 0:
-    print(4)
-elif x < 0 and y > 0:
-    print(2)
-elif x < 0 and y < 0:
-    print(3)
+print(sum(int(p[:-1]) ** int(p[-1]) for p in ps))
