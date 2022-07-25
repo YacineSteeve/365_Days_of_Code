@@ -1,9 +1,3 @@
-for _ in range(int(input())):
-    r, e, c = map(int, input().split())
+ls = [int(input()) for _ in range(int(input()))]
 
-    if e - c > r:
-        print('advertise')
-    elif e - c < r:
-        print('do not advertise')
-    elif e - c == r:
-        print('does not matter')
+print(sum(ls) - len(ls) + 1)
