@@ -1,3 +1,2 @@
-ls = [int(input()) for _ in range(int(input()))]
-
-print(sum(ls) - len(ls) + 1)
+es = "e" * (2 * list(input()).count('e'))
+print("h" + es + "y")
