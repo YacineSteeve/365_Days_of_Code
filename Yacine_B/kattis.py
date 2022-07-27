@@ -1,2 +1,1 @@
-es = "e" * (2 * list(input()).count('e'))
-print("h" + es + "y")
+print(sum(map(int, input().split())))
