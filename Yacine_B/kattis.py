@@ -1,14 +1,9 @@
-n, t = map(int, input().split())
-potions = []
+c = float(input())
 
-ok = True
+cost = 0
 
-for i in range(n):
-    potions = list(map(lambda x: x - t, potions))
-    potions.append(int(input()))
+for _ in range(int(input())):
+    l, w = map(float, input().split())
+    cost += l * w * c
 
-    if i == n - 1 and 0 in potions:
-        ok = False
-        break
-
-print("YES") if ok else print("NO")
+print(f'{cost:.8f}')
