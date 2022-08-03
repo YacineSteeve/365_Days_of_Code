@@ -1,2 +1,3 @@
-left, right = input().split('()')
-print("correct") if len(left) == len(right) else print("fix")
+for _ in range(int(input())):
+    k, *strips = map(int, input().split())
+    print(sum(strips) - k + 1)
