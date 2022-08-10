@@ -1,6 +1,5 @@
-s = input().split()
+from math import sin, radians, ceil
 
-if len(s) == len(set(s)):
-    print("yes")
-else:
-    print("no")
+h, v = map(int, input().split())
+
+print(ceil(h / sin(radians(v))))
