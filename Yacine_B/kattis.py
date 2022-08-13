@@ -1,3 +1,8 @@
-for _ in range(int(input())):
-    k, n = map(int, input().split())
-    print(k, sum(1 + i for i in range(1, n + 1)))
+import re
+
+smiles = [r":\)", r";\)", r":-\)", r";-\)"]
+string = input()
+
+indices = sorted([match.start(0)for smile in smiles for match in re.finditer(smile, string)])
+
+print(*indices, sep='\n')
