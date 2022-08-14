@@ -1,8 +1,15 @@
-import re
+n = int(input())
 
-smiles = [r":\)", r";\)", r":-\)", r";-\)"]
-string = input()
+c, layers = 1, 0
 
-indices = sorted([match.start(0)for smile in smiles for match in re.finditer(smile, string)])
+while True:
+    if c % 2:
+        rem = n - c**2
+        if rem >= 0:
+            layers += 1
+            n = rem
+        else:
+            break
+    c += 1
 
-print(*indices, sep='\n')
+print(layers)
