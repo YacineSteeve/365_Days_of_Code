@@ -1,8 +1,9 @@
-n = int(input())
+h, m = map(int, input().split())
 
-if n % 2:
-    print("still running")
+if m >= 45:
+    print(f'{h} {m-45}')
 else:
-    press = [int(input()) for _ in range(n)]
-
-    print(sum(press[i + 1] - press[i] for i in range(0, n, 2)))
+    if h == 0:
+        print(f'{23} {m+15}')
+    else:
+        print(f'{h-1} {m+15}')
