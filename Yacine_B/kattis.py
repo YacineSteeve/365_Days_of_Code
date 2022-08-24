@@ -1,2 +1,2 @@
-print(bin(11))
-print(int(bin(13)[2:][::-1]))
+n = bin(int(input()))[2:]
+print(sum(int(n[i]) * (2**i) for i in range(len(n))))
