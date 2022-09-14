@@ -12,6 +12,9 @@ class ListNode:
 
 
 def middle_node(head: Optional[ListNode]) -> Optional[ListNode]:
+    """
+        Find and return the middle node of the linked list.
+    """
     nodes = []
 
     def explore_list(node, nodes_nb=nodes):
@@ -55,6 +58,25 @@ def middle_node(head: Optional[ListNode]) -> Optional[ListNode]:
     find_middle(head)
 
     return middle.pop()
+
+
+def is_palindrome(head: Optional[ListNode]) -> bool:
+    """
+        Check if a linked list is a palindrome.
+    """
+    nodes_vals = []
+
+    def explore_list(node, vals=nodes_vals):
+        vals.append(node.val)
+
+        if node.next is None:
+            return
+        else:
+            explore_list(node.next)
+
+    explore_list(head)
+
+    return nodes_vals == nodes_vals[::-1]
 
 
 linked_list = ListNode(
