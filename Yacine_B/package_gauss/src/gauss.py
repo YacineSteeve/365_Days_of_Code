@@ -1,5 +1,6 @@
 """Solve matrix using Gaussian algorithm.
 """
+import sys
 
 
 def display_matrix(matrix, n):
@@ -18,8 +19,8 @@ def display_matrix(matrix, n):
     for line in matrix:
         print(f"L{k}", end="   ")
         for x in line:
-            if type(x) is not bool:
-                print(x, end=" " * (5 - len([c for c in str(x)])))
+            if not isinstance(x, bool):
+                print(x, end=" " * (5 - len(str(x))))
         print()
         k += 1
     print()
@@ -60,11 +61,12 @@ def correct_matrix(matrix, n):
         coef = str(input("Coefficient to modify\n"
                          "Format: line,raw,value\n"
                          "(Enter N/n if none) : "))
-        finished = (coef == "N" or coef == "n")
+        finished = coef in ["N", "n"]
         if not finished:
-            mod_row = int(coef.split(",")[0]) - 1
-            mod_col = int(coef.split(",")[1]) - 1
-            new_val = int(coef.split(",")[2])
+            r, c, v, *_ = coef.split(",")
+            mod_row = int(r) - 1
+            mod_col = int(c) - 1
+            new_val = int(v)
             if mod_row not in range(n + 1) or mod_col not in range(n + 1):
                 print("Line or raw not found! Try again...")
             else:
@@ -130,7 +132,7 @@ def compute_solutions(matrix, n):
             sol = sum(terms) / x
         except ZeroDivisionError:
             print("\nUnsolvable system (no solution)! \n")
-            exit()
+            sys.exit()
         else:
             sols[i] = sol
 
@@ -153,23 +155,23 @@ def compute_solutions(matrix, n):
 
 
 if __name__ == "__main__":
-    ok = False
-    var_nb = 0
+    OK = False
+    VAR_NB = 0
 
-    while not ok:
+    while not OK:
         try:
-            var_nb = abs(int(input("\nNumber of variables: ")))
+            VAR_NB = abs(int(input("\nNumber of variables: ")))
         except ValueError:
             print("A positive integer expected as number of variables!")
         else:
-            ok = True
+            OK = True
 
-    mt = [[0 for _ in range(var_nb + 1)] + [False] for _ in range(var_nb)]
+    mt = [[0 for _ in range(VAR_NB + 1)] + [False] for _ in range(VAR_NB)]
 
     print()
-    display_matrix(mt, var_nb)
-    mt = fill_matrix(mt, var_nb)
-    mt = correct_matrix(mt, var_nb)
-    mt = triangulate_matrix(mt, var_nb)
-    compute_solutions(mt, var_nb)
+    display_matrix(mt, VAR_NB)
+    mt = fill_matrix(mt, VAR_NB)
+    mt = correct_matrix(mt, VAR_NB)
+    mt = triangulate_matrix(mt, VAR_NB)
+    compute_solutions(mt, VAR_NB)
     print()
