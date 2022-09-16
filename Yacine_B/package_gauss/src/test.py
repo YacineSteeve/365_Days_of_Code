@@ -1,4 +1,4 @@
-from gauss import *
+from .gauss import *
 
 
 """Run this in order to see a display template for the matrix/system:
