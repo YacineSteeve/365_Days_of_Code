@@ -1,3 +1,2 @@
-_, x, y = input(), set(map(int, input().split())), set(map(int, input().split()))
-
-print((x - y).pop())
+for _ in range(int(input())):
+    print(len(set([input() for _ in range(int(input()))])))
