@@ -1,2 +1,4 @@
-for _ in range(int(input())):
-    print(len(set([input() for _ in range(int(input()))])))
+if "ss" in input():
+    print("hiss")
+else:
+    print("no hiss")
