@@ -1,3 +1,5 @@
 for _ in range(int(input())):
-    t, n = map(int, input().split())
-    print(t, n * (n + 1) // 2, n**2, n * (n + 1))
+    s = input()
+    to = s.find("Simon says ")
+    if to != -1:
+        print(s[11:])
