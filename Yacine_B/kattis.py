@@ -1,5 +1,6 @@
-for _ in range(int(input())):
-    s = input()
-    to = s.find("Simon says ")
-    if to != -1:
-        print(s[11:])
+s = input().split()
+
+if len(s) == len(set(s)):
+    print("yes")
+else:
+    print("no")
