@@ -1,3 +1,3 @@
-for _ in range(int(input())):
-    n = int(input())
-    print(f"{n} is {'odd' if n % 2 else 'even'}")
+_, x, y = input(), set(map(int, input().split())), set(map(int, input().split()))
+
+print((x - y).pop())
