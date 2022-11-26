@@ -1,14 +1,13 @@
-def three_half(w: int, k: int, passengers=[0]) -> int:
-    if w == k:
-        passengers[-1] = 0
+parts, days = map(int, input().split())
+repl = []
 
-    if k == 0:
-        return int(passengers[-1])
-    else:
-        passengers[-1] = 2 * (0.5 + passengers[-1])
-        return three_half(w, k-1)
+while days > 0 or len(repl) < parts:
+    days -= 1
+    part = input()
+    if part not in repl:
+        repl.append(part)
 
-
-for _ in range(int(input())):
-    n = int(input())
-    print(three_half(n, n))
+if len(repl) == parts:
+    print(days)
+elif days == 0:
+    print("paradox avoided")
