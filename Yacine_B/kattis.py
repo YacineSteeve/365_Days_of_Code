@@ -1,16 +1,14 @@
-word, letters = set(input()), input()
-wrongs = 0
+def three_half(w: int, k: int, passengers=[0]) -> int:
+    if w == k:
+        passengers[-1] = 0
 
-for letter in letters:
-    if letter in word:
-        word.remove(letter)
+    if k == 0:
+        return int(passengers[-1])
     else:
-        wrongs += 1
+        passengers[-1] = 2 * (0.5 + passengers[-1])
+        return three_half(w, k-1)
 
-    if not word:
-        print("WIN")
-        break
 
-    if wrongs == 10:
-        print("LOSE")
-        break
+for _ in range(int(input())):
+    n = int(input())
+    print(three_half(n, n))
