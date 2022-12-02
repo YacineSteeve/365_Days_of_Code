@@ -1,13 +1,14 @@
-parts, days = map(int, input().split())
+n_parts, days = map(int, input().split())
 repl = []
+every = False
 
-while days > 0 or len(repl) < parts:
-    days -= 1
+for i in range(days):
     part = input()
     if part not in repl:
         repl.append(part)
+    if len(repl) == n_parts and not every:
+        print(i+1)
+        every = True
 
-if len(repl) == parts:
-    print(days)
-elif days == 0:
+if len(repl) < n_parts:
     print("paradox avoided")
