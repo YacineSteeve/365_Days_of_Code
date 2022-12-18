@@ -1,10 +1,11 @@
-for _ in range(int(input())):
-    s1, s2 = input(), input()
-    print(s1)
-    print(s2)
-    for i in range(len(s1)):
-        if s1[i] == s2[i]:
-            print('.', end='')
-        else:
-            print('*', end='')
-    print()
+values = [4, 3, 2, 7, 6, 5, 4, 3, 2, 1]
+
+cpr = list(input().strip())
+cpr.remove('-')
+
+test = sum(v * int(n) for v, n in zip(values, cpr))
+
+if test % 11:
+    print(0)
+else:
+    print(1)
